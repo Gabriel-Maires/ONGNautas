@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  django:
+    container_name: dev-django
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./:/app
+    command: >
+      sh -c "python3.11 manage.py migrate &&
+             python3.11 manage.py runserver 0.0.0.0:8000"
+    env_file:
+      - dev.env
+    ports:
+      - "8000:8000"
+    networks:
+      - django-network
+
+networks:
+  django-network:
+    driver: bridge
