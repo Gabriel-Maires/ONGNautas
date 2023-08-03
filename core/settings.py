@@ -85,12 +85,36 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+PROFILE = config('PROFILE', cast=str)
 DATABASES = {
-    'default': {
+    'default': {}
+}
+
+if PROFILE == 'test':
+    DATABASES['default'] = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
+
+elif PROFILE == 'dev':
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('POSTGRES_USER', cast=str),
+        'USER': config('POSTGRES_USER', cast=str),
+        'PASSWORD': config('POSTGRES_PASSWORD', cast=str),
+        'HOST': config('POSTGRES_HOST', cast=str),
+        'PORT': config('POSTGRES_PORT', cast=int),
+    }
+
+elif PROFILE == 'prod':
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('POSTGRES_USER', cast=str),
+        'USER': config('POSTGRES_USER', cast=str),
+        'PASSWORD': config('POSTGRES_PASSWORD', cast=str),
+        'HOST': config('POSTGRES_HOST', cast=str),
+        'PORT': config('POSTGRES_PORT', cast=int),
+    }
 
 
 # Password validation

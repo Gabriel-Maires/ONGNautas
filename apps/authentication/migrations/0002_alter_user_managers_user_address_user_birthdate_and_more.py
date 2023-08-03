@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='user',
             name='cep',
-            field=models.CharField(default='Não definido', max_length=11),
+            field=models.CharField(default='Sem CEP', max_length=11),
         ),
         migrations.AddField(
             model_name='user',

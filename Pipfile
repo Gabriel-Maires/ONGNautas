@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 python-decouple = "*"
 django = "==4.2.3"
+psycopg2-binary = "*"
 
 [dev-packages]
 

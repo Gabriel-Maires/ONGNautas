@@ -15,7 +15,7 @@ class User(AbstractUser):
     is_supporter = models.BooleanField(default=False)
     cpf = models.CharField(max_length=11, blank=False)
     birthdate = models.DateField(blank=False, default=timezone.now)
-    cep = models.CharField(max_length=11, blank=False, default='Não definido')
+    cep = models.CharField(max_length=11, blank=False, default='Sem CEP')
     address = models.CharField(max_length=64, blank=False, default='Não definido')
     complement = models.CharField(max_length=24, blank=True)
 
