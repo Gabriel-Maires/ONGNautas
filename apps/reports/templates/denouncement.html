@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Denúncia Ambiental</title>
+    <!-- Adicione os links do Bootstrap para estilização -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Denúncia Ambiental</h1>
+        <p>Informe como fazer a denúncia:</p>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#denunciaModal">Fazer Denúncia</button>
+    </div>
+
+    <!-- Modal para fazer a denúncia -->
+    <div class="modal fade" id="denunciaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Fazer Denúncia</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="descricao">Descrição da Denúncia:</label>
+                            <textarea class="form-control" id="descricao" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="foto">Foto da Denúncia:</label>
+                            <input type="file" class="form-control-file" id="foto">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary">Enviar Denúncia</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
