@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Página de Login</title>
-    <!-- Adicione o link do Bootstrap para estilização -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
+{% extends "base/base.html" %}
+{% load static %}
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'perfil/css/home.css' %}">
+{% endblock 'head' %}
+
+{% block body %}
+
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -65,5 +64,5 @@
             });
         });
     </script>
-</body>
+{% endblock body %}
 </html>
