@@ -20,9 +20,10 @@ lowercase_letters = RegexValidator(
 )
 number_validator = RegexValidator(
     regex = r'\d+',
-    message = ' Use at least 1 number'
+    message = 'Use at least 1 number'
 )
 
 cpf_validator = RegexValidator(
-    regex = r'^\d{3}\.\d{3}\.\d{3}-\d{2}$'
+    regex = r'^\d{3}\.\d{3}\.\d{3}-\d{2}$',
+    message = 'CPF Inválido'
 )
