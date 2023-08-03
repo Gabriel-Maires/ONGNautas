@@ -1,38 +1,36 @@
 {% extends "base/base.html" %}
 {% load static %}
-{% block 'head' %}
-<link rel="stylesheet" href="{% static 'perfil/css/home.css' %}">
-{% endblock 'head' %}
+{% block title %}Login{% endblock title %}
 
-{% block body %}
-
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h2 class="text-center">Login</h2>
+{% block content %}
+    <section class="padd-section">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class=" container">
+                        <h2 class="section-title text-center">Login</h2>
                     </div>
-                    <div class="card-body">
-                        <form id="loginForm">
-                            <div class="form-group">
-                                <label for="email">E-mail:</label>
-                                <input type="email" id="email" name="email" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Senha:</label>
-                                <input type="password" id="password" name="password" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-block">Entrar</button>
-                            </div>
-                        </form>
+                    
+                        <div class="card-body col-lg-5 col-md-8">
+                            <form id="loginForm">
+                                <div class="form-group">
+                                    <label for="email">E-mail:</label>
+                                    <input type="email" id="email" name="email" class="form-control" required>
+                                </div>
+                                <div class="form-group mt-3">
+                                    <label for="password">Senha:</label>
+                                    <input type="password" id="password" name="password" class="form-control" required>
+                                </div>
+                                <div class="form-group mt-3 text-center">
+                                    <button type="submit" class="">Entrar</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    </section>
     <!-- Scripts -->
     <script>
         // Lógica de autenticação no lado do cliente (apenas exemplo)
@@ -64,5 +62,5 @@
             });
         });
     </script>
-{% endblock body %}
+{% endblock content %}
 </html>
