@@ -16,9 +16,9 @@ def register_view(request):
         is_voluntary = request.POST.get('voluntary')
         password = request.POST.get('password') if (request.POST.get('password') == request.POST.get('password_confirmation')
                                                     ) else None
-        user = User(username=name, email=email, 
+        user = User.objects.create_user(username=name, email=email, 
                     birth_date=birth_date, cpf=cpf, 
                     cep=cep, address=address, 
                     complement=complement, is_supporter=is_supporter,
                     is_voluntary=is_voluntary, password=password)
-        user.save()
+        
