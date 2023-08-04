@@ -29,11 +29,24 @@ __Usando SSH:__ ```git clone git@github.com:weblerson/ONGNautas.git```
 
 <p style="color: red;">Eu recomendo usar o link SSH</p>
 
+### Perfis de Projeto
+Para utilizar os perfis de teste e desenvolvimento, certifique-se de ter o Docker e o plugin Docker Compose instalados no seu computador.
+
+##### Perfil de Testes
+
+Para executar o perfil de testes, siga os seguintes passos:
+
+1. __Subindo os Serviços__
+Dentro do diretório raiz do projeto, digite o comando ```docker compose -f docker-compose.test.yaml --env-file test.env up --build``` <br>
+Dessa forma, automaticamente o docker vai criar o banco de testes, executar as migrações e rodar todos os testes do projeto automaticamente.
+<br>
+
+2. __Derrubando os Serviços__
+Aperte o comando ```CTRL + C``` para parar os containers. Após isso, digite o comando ```docker compose -f docker-compose.test.yaml``` down para derrubar os containers completamente. Depois de fazer isso, todos os containers vão ser encerrados.
+<br>
 ##### Perfil de Desenvolvimento
 
-Para utilizar o perfil de desenvolvimento, certifique-se de ter o Docker e o plugin Docker Compose instalados no seu computador.
-
-Para executar com o docker compose e o docker engine, siga os seguintes passos:
+Para executar o perfil de desenvolvimento, siga os seguintes passos:
 
 1. __Subindo os Serviços__
 Dentro do diretório raiz do projeto, digite o comando ```docker compose -f docker-compose.dev.yaml --env-file dev.env up --build``` <br>
