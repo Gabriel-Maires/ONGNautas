@@ -12,4 +12,3 @@ def register_view(request):
             register_form.save()
         else:
             return render(request, 'register.html', {'form':register_form})
-        
