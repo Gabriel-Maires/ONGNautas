@@ -5,4 +5,4 @@ from authentication.models.user import User
 class RegisterForm(forms.ModelForm):
     class Meta:
         model = User
-        field = '__all__'
+        fields = '__all__'

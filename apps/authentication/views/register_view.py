@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from authentication.models.user import User
-from authentication.forms import RegisterForm
+from authentication.forms.register_form import RegisterForm
+
 
 def register_view(request):
     if request.method == 'GET':
