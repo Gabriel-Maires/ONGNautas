@@ -25,5 +25,10 @@ number_validator = RegexValidator(
 
 cpf_validator = RegexValidator(
     regex = r'^\d{3}\.\d{3}\.\d{3}-\d{2}$',
-    message = 'CPF Inválido'
+    message = 'Insert a valid CPF'
+)
+
+cep_validator = RegexValidator(
+    regex = r'\d{5}-\d{3}',
+    message = 'Insert a valid CEP'
 )
