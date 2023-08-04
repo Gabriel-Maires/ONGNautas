@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from authentication.models.user import User
+from authentication.models import User
 from authentication.forms.register_form import RegisterForm
 
 
