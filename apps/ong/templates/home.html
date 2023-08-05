@@ -4,7 +4,230 @@
 <!-- CSS -->
 {% block 'css' %}{% static 'ong/css/home.css' %}{% endblock 'css' %}
 
-{% block 'content' %}
+{% comment %} {% block 'content' %}
 
+    <section >
+        <div class="background"></div>
+    </section>
+<!-- Quem Somos -->
+    <section>
+<h1>Quem Somos</h1>
+    </section>
+<!-- Seja Voluntário-->
+    <section></section>
+        <h1> Seja Voluntário</h1>
+<!-- Apoia a Causa-->
+    <section></section>
+<!-- Newsletter -->
+    <section></section>
 
 {% endblock 'content' %}
+{% extends "base/base.html" %}
+{% load static %} {% endcomment %}
+
+<!-- CSS -->
+
+
+{% block 'content' %}
+<!-- Bem Vindo -->
+    <section class="padd-section">
+        <div class="container-fluid mt-5">
+            <div class="margin">
+                <div class="background">
+                    <p>A ONGNautas é uma organização empenhada na conservação e proteção do meio ambiente, especialmente em praias e cidades. Movidos pela conexão profunda entre a humanidade e esses ambientes, eles se dedicam a garantir um futuro sustentável para essas áreas. Através de ações de conscientização, educação e denúncia, a ONGNautas trabalha incansavelmente para enfrentar problemas como a poluição, a degradação e outras ameaças aos ecossistemas.</p>
+                    <button class="btn">AÇÔES</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <section></section>
+        
+    </section>
+
+<!-- Quem somos -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Quem Somos?</h2>
+            <p class="section-description text-center">Entenda um pouco mais sobre a ong.</p>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1>ONG.Nautas</h1>
+                    <p>Estamos comprometidos em combater a poluição, promover práticas sustentáveis e engajar a comunidade local em ações de preservação.</p>
+                    <p>Com uma equipe apaixonada por natureza e especialistas em conservação, trabalhamos para um futuro mais saudável para nossas praias e cidades.</p>
+                    <button class="btn">Conheça nosso blog</button>
+                </div>
+                <!-- Linha vertical -->
+                <div class="d-flex" style="height: 200px;">
+                    <div class="vr bg-primary"></div>
+                </div>
+
+                <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                    <div>
+                        <div class="photo">
+                            <img src="caminho-da-imagem-1.jpg" alt="Foto 1">
+                        </div>
+                        <div class="photo">
+                            <img src="caminho-da-imagem-2.jpg" alt="Foto 2">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="photo">
+                            <img src="caminho-da-imagem-3.jpg" alt="Foto 3">
+                        </div>
+                        <div class="photo">
+                            <img src="caminho-da-imagem-4.jpg" alt="Foto 4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voluntary-->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Seja Voluntário</h2>
+            <p class="section-description text-center">Com você somos mais forte.</p>
+
+            <div class="row">
+                <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                    <div>
+                        <div class="photo">
+                            <img src="caminho-da-imagem-1.jpg" alt="Foto 1">
+                        </div>
+                        <div class="photo">
+                            <img src="caminho-da-imagem-2.jpg" alt="Foto 2">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="photo">
+                            <img src="caminho-da-imagem-3.jpg" alt="Foto 3">
+                        </div>
+                        <div class="photo">
+                            <img src="caminho-da-imagem-4.jpg" alt="Foto 4">
+                        </div>
+                    </div>
+
+                    <!-- Linha vertical -->
+                    <div class="vr bg-primary"></div>
+              
+                    
+                        <div class="col-lg-9">
+                            <h1>Voluntário</h1>
+                            <p>Você, sim, você mesmo! Se tem um coração verde, vontade de fazer a diferença e um espírito aventureiro, essa é a sua chance de fazer parte de uma equipe dedicada a proteger o meio ambiente e preservar as belezas naturais do nosso querido lar terrestre.</p>
+                            <p>Impacto positivo: Cada ação que você realizar terá um efeito cascata em nosso ecossistema, contribuindo para um mundo mais verde e sustentável. Plante árvores, participe de limpezas ambientais, e deixe sua marca brilhando no firmamento!</p>
+                            <button class="btn">Cadastrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- support -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Fortaleça nossas ações</h2>
+            <p class="section-description text-center">Fortaleça nossas ações</p>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1>Apoiador</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <button class="btn">Apoiar</button>
+                </div>
+                <!-- Linha vertical -->
+                <div class="d-flex" style="height: 200px;">
+                    <div class="vr bg-primary"></div>
+                </div>
+
+                <div class="col-lg-3 d-flex align-items-center justify-content-center">
+                    <div>
+                        <div class="photo">
+                            <img src="caminho-da-imagem-1.jpg" alt="Foto 1">
+                        </div>
+                        <div class="photo">
+                            <img src="caminho-da-imagem-2.jpg" alt="Foto 2">
+                        </div>
+                    </div>
+                    <div>
+                        <div class="photo">
+                            <img src="caminho-da-imagem-3.jpg" alt="Foto 3">
+                        </div>
+                        <div class="photo">
+                            <img src="caminho-da-imagem-4.jpg" alt="Foto 4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+          <!-- ======= Newsletter ======= -->
+        <section class="padd-section">
+
+            <div class="container">
+              <div class="">
+      
+                <h2 class="text-center">Ultimas Notícias</h2>
+                <p class="text-center">Fique por dentro das últimas notícias .</p>
+              </div>
+
+              <div class="row">
+      
+                <div class="col-md-6 col-lg-4">
+                  <div class="">
+                    <a href="#"><img src="caminho-da-imagem-1.jpg" alt="img-1"></a>
+                    <div class="content-blog">
+                      <h4><a href="#">Junte-se a nós na missão verde! Acesse nosso Blog e inscrevas-se na nossa newsletter</a></h4>
+                      <span>01, ago 2023</span>
+                      <a class="btn" href="#">saiba mais</a>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-md-6 col-lg-4">
+                  <div class="text-left">
+                    <a href="#"><img src="caminho-da-imagem-2.jpg" class="" alt="img-2"></a>
+                    <div class="">
+                      <h4><a href="#">Planeta Sustentável: Descubra como os ONGNautas estão fazendo a diferença</a></h4>
+                      <span>01, ago 2023</span>
+                      <a class="btn" href="#">saiba mais</a>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-md-6 col-lg-4">
+                  <div class="text-left">
+                    <a href="#"><img src="caminho-da-imagem-3.jpg" class="" alt="img-3"></a>
+                    <div class="">
+                      <h4><a href="#">Explorando a Natureza: As melhores trilhas ecológicas com os ONGNautas</a></h4>
+                      <span>01, ago 2023</span>
+                      <a class="btn" href="#">saiba mais</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+      
+
+          <section  class="text-center">
+            <div class="">
+              <div class="container" >
+                <div class="row justify-content-center">
+                  <div class="col-md-9 col-lg-6">
+                    <form class="d-flex" method="POST" action="#">
+                      <input type="email" class="form-control " placeholder="Email Adress" name="email">
+                      <button type="submit" class="btn "><i></i>Inscreva-se</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section><!-- End Newsletter Section -->
+{% endblock 'content' %}
+</body>
+</html>

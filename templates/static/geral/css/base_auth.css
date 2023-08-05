@@ -36,7 +36,7 @@
   
   body {
     
-    background-image: url("/static/authentication/img/backlogin.png") !important;
+    background-image: url("/static/authentication/img/back-login.png") !important;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
