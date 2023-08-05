@@ -1,0 +1,58 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Lastica'; 
+    src: url('/static/fonts/lastica/lastica.ttf') format('truetype'); 
+    /* Outras propriedades da fonte, se necessário (font-weight, font-style, etc.) */
+  }
+  
+@font-face {
+    font-family: 'Aileron'; 
+    src: url('/static/fonts/aileron/aileron.ttf') format('truetype'); 
+    /* Outras propriedades da fonte, (font-weight, font-style, etc.) */
+  }
+@font-face {
+    font-family: 'Josefin sans'; 
+    src: url('/static/fonts/Josefin_Sans/JosefinSans-SemiBoldItalic.ttf') format('truetype'); 
+    /* Outras propriedades da fonte, (font-weight, font-style, etc.) */
+  }
+  
+  :root {
+    --login-title-color: #f3ece8; /* Cor dos Titulos: Login e Cadastro */
+    --input-login-bg: #a28e61; /* background color dos inputs dos forms: Login e Cadastro */
+    --placeholder-text: #f1ebeb; /* Cor do texto nome, data, email e etc */
+  }
+   /* para usar as variaveis root use o var(aqui dentro a variavel com a propriedade desejada) */
+  
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    
+    background-image: url("/static/authentication/img/back-login.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin: 0 auto;
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.3
+    ); /* Cor do efeito de vidro com transparência */
+    backdrop-filter: blur(10px); /* Efeito de desfoque para o efeito de vidro */
+    border-left: 1rem solid black;
+    border-right: 1rem solid black;
+  }
