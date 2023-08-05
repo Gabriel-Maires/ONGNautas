@@ -1,0 +1,111 @@
+/* Reset css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* fontes e variaveis de cor */
+@font-face {
+  font-family: "Lastica";
+  src: url("/static/fonts/lastica/lastica.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Aileron";
+  src: url("/static/fonts/aileron/aileron.ttf") format("truetype");
+  /* propriedades da fonte */
+}
+@font-face {
+  font-family: "Josefin sans";
+  src: url("/static/fonts/Josefin_Sans/JosefinSans-SemiBoldItalic.ttf")
+    format("truetype");
+}
+
+:root {
+  --login-title-color: #f3ece8; /* Cor dos Titulos: Login e Cadastro */
+  --input-login-bg: #a28e61; /* background color dos inputs dos forms: Login e Cadastro */
+  --placeholder-text: #f1ebeb; /* Cor do texto nome, data, email e etc */
+}
+
+
+
+
+
+
+
+body {
+  background-image: url("/static/authentication/img/backlogin.png") !important;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  height: 100vh;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.title-form{
+  font-family: "Lastica";
+  font-size: 2rem !important;
+  color: var(--login-title-color)!important;
+}
+
+.navbar-brand img {
+  width: 10rem;
+  height: auto;
+}
+
+.main-content-container-form {
+  margin: 0 auto;
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(
+    62,
+    51,
+    27,
+    0.343
+  ); /* Cor do efeito de vidro com transparência */
+  backdrop-filter: blur(1px); /* Efeito de desfoque para o efeito de vidro */
+  border-left: 1rem solid black;
+  border-right: 1rem solid black;
+}
+
+.form-control {
+  font-family: "Lastica";
+  background-image: url("/static/authentication/img/input.png");
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border: hidden;
+  background-color: transparent;
+}
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border: hidden !important;
+}
+.btn {
+  margin: 0 auto;
+  width: 170px;
+  padding: 2px;
+  border-radius: 1rem;
+  border: hidden;
+  background-image: linear-gradient(
+    to left bottom,
+    #00a651,
+    #3baf4c,
+    #5ab748,
+    #74bf43,
+    #8dc63f
+  );
+}

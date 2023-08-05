@@ -1,0 +1,50 @@
+/* Estilo para o formulário */
+
+.main-content-container-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+}
+
+.form-group:nth-child(1) input {
+  margin-right: 45px;
+}
+.form-group:nth-child(2) input,
+.form-group:nth-child(2) .custom-control,
+.form-group:nth-child(2) h2 {
+  margin-left: 45px;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+.custom-control {
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  margin-top: 10px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

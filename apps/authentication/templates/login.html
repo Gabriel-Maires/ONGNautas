@@ -1,10 +1,13 @@
-{% extends "base/base.html" %}
-{% load static %}
-{% block 'title' %}Login{% endblock 'title' %}
-<!-- CSS -->
-{% block 'css' %}{% static 'authentication/css/login.css' %}{% endblock 'css' %}
+{% extends 'base/base_form.html' %}
 
-{% block 'content' %}
+{% load static %} 
+
+{% block 'head' %}
+<!-- Links de estilização da pagina -->
+{% endblock %}
+
+{% block 'title' %}Cadastro{% endblock %} 
+{% block 'body' %}
     <section class="padd-section">
         <div class="container mt-5">
             <div class="row justify-content-center">
@@ -64,5 +67,5 @@
             });
         });
     </script>
-{% endblock 'content' %}
-</html>
+{% endblock 'body' %}
+
