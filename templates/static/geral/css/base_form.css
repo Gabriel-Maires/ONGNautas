@@ -30,41 +30,73 @@
 
 
 
-
-
-
-
 body {
   background-image: url("/static/authentication/img/backlogin.png") !important;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-
-  height: 100vh;
+ 
 }
 
 .navbar {
   position: fixed;
+  margin: 0 auto;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 85%;
   z-index: 100;
+  background-color: rgba(
+    62,
+    51,
+    27,
+    0.343
+  ); 
+  backdrop-filter: blur(1px); 
+  border-left: 2.3rem solid black;
+  border-right: 2.3rem solid black;
 }
 
-.title-form{
-  font-family: "Lastica";
-  font-size: 2rem !important;
-  color: var(--login-title-color)!important;
+.navbar-custom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra da navbar */
 }
 
 .navbar-brand img {
-  width: 10rem;
+  width: 12rem;
   height: auto;
 }
 
+.navbar-content {
+  display: flex;
+  align-items: center;
+  color: var(--login-title-color)
+}
+
+.navbar-content h5 {
+  margin-right: 20px;
+}
+
+.title-form{
+  
+  font-family: "Lastica";
+  font-size: 3rem !important;
+  color: var(--login-title-color)!important;
+  font-weight: 900;
+  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; 
+  letter-spacing: 7px;
+  padding: 10px; 
+  
+}
+
+
+
 .main-content-container-form {
   margin: 0 auto;
-  width: 65%;
+  height: 100%;
+  width: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,10 +105,10 @@ body {
     51,
     27,
     0.343
-  ); /* Cor do efeito de vidro com transparência */
-  backdrop-filter: blur(1px); /* Efeito de desfoque para o efeito de vidro */
-  border-left: 1rem solid black;
-  border-right: 1rem solid black;
+  ); 
+  backdrop-filter: blur(1px); 
+  border-left: 2.3rem solid black;
+  border-right: 2.3rem solid black;
 }
 
 .form-control {
@@ -94,18 +126,16 @@ body {
   box-shadow: none;
   border: hidden !important;
 }
-.btn {
+.btn-default{
+  font-family: "Lastica";
+  color: var(--login-title-color);
+  font-size: 0.8rem;
   margin: 0 auto;
   width: 170px;
-  padding: 2px;
+  padding: 4px;
+  height: 40px;
   border-radius: 1rem;
   border: hidden;
-  background-image: linear-gradient(
-    to left bottom,
-    #00a651,
-    #3baf4c,
-    #5ab748,
-    #74bf43,
-    #8dc63f
-  );
+  background-image: linear-gradient(to right, #00a651, #3ab84a, #5fca40, #83db30, #a8eb12);
 }
+

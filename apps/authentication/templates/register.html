@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block 'title' %}Cadastro{% endblock %} 
+{% block 'nav-h5' %}Já tem cadastro?  <button type="submit" class="btn-default">Login</button></h5>{% endblock 'nav-h5' %}
 {% block 'body' %}
 <form>
   <h2 class='title-form'> Cadastro </h2>
@@ -68,20 +69,23 @@
         id="inputComplement"
         placeholder="Complemento"
       />
-      <h2>Tipo de cadastro:</h2>
-      <div class="custom-control custom-radio custom-control-inline">
-        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" />
-        <label class="custom-control-label" for="customRadioInline1">Quero ser Voluntário</label>
+      <div class="container">
+        <div class="form-group3">
+          <h3>Tipo de cadastro:</h3>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" />
+            <label class="custom-control-label" for="customRadioInline1">Quero ser Voluntário</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" />
+            <label class="custom-control-label" for="customRadioInline2">Quero ser Apoiador</label>
+          </div>
+        </div>
       </div>
-      <div class="custom-control custom-radio custom-control-inline">
-        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" />
-        <label class="custom-control-label" for="customRadioInline2">Quero ser Apoiador</label>
-      </div>
-    </div>
-  </div>
+      
   
   <div class="form-row">
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    <button type="submit" class="btn-default">Cadastrar</button>
   </div>
 </form>
 

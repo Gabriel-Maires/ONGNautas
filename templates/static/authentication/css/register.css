@@ -20,6 +20,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 45px;
+ 
 }
 
 .form-group:nth-child(1) input {
@@ -47,4 +48,12 @@ input {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+ h3{
+  margin-left: 3.5rem;
+ }
+.form-group3 {
+  color:var(--placeholder-text);
+  
+  text-decoration: underline;
 }
