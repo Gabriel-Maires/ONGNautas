@@ -1,5 +1,5 @@
 from django.test import TestCase
-from ..models import User,Denouncement
+from authentication.models import User, Denouncement
 from django.core.files.uploadedfile import SimpleUploadedFile
 
 class DenouncementTest(TestCase):
@@ -9,8 +9,8 @@ class DenouncementTest(TestCase):
 
     def test_create_denouncement(self):
         denouncement = Denouncement.objects.create(
-            title='test',
-            description='Just teste',
+            title='The Title',
+            description='The Description',
             image=SimpleUploadedFile('test_image.jpg', b'cont', content_type='image/jpeg'),#act like a real image
             author=self.user,
         )

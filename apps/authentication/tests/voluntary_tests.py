@@ -1,5 +1,5 @@
 from django.test import TestCase
-from ..models import User,Voluntary
+from authentication.models import User, Voluntary
 
 
 class VoluntaryTest(TestCase):

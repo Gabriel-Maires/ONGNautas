@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.utils import timezone
 from django.contrib.auth import get_user_model
-from ..models import User,Denouncement,Voluntary
+from authentication.models import User, Denouncement, Voluntary
 from django.core.files.uploadedfile import SimpleUploadedFile
 
 #user tests
