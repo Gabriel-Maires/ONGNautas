@@ -31,7 +31,7 @@ body{
 
 /* Botões principais home Page, login e cadastro*/
 .btn{
-    margin: 0 auto;
+    margin: 10px auto;
     width:170px ;
     padding:2px;
     border-radius: 1rem;
