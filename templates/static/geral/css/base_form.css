@@ -12,6 +12,12 @@
 }
 
 @font-face {
+  font-family: "Lastica-bold";
+  src: url("/static/fonts/lastica/lastica.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
   font-family: "Aileron";
   src: url("/static/fonts/aileron/aileron.ttf") format("truetype");
   /* propriedades da fonte */
@@ -65,7 +71,7 @@ body {
 }
 
 .navbar-brand img {
-  width: 12rem;
+  width: 14rem;
   height: auto;
 }
 
@@ -78,20 +84,21 @@ body {
 .navbar-content h5 {
   margin-right: 20px;
 }
-
+form{
+  width:100%;
+  margin-bottom: 120px;
+}
 .title-form{
-  
-  font-family: "Lastica";
-  font-size: 3rem !important;
+  margin-bottom: 100px;
+  font-family: "Lastica-bold";
+  font-size: 4rem !important;
   color: var(--login-title-color)!important;
   font-weight: 900;
   text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; 
-  letter-spacing: 7px;
+  letter-spacing: 9px;
   padding: 10px; 
   
 }
-
-
 
 .main-content-container-form {
   margin: 0 auto;
@@ -137,5 +144,8 @@ body {
   border-radius: 1rem;
   border: hidden;
   background-image: linear-gradient(to right, #00a651, #3ab84a, #5fca40, #83db30, #a8eb12);
+}
+input {
+  margin-bottom: 10px;
 }
 
