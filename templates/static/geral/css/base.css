@@ -112,19 +112,7 @@ p {
 span {
   letter-spacing: 1px;
 }
-.btn-default {
-  background: #71c55d;
-  border: 0;
-  padding: 0px 10px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 10%;
-  margin-bottom: 0.5rem;
-}
 
-.btn-default:hover {
-  background: #92d283;
-}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
