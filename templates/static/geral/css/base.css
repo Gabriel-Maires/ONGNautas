@@ -35,8 +35,12 @@ body{
     width:170px ;
     padding:2px;
     border-radius: 1rem;
+    transition: 0.4s;
     border:hidden;
     background-image: linear-gradient(to left bottom, #00a651, #3baf4c, #5ab748, #74bf43, #8dc63f);
+}
+.btn:hover{
+  background-image: linear-gradient(to left bottom, #8dc63f, #74bf43, #5ab748, #3baf4c, #00a651);
 }
 
 body {
