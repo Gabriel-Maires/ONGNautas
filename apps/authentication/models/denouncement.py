@@ -2,7 +2,6 @@ from django.db import models
 
 from .user import User
 
-
 class Denouncement(models.Model):
 
     title = models.CharField(max_length=128)
