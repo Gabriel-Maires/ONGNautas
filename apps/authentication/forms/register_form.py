@@ -6,3 +6,5 @@ class RegisterForm(forms.ModelForm):
     class Meta:
         model = User
         fields = '__all__'
+
+    #TODO: Method to validate the password
