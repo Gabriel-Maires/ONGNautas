@@ -12,3 +12,7 @@ class Report(models.Model):
     complement = models.CharField(max_length=24, blank=True)
 
     evidence_image = models.ImageField()
+
+    class Meta:
+        verbose_name = 'Denúncia'
+        verbose_name_plural = 'Denúncias'
