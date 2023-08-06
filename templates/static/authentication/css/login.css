@@ -1,5 +1,42 @@
-/* login.css */
-.form-group.button-group {
-    text-align: center;
-  }
+body{
+  height: 100vh ;
+}
+.title-form{
+  margin-top: 100px;
+  text-align: center;
+  font-family: "Lastica";
+  font-size: 4rem !important;
+  color: var(--login-title-color)!important;
+  font-weight: 900;
+  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; 
+  letter-spacing: 9px;
+  
+  
+}
+.form-login{
+  width: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+
+.form-control {
+  font-family: "Lastica";
+  background-image: url("/static/authentication/img/input.png");
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border: hidden;
+  width: 27rem;
+  background-color: transparent;
+}
+
+
+.title-form{
+  margin: 0 auto;
+}
   

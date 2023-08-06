@@ -1,60 +1,82 @@
-/* Estilo para o formulário */
+/* register.css */
+
+
 
 .main-content-container-form {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap:30px;
   height: 100vh;
+  
 }
 
 form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin: 0 auto;
+  flex-wrap: wrap;
   max-width: 600px;
+  margin: 0 auto;
+  gap: 10px;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 45px;
-  padding: 0 30px;
- 
-}
-
-.form-group:nth-child(1) input {
-  margin-right: 45px;
-}
-.form-group:nth-child(2) input,
-.form-group:nth-child(2) .custom-control,
-.form-group:nth-child(2) h2 {
-  margin-left: 45px;
-}
-
-input {
+.title-form{
   margin-bottom: 10px;
-}
-
-.custom-control {
-  margin-bottom: 10px;
-}
-
-.btn-primary {
-  margin-top: 10px;
-}
-
-.form-row {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
- h3{
-  margin-left: 3.5rem;
- }
-.form-group3 {
-  color:var(--placeholder-text);
+  text-align: center;
+  font-family: "Lastica";
+  font-size: 4rem !important;
+  color: var(--login-title-color)!important;
+  font-weight: 900;
+  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; 
+  letter-spacing: 9px;
   
-  text-decoration: underline;
+  
+}
+
+.form-group:nth-child(-n+5) {
+  flex-basis: calc(50% - 5px);
+}
+
+
+.form-group:nth-child(n+6) {
+  flex-basis: calc(50% - 5px);
+}
+
+
+
+.form-group3 {
+  flex-basis: 100%;
+  text-align: center;
+  margin: 20px  15px ;
+
+  color: var(--login-title-color);
+}
+
+/*.btn-default {
+  flex-basis: 100%;
+  margin: 0 auto;
+}
+*/
+
+
+.form-control {
+  font-family: "Lastica";
+  background-image: url("/static/authentication/img/input.png");
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 10px;
+  border-radius: 0.7rem;
+  padding: 10px 15px;
+  border: hidden;
+  background-color: transparent;
+  margin-bottom: 30px;
+}
+
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border: hidden !important;
+}
+
+.custom-control{
+  margin-top: 10px;
 }

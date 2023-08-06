@@ -23,8 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('authentication/', include('authentication.urls')),
     path('reports/', include('reports.urls')),
+    path('', include('ong.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-
-# Front: Quaisquer problema com as medias, falar comigo. Não resolvam isso sozinhos

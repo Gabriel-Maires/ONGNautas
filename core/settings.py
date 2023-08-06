@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     # My Apps
     'authentication',
     'reports',
+    'perfil',
+    'ong',
 ]
 
 MIDDLEWARE = [

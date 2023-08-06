@@ -41,6 +41,7 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  overflow: hidden;
  
 }
 
@@ -83,22 +84,19 @@ body {
 
 .navbar-content h5 {
   margin-right: 20px;
+  font-family: "Josefin sans";
+  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; 
+ 
+
 }
 form{
-  width:100%;
-  margin-bottom: 120px;
-}
-.title-form{
-  margin-bottom: 100px;
-  font-family: "Lastica-bold";
-  font-size: 4rem !important;
-  color: var(--login-title-color)!important;
-  font-weight: 900;
-  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; 
-  letter-spacing: 9px;
-  padding: 10px; 
   
+  width:100%;
+  margin-bottom: 150px;
 }
+
+
+
 
 .main-content-container-form {
   margin: 0 auto;
@@ -118,21 +116,10 @@ form{
   border-right: 2.3rem solid black;
 }
 
-.form-control {
-  font-family: "Lastica";
-  background-image: url("/static/authentication/img/input.png");
-  background-position: center;
-  background-size: cover;
-  margin-bottom: 10px;
-  padding: 10px 15px;
-  border: hidden;
-  background-color: transparent;
-}
-.form-control:focus {
-  outline: none;
-  box-shadow: none;
-  border: hidden !important;
-}
+
+
+
+
 .btn-default{
   font-family: "Lastica";
   color: var(--login-title-color);
@@ -145,7 +132,11 @@ form{
   border: hidden;
   background-image: linear-gradient(to right, #00a651, #3ab84a, #5fca40, #83db30, #a8eb12);
 }
-input {
-  margin-bottom: 10px;
-}
 
+@media (max-width: 768px) {
+  .title-form {
+    font-size: 1.5rem !important;
+    letter-spacing: 3px;
+    padding: 5px;
+  }
+}
