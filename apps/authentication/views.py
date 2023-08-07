@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib import auth
 
+from django.contrib import messages
+from django.contrib.messages import constants
+
 from .forms import RegisterForm
 from .models import Voluntary
 
@@ -22,7 +25,21 @@ def register_view(request):
                 if user.is_voluntary:
                     Voluntary.objects.create(user=user)
 
+                    message: str
+                    if user.is_voluntary and user.is_supporter:
+                        message = 'Você se cadastrou como voluntário e apoiador!'
+                    elif user.is_voluntary:
+                        message = 'Você se cadastrou como voluntário!'
+                    elif user.is_supporter:
+                        message = 'Você se cadastrou como apoiador!'
+                    
+                    messages.add_message(request, constants.INFO, message)
+
+                messages.add_message(request, constants.SUCCESS, 'Usuário criado com sucesso!')
+
                 return redirect(reverse('login'))
+            
+            messages.add_message(request, constants.WARNING, 'Preencha os campos corretamente!')
                 
             return render(request, 'register.html', {'form': register_form},)
 

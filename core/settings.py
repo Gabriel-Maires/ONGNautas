@@ -169,3 +169,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'authentication.User'
 AUTHENTICATION_BACKENDS = ('authentication.backends.CustomBackend',)
+
+# Messages
+
+from django.contrib.messages import constants
+
+MESSAGE_TAGS = {
+    constants.INFO: 'alert-primary',
+    constants.DEBUG: 'alert-info',
+    constants.SUCCESS: 'alert-success',
+    constants.WARNING: 'alert-warning',
+    constants.ERROR: 'alert-danger',
+}

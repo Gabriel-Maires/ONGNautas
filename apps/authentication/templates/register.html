@@ -16,6 +16,13 @@
 
 {% block 'body' %}
   <form class="row" method="POST" action="{% url 'register' %}">{% csrf_token %}
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert {{ message.tags }}" role="alert">
+          {{ message }}
+        </div>  
+      {% endfor %}
+    {% endif %}
     <h2 class='title-form col-12 text-center'> Cadastro </h2>
     <div class="form-group col-mdl-6">
 
