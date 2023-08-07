@@ -3,46 +3,74 @@
 {% load static %} 
 
 {% block 'head' %}
+<!-- Links de estilização da pagina -->
 
-<link rel="stylesheet" href="{% static 'authentication/css/auth.css' %}" />
+<link rel="stylesheet" href="{% static 'authentication/css/login.css' %}" />
 
 
 {% endblock %}
 
-{% block 'title' %}Login{% endblock %}
-
+{% block 'title' %}Login{% endblock %} 
+{% block 'nav-h5' %}Já possui cadastro? <button type="submit" class="btn-default">cadastrar</button></h5>{% endblock 'nav-h5' %}
 {% block 'body' %}
-
-<div class="glass-container">
-  <div class="container mt-8 bg-transparente">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-md-6">
-        <div class="card bg-transparent">
-          <div class="card-header">
-            <h2 class="text-center">Login</h2>
-          </div>
-          <div class="card-body">
-            <form id="loginForm">
-              <div class="form-group3 mb-4">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="inputEmail"
-                  placeholder="Email"
-                />
-                <input
-                  type="password"
-                  class="form-control"
-                  id="inputPassword"
-                  placeholder="Senha"
-                />
-                <button type="submit" class="btn btn-primary">Entrar</button>
-              </div>
-            </form>
-          </div>
+    <section class="padd-section">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 ">
+                    <div class=" container">
+                        <h2 class="title-form">Login</h2>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <div class="card-body">
+                            <form clas="form-login" id="loginForm">
+                                <div class="form-group">
+                                  
+                                    <input type="email" id="email" name="email" value="E-mail" class="form-control" required>
+                                </div>
+                                <div class="form-group mt-3">
+                                    
+                                    <input type="password" id="password" name="password" value="password"  class="form-control" required>
+                                </div>
+                                <div class="form-group mt-3 text-center button-group">
+                                    <button type="submit" class="btn-default">Entrar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+    </section>
+    <!-- Scripts -->
+    <script>
+        // Lógica de autenticação no lado do cliente (apenas exemplo)
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            // Aqui você pode enviar as credenciais para o servidor e verificar a autenticação.
+            // Exemplo: usando fetch() para fazer uma requisição POST ao servidor.
+            fetch('/api/login', {
+                method: 'POST',
+                body: JSON.stringify({ email, password }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Login bem-sucedido! Redirecionando para a página de perfil...');
+                    // Aqui você pode redirecionar para a página de perfil ou outra página após o login bem-sucedido.
+                } else {
+                    alert('Login falhou! Verifique suas credenciais e tente novamente.');
+                }
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Erro ao processar o login. Tente novamente mais tarde.');
+            });
+        });
+    </script>
 {% endblock 'body' %}
+
