@@ -2,7 +2,7 @@ from django.core.validators import RegexValidator
 
 
 no_whitespaces = RegexValidator(
-    regex = r'/s',
+    regex = r'\s',
     message = 'Don\'t use Whitespaces',
     inverse_match = True
 )
