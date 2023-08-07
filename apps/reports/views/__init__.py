@@ -1,1 +1,0 @@
-from .denouncement_view import denouncement_view

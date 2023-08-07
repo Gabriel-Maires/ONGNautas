@@ -10,21 +10,21 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link scrollto active" href="{% url 'ong:home' %}">Home</a></li>
-            <li class="nav-item"><a class="nav-link scrollto" href="{% url 'ong:home' %}#about-us">Sobre nós</a></li>
-            <li class="nav-item"><a class="nav-link scrollto" href="{% url 'ong:home' %}#volunteers">Voluntários</a></li>
-            <li class="nav-item"><a class="nav-link scrollto" href="{% url 'ong:home' %}#supporters">Apoie</a></li>
-            <li class="nav-item"><a class="nav-link scrollto" href="{% url 'reports:denouncement' %}">Denuncie</a></li>
-            <li class="nav-item"><a class="nav-link scrollto" href="{% url 'ong:blog' %}">Blog</a></li>
+            <li class="nav-item"><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
+            <li class="nav-item"><a class="nav-link scrollto" href="{% url 'home' %}#about-us">Sobre nós</a></li>
+            <li class="nav-item"><a class="nav-link scrollto" href="{% url 'home' %}#volunteers">Voluntários</a></li>
+            <li class="nav-item"><a class="nav-link scrollto" href="{% url 'home' %}#supporters">Apoie</a></li>
+            <li class="nav-item"><a class="nav-link scrollto" href="{% url 'denouncement' %}">Denuncie</a></li>
+            <li class="nav-item"><a class="nav-link scrollto" href="{% url 'blog' %}">Blog</a></li>
             <li class="nav-item"><a class="nav-link scrollto" href="#team">Transparência</a></li>
             
             <li class="nav-item px-4">
-              <a href="{% url 'authentication:login' %}">
+              <a href="{% url 'login' %}">
                 <button class="nav-link btn">Login</button>
               </a>
             </li>
             <li class="nav-item px-4">
-              <a href="{% url 'authentication:register' %}">
+              <a href="{% url 'register' %}">
                 <button class="nav-link btn">Cadastro</button>
               </a>
             </li>
