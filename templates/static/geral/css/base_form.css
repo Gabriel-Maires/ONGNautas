@@ -34,15 +34,12 @@
   --placeholder-text: #f1ebeb; /* Cor do texto nome, data, email e etc */
 }
 
-
-
 body {
   background-image: url("/static/authentication/img/backlogin.png") !important;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   overflow: hidden;
- 
 }
 
 .navbar {
@@ -52,13 +49,8 @@ body {
   left: 0;
   width: 85%;
   z-index: 100;
-  background-color: rgba(
-    62,
-    51,
-    27,
-    0.343
-  ); 
-  backdrop-filter: blur(1px); 
+  background-color: rgba(62, 51, 27, 0.343);
+  backdrop-filter: blur(1px);
   border-left: 2.3rem solid black;
   border-right: 2.3rem solid black;
 }
@@ -79,24 +71,19 @@ body {
 .navbar-content {
   display: flex;
   align-items: center;
-  color: var(--login-title-color)
+  color: var(--login-title-color);
 }
 
 .navbar-content h5 {
   margin-right: 20px;
   font-family: "Josefin sans";
-  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; 
- 
-
+  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+    2px 2px 0 black;
 }
-form{
-  
-  width:100%;
+form {
+  width: 100%;
   margin-bottom: 150px;
 }
-
-
-
 
 .main-content-container-form {
   margin: 0 auto;
@@ -105,22 +92,19 @@ form{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(
-    62,
-    51,
-    27,
-    0.343
-  ); 
-  backdrop-filter: blur(1px); 
+  background-color: rgba(62, 51, 27, 0.343);
+  backdrop-filter: blur(1px);
   border-left: 2.3rem solid black;
   border-right: 2.3rem solid black;
 }
 
+.error-msg {
+  color: red !important;
+  font-size: 12px !important;
+  margin-top: 5px !important;
+}
 
-
-
-
-.btn-default{
+.btn-default {
   font-family: "Lastica";
   color: var(--login-title-color);
   font-size: 0.8rem;
@@ -130,7 +114,14 @@ form{
   height: 40px;
   border-radius: 1rem;
   border: hidden;
-  background-image: linear-gradient(to right, #00a651, #3ab84a, #5fca40, #83db30, #a8eb12);
+  background-image: linear-gradient(
+    to right,
+    #00a651,
+    #3ab84a,
+    #5fca40,
+    #83db30,
+    #a8eb12
+  );
 }
 
 @media (max-width: 768px) {
