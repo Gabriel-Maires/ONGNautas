@@ -50,7 +50,7 @@ class User(AbstractUser):
 
 class Voluntary(models.Model):
     
-    hours_worked = models.DecimalField(max_digits=8, decimal_places=2)
+    hours_worked = models.DecimalField(max_digits=8, decimal_places=2, default=0.0)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:

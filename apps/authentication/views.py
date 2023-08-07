@@ -3,23 +3,28 @@ from django.urls import reverse
 from django.contrib import auth
 
 from .forms import RegisterForm
+from .models import Voluntary
 
 
 def register_view(request):
 
     match request.method:
         case 'GET':
-            return render(request, 'register.html')
+            if request.user.is_authenticated:
+                return redirect(reverse('home'))
+
+            return render(request, 'register.html', {'form': RegisterForm()})
         
         case 'POST':
             register_form = RegisterForm(request.POST)
             if register_form.is_valid():
-                register_form.save()
+                user = register_form.save()
+                if user.is_voluntary:
+                    Voluntary.objects.create(user=user)
 
-                return render(request, 'register.html', {'form': register_form},)
+                return redirect(reverse('login'))
                 
-            else:
-                return render(request, 'register.html', {'form': register_form},)
+            return render(request, 'register.html', {'form': register_form},)
 
 
 def login_view(request):

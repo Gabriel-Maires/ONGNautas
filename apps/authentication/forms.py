@@ -21,6 +21,7 @@ class RegisterForm(forms.ModelForm):
 
     cpf = forms.CharField(max_length=14)
     cep = forms.CharField(max_length=9)
+    address = forms.CharField(max_length=64)
 
     def clean_cpf(self):
         
@@ -43,6 +44,10 @@ class RegisterForm(forms.ModelForm):
         instance = super().save(commit=False)
         instance.cpf = self.cleaned_data.get('cpf')
         instance.cep = self.cleaned_data.get('cep')
+
+        password = self.cleaned_data['password']
+        if password:
+            instance.set_password(password)
 
         if commit:
             instance.save()

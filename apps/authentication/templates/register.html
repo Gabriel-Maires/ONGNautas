@@ -22,102 +22,210 @@
       {% if form.first_name.errors %}
         <p>{{ form.first_name.errors.0 }}</p>
       {% endif %}
-      <input
-        type="text"
-        class="form-control"
-        id="inputname"
-        name="first_name"
-        placeholder="Nome"
-      />
+      {% if form.first_name.value %}
+        <input
+          type="text"
+          class="form-control"
+          id="inputname"
+          name="first_name"
+          placeholder="Nome"
+          value={{ form.first_name.value }}
+        />
+      {% else %}
+        <input
+          type="text"
+          class="form-control"
+          id="inputname"
+          name="first_name"
+          placeholder="Nome"
+        />
+      {% endif %}
 
       {% if form.cpf.errors %}
         <p>{{ form.cpf.errors.0 }}</p>
       {% endif %}
-      <input
-        type="text"
-        class="form-control"
-        id="inputCity"
-        name="cpf"
-        placeholder="CPF"
-      />
+      {% if form.cpf.value %}
+        <input
+          type="text"
+          class="form-control"
+          id="inputCity"
+          name="cpf"
+          placeholder="CPF"
+          value={{ form.cpf.value }}
+        />
+      {% else %}
+        <input
+          type="text"
+          class="form-control"
+          id="inputCity"
+          name="cpf"
+          placeholder="CPF"
+        />
+      {% endif %}
 
       {% if form.email.errors %}
         <p>{{ form.email.errors.0 }}</p>
       {% endif %}
-      <input
-        type="email"
-        class="form-control"
-        id="inputEmail"
-        name="email"
-        placeholder="Email"
-      />
+      {% if form.email.value %}
+        <input
+          type="email"
+          class="form-control"
+          id="inputEmail"
+          name="email"
+          placeholder="Email"
+          value={{ form.email.value }}
+        />
+      {% else %}
+        <input
+          type="email"
+          class="form-control"
+          id="inputEmail"
+          name="email"
+          placeholder="Email"
+        />
+      {% endif %}
 
       {% if form.password.errors %}
         <p>{{ form.password.errors.0 }}</p>
       {% endif %}
-      <input
-        type="password"
-        class="form-control"
-        id="inputPassword"
-        name="password"
-        placeholder="Senha"
-      />
+      {% if form.password.value %}
+        <input
+          type="password"
+          class="form-control"
+          id="inputPassword"
+          name="password"
+          placeholder="Senha"
+          value={{ form.password.value }}
+        />
+      {% else %}
+        <input
+          type="password"
+          class="form-control"
+          id="inputPassword"
+          name="password"
+          placeholder="Senha"
+        />
+      {% endif %}
 
-      <input
-        type="date"
-        class="form-control"
-        id="inputdate"
-        name="birthdate"
-        placeholder="Data de Nascimento"
-      />
+      {% if form.birthdate.value %}
+        <input
+          type="date"
+          class="form-control"
+          id="inputdate"
+          name="birthdate"
+          placeholder="Data de Nascimento"
+          value={{ form.birthdate.value }}
+        />
+      {% else %}
+        <input
+          type="date"
+          class="form-control"
+          id="inputdate"
+          name="birthdate"
+          placeholder="Data de Nascimento"
+        />
+      {% endif %}
     </div>
 
-    {% if form.last_name.errors %}
-      <p>{{ form.last_name.errors.0 }}</p>
-    {% endif %}
     <div class="form-group col-md-6">
-      <input
-        type="text"
-        class="form-control"
-        id="inputlastname"
-        name="last_name"
-        placeholder="Sobrenome"
-      />
+
+      {% if form.last_name.errors %}
+        <p>{{ form.last_name.errors.0 }}</p>
+      {% endif %}
+      {% if form.last_name.value %}
+        <input
+          type="text"
+          class="form-control"
+          id="inputlastname"
+          name="last_name"
+          placeholder="Sobrenome"
+          value={{ form.last_name.value }}
+        />
+      {% else %}
+        <input
+          type="text"
+          class="form-control"
+          id="inputlastname"
+          name="last_name"
+          placeholder="Sobrenome"
+        />
+      {% endif %}
 
       {% if form.cep.errors %}
         <p>{{ form.cep.errors.0 }}</p>
       {% endif %}
-      <input
-        type="text"
-        class="form-control"
-        id="inputZip"
-        name="cep"
-        placeholder="CEP"
-      />
+      {% if form.cep.value %}
+        <input
+          type="text"
+          class="form-control"
+          id="inputZip"
+          name="cep"
+          placeholder="CEP"
+          value={{ form.cep.value }}
+        />
+      {% else %}
+        <input
+          type="text"
+          class="form-control"
+          id="inputZip"
+          name="cep"
+          placeholder="CEP"
+        />
+      {% endif %}
 
-      <input
-        type="text"
-        class="form-control"
-        id="inputAddress"
-        name="address"
-        placeholder="Endereço"
-      />
+      {% if form.address.value %}
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress"
+          name="address"
+          placeholder="Endereço"
+          value={{ form.address.value }}
+        />
+      {% else %}
+        <input
+          type="text"
+          class="form-control"
+          id="inputAddress"
+          name="address"
+          placeholder="Endereço"
+        />
+      {% endif %}
       
-      <input
-        type="text"
-        class="form-control"
-        id="inputComplement"
-        name="complement"
-        placeholder="Complemento"
-      />
+      {% if form.complement.value %}
+        <input
+          type="text"
+          class="form-control"
+          id="inputComplement"
+          name="complement"
+          placeholder="Complemento"
+          value={{ form.complement.value }}
+        />
+      {% else %}
+        <input
+          type="text"
+          class="form-control"
+          id="inputComplement"
+          name="complement"
+          placeholder="Complemento"
+        />
+      {% endif %}
       <div class="form-group3">
         <h3 class="mb-3">Tipo de cadastro:</h3>
         <div class="custom-control custom-radio custom-control-inline">
+          {% if form.is_voluntary.value %}
+            <input type="radio" name="is_voluntary" checked={{ form.is_voluntary.value }} id="customRadioInline1" name="customRadioInline1" class="custom-control-input" />
+          {% else %} 
           <input type="radio" name="is_voluntary" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" />
+          {% endif %}
           <label class="custom-control-label" for="customRadioInline1">Quero ser Voluntário</label>
         </div>
         <div class="custom-control custom-radio custom-control-inline">
+          {% if form.is_supporter.value %}
+            <input type="radio" name="is_supporter" checked={{ form.is_supporter.value }} id="customRadioInline2" name="customRadioInline1" class="custom-control-input" />
+          {% else %}
           <input type="radio" name="is_supporter" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" />
+          {% endif %}
           <label class="custom-control-label" for="customRadioInline2">Quero ser Apoiador</label>
         </div>
       </div>
