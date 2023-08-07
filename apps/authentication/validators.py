@@ -14,10 +14,12 @@ uppercase_letters = RegexValidator(
     regex = r'[A-Z]',
     message = 'Use at least 1 UPPERCASE letter'
 )
+
 lowercase_letters = RegexValidator(
     regex = r'[a-z]',
     message = 'Use at least 1 lowercase letter'
 )
+
 number_validator = RegexValidator(
     regex = r'\d+',
     message = 'Use at least 1 number'
