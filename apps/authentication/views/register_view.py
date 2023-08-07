@@ -10,5 +10,8 @@ def register_view(request):
         register_form = RegisterForm(request.POST)
         if register_form.is_valid():
             register_form.save()
+
+            return render(request, 'register.html', {'form': register_form},)
+            
         else:
             return render(request, 'register.html', {'form': register_form},)
