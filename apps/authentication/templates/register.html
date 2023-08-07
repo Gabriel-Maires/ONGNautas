@@ -95,24 +95,13 @@
       {% if form.password.errors %}
         <p>{{ form.password.errors.0 }}</p>
       {% endif %}
-      {% if form.password.value %}
-        <input
-          type="password"
-          class="form-control"
-          id="inputPassword"
-          name="password"
-          placeholder="Senha"
-          value={{ form.password.value }}
-        />
-      {% else %}
-        <input
-          type="password"
-          class="form-control"
-          id="inputPassword"
-          name="password"
-          placeholder="Senha"
-        />
-      {% endif %}
+      <input
+        type="password"
+        class="form-control"
+        id="inputPassword"
+        name="password"
+        placeholder="Senha"
+      />
 
       {% if form.birthdate.value %}
         <input

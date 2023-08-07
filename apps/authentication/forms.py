@@ -59,6 +59,20 @@ class RegisterForm(forms.ModelForm):
         return re.sub(r'[^0-9]', '', self.data[key])
     
 
+class LoginForm(forms.ModelForm):
+
+    class Meta:
+        
+        model = User
+        fields = ['email', 'password']
+
+    email = forms.CharField(max_length=64, validators=[no_whitespaces])
+
+    def clean(self):
+        
+        return self.cleaned_data
+    
+
 class UserChangeForm(UserChangeForm):
 
     class Meta(UserChangeForm.Meta):

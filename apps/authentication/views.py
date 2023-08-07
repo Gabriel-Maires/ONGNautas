@@ -5,7 +5,7 @@ from django.contrib import auth
 from django.contrib import messages
 from django.contrib.messages import constants
 
-from .forms import RegisterForm
+from .forms import RegisterForm, LoginForm
 from .models import Voluntary
 
 
@@ -51,17 +51,26 @@ def login_view(request):
             if request.user.is_authenticated:
                 return redirect(reverse('home'))
 
-            return render(request, 'login.html')
+            return render(request, 'login.html', {'form': LoginForm()})
         
         case 'POST':
-            email = request.POST.get('email')
-            password = request.POST.get('password')
+            login_form: LoginForm = LoginForm(request.POST)
 
-            user = auth.authenticate(username=email, password=password)
+            if login_form.is_valid():
+                email = login_form.cleaned_data.get('email')
+                password = login_form.cleaned_data.get('password')
 
-            if user is not None:
-                auth.login(request, user)
+                user = auth.authenticate(username=email, password=password)
 
-                return redirect(reverse('home'))
+                if user is not None:
+                    auth.login(request, user)
+
+                    return redirect(reverse('home'))
+                
+                messages.add_message(request, constants.WARNING, 'Credenciais incorretas!')
+
+                return render(request, 'login.html', {'form': login_form})
+
+            messages.add_message(request, constants.WARNING, 'Preencha os campos corretamente!')
             
-            return redirect(reverse('login'))          
+            return render(request, 'login.html', {'form': login_form})         

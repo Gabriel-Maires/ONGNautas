@@ -19,11 +19,11 @@
                 <div class="col-md-6 ">
                     <div class=" container">
                         {% if messages %}
-													{% for message in messages %}
-														<div class="alert {{ message.tags }}" role="alert">
-															{{ message }}
-														</div>  
-													{% endfor %}
+                            {% for message in messages %}
+                                <div class="alert {{ message.tags }}" role="alert">
+                                    {{ message }}
+                                </div>  
+                            {% endfor %}
                         {% endif %}
                         <h2 class="title-form">Login</h2>
                     </div>
@@ -31,11 +31,21 @@
                         <div class="card-body">
                             <form class="form-login" id="loginForm" action="{% url 'login' %}" method="POST">{% csrf_token %}
                                 <div class="form-group">
-                                  
+                                    
+                                    {% if form.email.errors %}
+                                        <p>{{ form.email.errors.0 }}</p>
+                                    {% endif %}
+                                    {% if form.email.value %}
+                                    <input type="email" id="email" value={{ form.email.value }} name="email" placeholder="E-mail" class="form-control" required>
+                                    {% else %}
                                     <input type="email" id="email" name="email" placeholder="E-mail" class="form-control" required>
+                                    {% endif %}
                                 </div>
                                 <div class="form-group mt-3">
                                     
+                                    {% if form.password.errors %}
+                                        {{ form.password.errors.0 }}
+                                    {% endif %}
                                     <input type="password" id="password" name="password" placeholder="password"  class="form-control" required>
                                 </div>
                                 <div class="form-group mt-3 text-center button-group">
