@@ -1,7 +1,7 @@
 from django.db import models
 from authentication.validators import cep_validator
 
-# Create your models here.
+
 class Report(models.Model):
 
     title = models.CharField(max_length=30, blank=False)

@@ -1,5 +1,6 @@
 from django import forms
-from authentication.models.user import User
+from django.contrib.auth.forms import UserChangeForm, UserCreationForm
+from .models import User
 
 from authentication.validators import *
 
@@ -51,3 +52,18 @@ class RegisterForm(forms.ModelForm):
     def _remove_characters(self, key: str):
 
         return re.sub(r'[^0-9]', '', self.data[key])
+    
+
+class UserChangeForm(UserChangeForm):
+
+    class Meta(UserChangeForm.Meta):
+
+        model = User
+
+
+class UserCreationForm(UserCreationForm):
+
+    class Meta(UserCreationForm.Meta):
+
+        model = User
+

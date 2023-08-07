@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from reports.forms.reports_form import ReportsForm
+from .forms import ReportsForm
 
 
 def denouncement_view(request):
+
     if request.method == 'GET':
         return render(request, 'denouncement.html')
     elif request.method == 'POST':

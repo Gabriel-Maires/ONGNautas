@@ -3,9 +3,9 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
-from authentication.managers import UserManager
+from .managers import UserManager
 
-from authentication.validators import cpf_validator, cep_validator, no_whitespaces
+from .validators import cpf_validator, cep_validator, no_whitespaces
 
 
 class User(AbstractUser):
@@ -47,3 +47,12 @@ class User(AbstractUser):
     def __str__(self) -> str:
         return self.get_full_name()
 
+
+class Voluntary(models.Model):
+    
+    hours_worked = models.DecimalField(max_digits=8, decimal_places=2)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Voluntário'
+        verbose_name_plural = 'Voluntários'
