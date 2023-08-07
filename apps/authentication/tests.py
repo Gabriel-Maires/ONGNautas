@@ -1,12 +1,30 @@
 from django.test import TestCase
-from django.utils import timezone
 from django.contrib.auth import get_user_model
-from authentication.models import User, Denouncement, Voluntary
+from django.utils import timezone
+from .models import User, Denouncement, Voluntary
 from django.core.files.uploadedfile import SimpleUploadedFile
 
-#user tests
+
+class DenouncementTest(TestCase):
+
+    def setUp(self):
+        self.user = User.objects.create(username='testuser')
+
+    def test_create_denouncement(self):
+        denouncement = Denouncement.objects.create(
+            title='The Title',
+            description='The Description',
+            image=SimpleUploadedFile('test_image.jpg', b'cont', content_type='image/jpeg'),#act like a real image
+            author=self.user,
+        )
+        self.assertEqual(denouncement.title, 'The Title')
+        self.assertEqual(denouncement.description, 'The Description')
+        self.assertEqual(denouncement.image.read(), b'cont')
+        self.assertEqual(denouncement.author, self.user)
+
 
 class UserTest(TestCase):
+
     @classmethod
     def setUpTestData(cls):
         cls.User = get_user_model()
@@ -21,6 +39,7 @@ class UserTest(TestCase):
             'address': 'qno18',
             'complement': 'casa01',
         }
+    
     def test_create_user(self):
         user = self.User.objects.create_user(**self.user_data)
         self.assertEqual(user.username, self.user_data['username'])
@@ -32,6 +51,23 @@ class UserTest(TestCase):
         self.assertEqual(user.complement, self.user_data['complement'])
         self.assertEqual(user.cep, self.user_data['cep'])
         self.assertEqual(user.address, self.user_data['address'])
+
     def test_str(self):
         user = self.User.objects.create_user(**self.user_data)
         self.assertEqual(str(user), user.get_full_name())
+
+
+class VoluntaryTest(TestCase):
+    
+    def setUp(self):
+        self.user = User.objects.create(username='test_user')
+        self.voluntary = Voluntary.objects.create(
+            hours_worked=10.5,
+            user=self.user
+        )
+
+    def test_hours_work(self):
+        self.assertEqual(self.voluntary.hours_worked, 10.5)
+
+    def test_foreign_key(self):
+        self.assertEqual(self.voluntary.user, self.user)

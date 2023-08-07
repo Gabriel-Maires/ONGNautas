@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block 'title' %}Login{% endblock %} 
-{% block 'nav-h5' %}Já possui cadastro? <a href="{% url 'authentication:register' %}"><button type="submit" class="btn-default">cadastrar</button></a></h5>{% endblock 'nav-h5' %}
+{% block 'nav-h5' %}Não possui cadastro? <a href="{% url 'register' %}"><button type="submit" class="btn-default">cadastrar</button></a></h5>{% endblock 'nav-h5' %}
 {% block 'body' %}
     <section class="padd-section">
         <div class="container mt-5">
@@ -22,14 +22,14 @@
                     </div>
                     <div class="d-flex align-items-center justify-content-center">
                         <div class="card-body">
-                            <form clas="form-login" id="loginForm">
+                            <form class="form-login" id="loginForm" action="{% url 'login' %}" method="POST">{% csrf_token %}
                                 <div class="form-group">
                                   
-                                    <input type="email" id="email" name="email" value="E-mail" class="form-control" required>
+                                    <input type="email" id="email" name="email" placeholder="E-mail" class="form-control" required>
                                 </div>
                                 <div class="form-group mt-3">
                                     
-                                    <input type="password" id="password" name="password" value="password"  class="form-control" required>
+                                    <input type="password" id="password" name="password" placeholder="password"  class="form-control" required>
                                 </div>
                                 <div class="form-group mt-3 text-center button-group">
                                     <button type="submit" class="btn-default">Entrar</button>
@@ -42,35 +42,5 @@
         </div>
     </section>
     <!-- Scripts -->
-    <script>
-        // Lógica de autenticação no lado do cliente (apenas exemplo)
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            // Aqui você pode enviar as credenciais para o servidor e verificar a autenticação.
-            // Exemplo: usando fetch() para fazer uma requisição POST ao servidor.
-            fetch('/api/login', {
-                method: 'POST',
-                body: JSON.stringify({ email, password }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    alert('Login bem-sucedido! Redirecionando para a página de perfil...');
-                    // Aqui você pode redirecionar para a página de perfil ou outra página após o login bem-sucedido.
-                } else {
-                    alert('Login falhou! Verifique suas credenciais e tente novamente.');
-                }
-            })
-            .catch(error => {
-                console.error('Erro:', error);
-                alert('Erro ao processar o login. Tente novamente mais tarde.');
-            });
-        });
-    </script>
 {% endblock 'body' %}
 

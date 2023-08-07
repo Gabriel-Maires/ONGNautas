@@ -11,79 +11,113 @@
 
 {% block 'nav-h5' %}
   Já tem cadastro?  
-  <a href="{% url 'authentication:login' %}"><button type="submit" class="btn-default">Login</button></a>
+  <a href="{% url 'login' %}"><button type="submit" class="btn-default">Login</button></a>
 {% endblock 'nav-h5' %}
 
 {% block 'body' %}
-  <form class="row ">
+  <form class="row" method="POST" action="{% url 'register' %}">{% csrf_token %}
     <h2 class='title-form col-12 text-center'> Cadastro </h2>
     <div class="form-group col-mdl-6">
-      
+
+      {% if form.first_name.errors %}
+        <p>{{ form.first_name.errors.0 }}</p>
+      {% endif %}
       <input
         type="text"
         class="form-control"
         id="inputname"
+        name="first_name"
         placeholder="Nome"
       />
 
+      {% if form.cpf.errors %}
+        <p>{{ form.cpf.errors.0 }}</p>
+      {% endif %}
       <input
         type="text"
         class="form-control"
         id="inputCity"
+        name="cpf"
         placeholder="CPF"
       />
+
+      {% if form.email.errors %}
+        <p>{{ form.email.errors.0 }}</p>
+      {% endif %}
       <input
         type="email"
         class="form-control"
         id="inputEmail"
+        name="email"
         placeholder="Email"
       />
+
+      {% if form.password.errors %}
+        <p>{{ form.password.errors.0 }}</p>
+      {% endif %}
       <input
         type="password"
         class="form-control"
         id="inputPassword"
+        name="password"
         placeholder="Senha"
       />
+
       <input
         type="date"
         class="form-control"
         id="inputdate"
+        name="birthdate"
         placeholder="Data de Nascimento"
       />
     </div>
+
+    {% if form.last_name.errors %}
+      <p>{{ form.last_name.errors.0 }}</p>
+    {% endif %}
     <div class="form-group col-md-6">
       <input
         type="text"
         class="form-control"
         id="inputlastname"
+        name="last_name"
         placeholder="Sobrenome"
       />
+
+      {% if form.cep.errors %}
+        <p>{{ form.cep.errors.0 }}</p>
+      {% endif %}
       <input
         type="text"
         class="form-control"
         id="inputZip"
+        name="cep"
         placeholder="CEP"
       />
+
       <input
         type="text"
         class="form-control"
         id="inputAddress"
+        name="address"
         placeholder="Endereço"
       />
+      
       <input
         type="text"
         class="form-control"
         id="inputComplement"
+        name="complement"
         placeholder="Complemento"
       />
       <div class="form-group3">
         <h3 class="mb-3">Tipo de cadastro:</h3>
         <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" />
+          <input type="radio" name="is_voluntary" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" />
           <label class="custom-control-label" for="customRadioInline1">Quero ser Voluntário</label>
         </div>
         <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" />
+          <input type="radio" name="is_supporter" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" />
           <label class="custom-control-label" for="customRadioInline2">Quero ser Apoiador</label>
         </div>
       </div>
