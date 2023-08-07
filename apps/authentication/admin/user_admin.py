@@ -22,4 +22,4 @@ class UserAdmin(UserAdmin):
     list_filter = ('is_voluntary', 'is_supporter')
     ordering = ('first_name', 'last_name')
 
-    readonly_fields = ['is_voluntary', 'is_supporter', 'cpf', 'birthdate']
+    readonly_fields = ['cpf', 'birthdate']
