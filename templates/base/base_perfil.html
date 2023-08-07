@@ -1,0 +1,36 @@
+<!-- base_perfil.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    {% include 'partials/head.html' %}
+
+    <title>{% block 'title' %}{% endblock 'title' %} | ONGNautas</title>
+
+    <link rel="stylesheet" href="{% block 'css' %}{% endblock 'css' %}">
+
+</head>
+<body>
+
+{% include 'partials/header-perfil.html' %}
+
+{% block content %}
+<div class="content">
+       
+</div>
+{% endblock %}
+
+<main class="main-content-container">
+    {% block 'body' %}{% endblock 'body' %}
+</main>
+
+<!-- ======= Footer ======= -->
+{% block 'scripts' %}{% endblock 'scripts' %}
+<!-- Importe o jQuery e o Bootstrap JS via CDN -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
