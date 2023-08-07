@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 @font-face {
     font-family: 'Lastica'; 
     src: url('/static/fonts/lastica/lastica.ttf') format('truetype'); 
@@ -24,10 +25,6 @@ body{
     background-image: radial-gradient(circle, #f1ebeb, #f4eeed, #f7f1ef, #f9f4f2, #fcf7f4, #fbf6f3, #faf6f1, #f9f5f0, #f5f1ea, #f0ede5, #eaeae0, #e4e6db);
 }
 
-/**/
-:root{
- 
-}
 
 /* Botões principais home Page, login e cadastro*/
 .btn{
@@ -113,9 +110,8 @@ span {
   letter-spacing: 1px;
 }
 
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
+/*-- Header --*/
+
 #header {
   background: #fff;
   z-index: 997;
@@ -207,9 +203,7 @@ span {
   margin-right: 15px;
 }
 
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
+/*-- Footer --*/
 .footer {
   background: #71c55d;
   padding-top: 50px;

@@ -1,20 +1,44 @@
+<!-- Este código foi criado por: Luciana.
+Só mexer ao comunicar a mesma. Fora isso, por favor nao mexer -->
 {% load static %}
 
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="pt-BR">
-<!-- base dos forms não confundir -->
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{% static 'geral/css/base_auth.css' %}" rel="stylesheet">
-    <title>{% block 'title' %}{% endblock %}| ONGNautas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    {% block 'head' %}{% endblock  %}
+    <title>{% block 'title' %}{% endblock 'title' %} |ONGNautas</title>
+    <link
+      rel="stylesheet"
+      href="{% block 'css' %}{% static 'geral/css/base_form.css' %}{% endblock %}"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    {% block 'head' %}{% endblock %}
   </head>
 
-  <body>
-    {% block 'body' %}{% endblock %}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <body class="base_form-page">
+    <nav class="navbar navbar-custom">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="{% static 'authentication/img/logoform.png' %}" alt="Logo Login" />
+        </a>
+        <div class="navbar-content">
+          <h5>{% block 'nav-h5' %}{% endblock 'nav-h5' %}</h5>
+          
+        </div>
+      </div>
+    </nav>
+  
+
+    <main class="main-content-container-form">
+      {% block 'body' %}{% endblock 'body' %}
+    </main>
+
+    <!-- * jQuery e o Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
