@@ -21,23 +21,33 @@ def register_view(request):
         case 'POST':
             register_form = RegisterForm(request.POST)
             if register_form.is_valid():
-                user = register_form.save()
-                if user.is_voluntary:
-                    Voluntary.objects.create(user=user)
+                try:
+                    user = register_form.save()
+                    if user.is_voluntary:
+                        Voluntary.objects.create(user=user)
 
-                    message: str
-                    if user.is_voluntary and user.is_supporter:
-                        message = 'Você se cadastrou como voluntário e apoiador!'
-                    elif user.is_voluntary:
-                        message = 'Você se cadastrou como voluntário!'
-                    elif user.is_supporter:
-                        message = 'Você se cadastrou como apoiador!'
-                    
-                    messages.add_message(request, constants.INFO, message)
+                        message: str
+                        if user.is_voluntary and user.is_supporter:
+                            message = 'Você se cadastrou como voluntário e apoiador!'
+                        elif user.is_voluntary:
+                            message = 'Você se cadastrou como voluntário!'
+                        elif user.is_supporter:
+                            message = 'Você se cadastrou como apoiador!'
+                        
+                        messages.add_message(request, constants.INFO, message)
 
-                messages.add_message(request, constants.SUCCESS, 'Usuário criado com sucesso!')
+                    messages.add_message(request, constants.SUCCESS, 'Usuário criado com sucesso!')
 
-                return redirect(reverse('login'))
+                    return redirect(reverse('login'))
+                
+                except:
+                    messages.add_message(
+                        request, 
+                        constants.ERROR, 
+                        'Erro interno do sistema. Tente novamente mais tarde.'
+                    )
+
+                    return render(request, 'register.html', {'form': register_form})
             
             messages.add_message(request, constants.WARNING, 'Preencha os campos corretamente!')
                 
@@ -60,16 +70,26 @@ def login_view(request):
                 email = login_form.cleaned_data.get('email')
                 password = login_form.cleaned_data.get('password')
 
-                user = auth.authenticate(username=email, password=password)
+                try:
+                    user = auth.authenticate(username=email, password=password)
 
-                if user is not None:
-                    auth.login(request, user)
+                    if user is not None:
+                        auth.login(request, user)
 
-                    return redirect(reverse('home'))
-                
-                messages.add_message(request, constants.WARNING, 'Credenciais incorretas!')
+                        return redirect(reverse('home'))
+                    
+                    messages.add_message(request, constants.WARNING, 'Credenciais incorretas!')
 
-                return render(request, 'login.html', {'form': login_form})
+                    return render(request, 'login.html', {'form': login_form})
+
+                except:
+                    messages.add_message(
+                        request,
+                        constants.ERROR,
+                        'Erro interno do sistema. Tente novamente mais tarde.'
+                    )
+
+                    return render(request, 'login.html', {'form': login_form})
 
             messages.add_message(request, constants.WARNING, 'Preencha os campos corretamente!')
             
