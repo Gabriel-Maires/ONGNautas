@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Third Part
+    'rolepermissions',
+
     # My Apps
     'authentication',
     'reports',
@@ -181,3 +184,7 @@ MESSAGE_TAGS = {
     constants.WARNING: 'alert-warning',
     constants.ERROR: 'alert-danger',
 }
+
+# Role Permissions
+
+ROLEPERMISSIONS_MODULE = 'core.roles'
