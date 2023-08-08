@@ -22,15 +22,16 @@ Só mexer ao comunicar a mesma. Fora isso, por favor nao mexer -->
     <nav class="navbar navbar-custom">
       <div class="container">
         <a class="navbar-brand" href="{% url 'home' %}">
-          <img src="{% static 'authentication/img/logoform.png' %}" alt="Logo Login" />
+          <img
+            src="{% static 'authentication/img/logoform.png' %}"
+            alt="Logo Login"
+          />
         </a>
         <div class="navbar-content">
           <h5>{% block 'nav-h5' %}{% endblock 'nav-h5' %}</h5>
-          
         </div>
       </div>
     </nav>
-  
 
     <main class="main-content-container-form">
       {% block 'body' %}{% endblock 'body' %}
