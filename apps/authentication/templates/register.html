@@ -1,129 +1,231 @@
-{% extends 'base/base_form.html' %}
-
-{% load static %} 
-
-{% block 'head' %}
+{% extends 'base/base_form.html' %} {% load static %} {% block 'head' %}
 <!-- Links de estilização da pagina -->
 <link rel="stylesheet" href="{% static 'authentication/css/register.css' %}" />
-{% endblock %}
-
-{% block 'title' %}Cadastro{% endblock %} 
-
-{% block 'nav-h5' %}
-  Já tem cadastro?  
-  <a href="{% url 'login' %}"><button type="submit" class="btn-default">Login</button></a>
-{% endblock 'nav-h5' %}
-
-{% block 'body' %}
-  <form class="row" method="POST" action="{% url 'register' %}">{% csrf_token %}
-    <h2 class='title-form col-12 text-center'> Cadastro </h2>
-    <div class="form-group col-mdl-6">
-
-      {% if form.first_name.errors %}
-        <p>{{ form.first_name.errors.0 }}</p>
-      {% endif %}
-      <input
-        type="text"
-        class="form-control"
-        id="inputname"
-        name="first_name"
-        placeholder="Nome"
-      />
-
-      {% if form.cpf.errors %}
-        <p>{{ form.cpf.errors.0 }}</p>
-      {% endif %}
-      <input
-        type="text"
-        class="form-control"
-        id="inputCity"
-        name="cpf"
-        placeholder="CPF"
-      />
-
-      {% if form.email.errors %}
-        <p>{{ form.email.errors.0 }}</p>
-      {% endif %}
-      <input
-        type="email"
-        class="form-control"
-        id="inputEmail"
-        name="email"
-        placeholder="Email"
-      />
-
-      {% if form.password.errors %}
-        <p>{{ form.password.errors.0 }}</p>
-      {% endif %}
-      <input
-        type="password"
-        class="form-control"
-        id="inputPassword"
-        name="password"
-        placeholder="Senha"
-      />
-
-      <input
-        type="date"
-        class="form-control"
-        id="inputdate"
-        name="birthdate"
-        placeholder="Data de Nascimento"
-      />
-    </div>
-
-    {% if form.last_name.errors %}
-      <p>{{ form.last_name.errors.0 }}</p>
+{% endblock %} {% block 'title' %}Cadastro{% endblock %} {% block 'nav-h5' %} Já
+tem cadastro?
+<a href="{% url 'login' %}"
+  ><button type="submit" class="btn-default">Login</button></a
+>
+{% endblock 'nav-h5' %} {% block 'body' %}
+<form class="row" method="POST" action="{% url 'register' %}">
+  {% csrf_token %}
+  <h2 class="title-form col-12 text-center">Cadastro</h2>
+  <div class="form-group col-mdl-6">
+    {% if form.first_name.errors %}
+    <p class="error-msg">{{ form.first_name.errors.0 }}</p>
+    {% endif %} {% if form.first_name.value %}
+    <input
+      type="text"
+      class="form-control"
+      id="inputname"
+      name="first_name"
+      placeholder="Nome"
+      value="{{ form.first_name.value }}"
+    />
+    {% else %}
+    <input
+      type="text"
+      class="form-control"
+      id="inputname"
+      name="first_name"
+      placeholder="Nome"
+    />
+    {% endif %} {% if form.cpf.errors %}
+    <p class="error-msg">{{ form.cpf.errors.0 }}</p>
+    {% endif %} {% if form.cpf.value %}
+    <input
+      type="text"
+      class="form-control"
+      id="inputCity"
+      name="cpf"
+      placeholder="CPF"
+      value="{{ form.cpf.value }}"
+    />
+    {% else %}
+    <input
+      type="text"
+      class="form-control"
+      id="inputCity"
+      name="cpf"
+      placeholder="CPF"
+    />
+    {% endif %} {% if form.email.errors %}
+    <p class="error-msg">{{ form.email.errors.0 }}</p>
+    {% endif %} {% if form.email.value %}
+    <input
+      type="email"
+      class="form-control"
+      id="inputEmail"
+      name="email"
+      placeholder="Email"
+      value="{{ form.email.value }}"
+    />
+    {% else %}
+    <input
+      type="email"
+      class="form-control"
+      id="inputEmail"
+      name="email"
+      placeholder="Email"
+    />
+    {% endif %} {% if form.password.errors %}
+    <p class="error-msg">{{ form.password.errors.0 }}</p>
     {% endif %}
-    <div class="form-group col-md-6">
-      <input
-        type="text"
-        class="form-control"
-        id="inputlastname"
-        name="last_name"
-        placeholder="Sobrenome"
-      />
+    <input
+      type="password"
+      class="form-control"
+      id="inputPassword"
+      name="password"
+      placeholder="Senha"
+    />
 
-      {% if form.cep.errors %}
-        <p>{{ form.cep.errors.0 }}</p>
-      {% endif %}
-      <input
-        type="text"
-        class="form-control"
-        id="inputZip"
-        name="cep"
-        placeholder="CEP"
-      />
+    {% if form.birthdate.value %}
+    <input
+      type="date"
+      class="form-control"
+      id="inputdate"
+      name="birthdate"
+      placeholder="Data de Nascimento"
+      value="{{ form.birthdate.value }}"
+    />
+    {% else %}
+    <input
+      type="date"
+      class="form-control"
+      id="inputdate"
+      name="birthdate"
+      placeholder="Data de Nascimento"
+    />
+    {% endif %}
+  </div>
 
-      <input
-        type="text"
-        class="form-control"
-        id="inputAddress"
-        name="address"
-        placeholder="Endereço"
-      />
-      
-      <input
-        type="text"
-        class="form-control"
-        id="inputComplement"
-        name="complement"
-        placeholder="Complemento"
-      />
-      <div class="form-group3">
-        <h3 class="mb-3">Tipo de cadastro:</h3>
-        <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" name="is_voluntary" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" />
-          <label class="custom-control-label" for="customRadioInline1">Quero ser Voluntário</label>
-        </div>
-        <div class="custom-control custom-radio custom-control-inline">
-          <input type="radio" name="is_supporter" id="customRadioInline2" name="customRadioInline1" class="custom-control-input" />
-          <label class="custom-control-label" for="customRadioInline2">Quero ser Apoiador</label>
-        </div>
+  <div class="form-group col-md-6">
+    {% if form.last_name.errors %}
+    <p class="error-msg">{{ form.last_name.errors.0 }}</p>
+    {% endif %} {% if form.last_name.value %}
+    <input
+      type="text"
+      class="form-control"
+      id="inputlastname"
+      name="last_name"
+      placeholder="Sobrenome"
+      value="{{ form.last_name.value }}"
+    />
+    {% else %}
+    <input
+      type="text"
+      class="form-control"
+      id="inputlastname"
+      name="last_name"
+      placeholder="Sobrenome"
+    />
+    {% endif %} {% if form.cep.errors %}
+    <p class="error-msg">{{ form.cep.errors.0 }}</p>
+    {% endif %} {% if form.cep.value %}
+    <input
+      type="text"
+      class="form-control"
+      id="inputZip"
+      name="cep"
+      placeholder="CEP"
+      value="{{ form.cep.value }}"
+    />
+    {% else %}
+    <input
+      type="text"
+      class="form-control"
+      id="inputZip"
+      name="cep"
+      placeholder="CEP"
+    />
+    {% endif %} {% if form.address.value %}
+    <input
+      type="text"
+      class="form-control"
+      id="inputAddress"
+      name="address"
+      placeholder="Endereço"
+      value="{{ form.address.value }}"
+    />
+    {% else %}
+    <input
+      type="text"
+      class="form-control"
+      id="inputAddress"
+      name="address"
+      placeholder="Endereço"
+    />
+    {% endif %} {% if form.complement.value %}
+    <input
+      type="text"
+      class="form-control"
+      id="inputComplement"
+      name="complement"
+      placeholder="Complemento"
+      value="{{ form.complement.value }}"
+    />
+    {% else %}
+    <input
+      type="text"
+      class="form-control"
+      id="inputComplement"
+      name="complement"
+      placeholder="Complemento"
+    />
+    {% endif %}
+    <div class="form-group3">
+      <h3 class="mb-3">Tipo de cadastro:</h3>
+      <div class="custom-control custom-radio custom-control-inline">
+        {% if form.is_voluntary.value %}
+        <input
+          type="radio"
+          name="is_voluntary"
+          checked="{{ form.is_voluntary.value }}"
+          id="customRadioInline1"
+          name="customRadioInline1"
+          class="custom-control-input"
+        />
+        {% else %}
+        <input
+          type="radio"
+          name="is_voluntary"
+          id="customRadioInline1"
+          name="customRadioInline1"
+          class="custom-control-input"
+        />
+        {% endif %}
+        <label class="custom-control-label" for="customRadioInline1"
+          >Quero ser Voluntário</label
+        >
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        {% if form.is_supporter.value %}
+        <input
+          type="radio"
+          name="is_supporter"
+          checked="{{ form.is_supporter.value }}"
+          id="customRadioInline2"
+          name="customRadioInline1"
+          class="custom-control-input"
+        />
+        {% else %}
+        <input
+          type="radio"
+          name="is_supporter"
+          id="customRadioInline2"
+          name="customRadioInline1"
+          class="custom-control-input"
+        />
+        {% endif %}
+        <label class="custom-control-label" for="customRadioInline2"
+          >Quero ser Apoiador</label
+        >
       </div>
     </div>
-    
-      <button type="submit" class="btn-default col-md-6 offset-md-3">Cadastrar</button>
-    
-  </form>
+  </div>
+
+  <button type="submit" class="btn-default col-md-6 offset-md-3">
+    Cadastrar
+  </button>
+</form>
 {% endblock %}

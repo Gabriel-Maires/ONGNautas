@@ -1,14 +1,11 @@
 /* register.css */
 
-
-
 .main-content-container-form {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap:30px;
+  gap: 30px;
   height: 100vh;
-  
 }
 
 form {
@@ -18,37 +15,42 @@ form {
   margin: 0 auto;
   gap: 10px;
 }
+form .error-msg {
+  color: yellow;
+}
 
-.title-form{
+.title-form {
   margin-bottom: 10px;
   text-align: center;
   font-family: "Lastica";
-  font-size: 4rem !important;
-  color: var(--login-title-color)!important;
+  font-size: 4rem;
+  color: var(--login-title-color);
   font-weight: 900;
-  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; 
+  text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
+    2px 2px 0 black;
   letter-spacing: 9px;
-  
-  
 }
 
-.form-group:nth-child(-n+5) {
+.form-group:nth-child(-n + 5) {
   flex-basis: calc(50% - 5px);
 }
 
-
-.form-group:nth-child(n+6) {
+.form-group:nth-child(n + 6) {
   flex-basis: calc(50% - 5px);
 }
-
-
 
 .form-group3 {
   flex-basis: 100%;
   text-align: center;
-  margin: 20px  15px ;
+  margin: 20px 15px;
 
   color: var(--login-title-color);
+}
+
+.error-msg {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
 /*.btn-default {
@@ -56,7 +58,6 @@ form {
   margin: 0 auto;
 }
 */
-
 
 .form-control {
   font-family: "Lastica";
@@ -77,6 +78,6 @@ form {
   border: hidden !important;
 }
 
-.custom-control{
+.custom-control {
   margin-top: 10px;
 }

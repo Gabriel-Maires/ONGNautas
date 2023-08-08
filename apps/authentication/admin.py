@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+from django.http.request import HttpRequest
 from .models import User, Voluntary
 from .forms import UserChangeForm, UserCreationForm
 
@@ -12,7 +13,7 @@ class UserAdmin(UserAdmin):
     model = User
 
     fieldsets = (
-        ('Informações Pessoais', {'fields': ('cpf', 'birthdate',)}),
+        ('Informações Pessoais', {'fields': ('cpf', 'birthdate', 'password')}),
         ('Informações de Endereço', {'fields': ('address', 'cep', 'complement',)}),
         ('Funções', {'fields': ('is_voluntary', 'is_supporter')}),
     )

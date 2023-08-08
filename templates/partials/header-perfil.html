@@ -1,0 +1,72 @@
+<!-- partials/header-perfil.html -->
+
+<header id="header" class="header fixed-top">
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container logo">
+      <h1>
+        <a class="navbar-brand" href="{% url 'home' %}"
+          >ONG<span>Nautas</span></a
+        >
+      </h1>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          {% if user.is_volunteer and user.is_supporter %}
+          <!--  voluntários e apoiadores -->
+          <li class="nav-item">
+            <a
+              class="nav-link scrollto active"
+              href="{% url 'my_volunteer_actions' %}"
+              >Meus Voluntariados</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="{% url 'actions' %}">Ações</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="{% url 'my_actions' %}"
+              >Minhas Ações</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="{% url 'donate' %}">Doar</a>
+          </li>
+          {% else %} {% if user.is_volunteer %}
+          <!-- voluntários -->
+          <li class="nav-item">
+            <a class="nav-link scrollto active" href="#">Meus Voluntariados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="#">Ações</a>
+          </li>
+          {% endif %} {% if user.is_supporter %}
+          <!--  apoiadores -->
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="#">Minhas Ações</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="#">Doar</a>
+          </li>
+          {% endif %} {% endif %}
+
+          <!--logout sempre será exibido em todas as opçoes! -->
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

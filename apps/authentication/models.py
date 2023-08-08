@@ -31,7 +31,7 @@ class User(AbstractUser):
 
     is_voluntary = models.BooleanField(default=False)
     is_supporter = models.BooleanField(default=False)
-    cpf = models.CharField(max_length=11, blank=False, validators=[cpf_validator, no_whitespaces])
+    cpf = models.CharField(max_length=11, unique=True, blank=False, validators=[cpf_validator, no_whitespaces])
     birthdate = models.DateField(blank=False, default=timezone.now)
     cep = models.CharField(max_length=11, blank=False, default='Sem CEP', validators=[cep_validator, no_whitespaces])
     address = models.CharField(max_length=64, blank=False, default='Não definido')
@@ -50,7 +50,7 @@ class User(AbstractUser):
 
 class Voluntary(models.Model):
     
-    hours_worked = models.DecimalField(max_digits=8, decimal_places=2)
+    hours_worked = models.DecimalField(max_digits=8, decimal_places=2, default=0.0)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:

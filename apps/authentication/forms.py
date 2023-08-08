@@ -21,6 +21,7 @@ class RegisterForm(forms.ModelForm):
 
     cpf = forms.CharField(max_length=14)
     cep = forms.CharField(max_length=9)
+    address = forms.CharField(max_length=64)
 
     def clean_cpf(self):
         
@@ -44,6 +45,10 @@ class RegisterForm(forms.ModelForm):
         instance.cpf = self.cleaned_data.get('cpf')
         instance.cep = self.cleaned_data.get('cep')
 
+        password = self.cleaned_data['password']
+        if password:
+            instance.set_password(password)
+
         if commit:
             instance.save()
 
@@ -52,6 +57,20 @@ class RegisterForm(forms.ModelForm):
     def _remove_characters(self, key: str):
 
         return re.sub(r'[^0-9]', '', self.data[key])
+    
+
+class LoginForm(forms.ModelForm):
+
+    class Meta:
+        
+        model = User
+        fields = ['email', 'password']
+
+    email = forms.CharField(max_length=64, validators=[no_whitespaces])
+
+    def clean(self):
+        
+        return self.cleaned_data
     
 
 class UserChangeForm(UserChangeForm):
