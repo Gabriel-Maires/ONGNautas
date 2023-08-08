@@ -17,11 +17,9 @@
 
     <!-- ======= Footer ======= -->
 
-    {% include 'partials/footer.html' %}
+    {% include 'partials/footer.html' %} 
+    <script>{% block 'scripts' %}{% endblock 'scripts' %}</script>
     
-   
-    {%block 'scripts'%}
-    {%endblock 'scripts'%}
     <!-- Importe o jQuery e o Bootstrap JS via CDN -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
