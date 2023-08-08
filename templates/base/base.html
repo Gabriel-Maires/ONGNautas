@@ -1,5 +1,3 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -19,8 +17,11 @@
 
     <!-- ======= Footer ======= -->
 
-    {% include 'partials/footer.html' %} {%block 'scripts'%} {%endblock
-    'scripts'%}
+    {% include 'partials/footer.html' %}
+    
+   
+    {%block 'scripts'%}
+    {%endblock 'scripts'%}
     <!-- Importe o jQuery e o Bootstrap JS via CDN -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

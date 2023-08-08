@@ -36,16 +36,17 @@ body {
 }
 
 .background {
-  background-image: url("/static/ong/img/home-1.jpg") !important;
+  background-image: url("/static/ong/img/index-home/background-home.svg") !important;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   margin: 0 auto;
-  width: 65%;
+  height:500px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  
   background-color: rgba(
     255,
     255,
