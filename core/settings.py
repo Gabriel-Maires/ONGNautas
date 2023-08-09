@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'reports',
     'perfil',
     'ong',
+    'ong_admin',
 ]
 
 MIDDLEWARE = [
