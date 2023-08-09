@@ -1,29 +1,56 @@
 /* register.css */
 
+.container-form {
+  margin: 0 auto;
+  height: 100vh;
+  width: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .main-content-container-form {
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
   height: 100vh;
+  width: 85%;
 }
 
-form {
+.row {
   display: flex;
-  flex-wrap: wrap;
-  max-width: 600px;
+  align-items: center;
+  justify-content: space-around;
   margin: 0 auto;
-  gap: 10px;
 }
-form .error-msg {
-  color: yellow;
+.form-group-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
+.form-group1,
+.form-group2,
+.form-group3 {
+  width: calc(50% - 30px);
+  box-sizing: border-box;
+  padding: 10px;
+  color: var(--placeholder-text);
+}
+.form-group1,
+.form-group2 {
+  margin: 0 auto;
+}
+.form-group3 {
+  width: 100%;
+  text-align: center;
+  font-family: "aileron";
+}
 .title-form {
-  margin-bottom: 10px;
+  margin-bottom: 100px;
   text-align: center;
   font-family: "Lastica";
-  font-size: 4rem;
+  font-size: 5rem;
   color: var(--login-title-color);
   font-weight: 900;
   text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
@@ -31,53 +58,87 @@ form .error-msg {
   letter-spacing: 9px;
 }
 
-.form-group:nth-child(-n + 5) {
-  flex-basis: calc(50% - 5px);
-}
-
-.form-group:nth-child(n + 6) {
-  flex-basis: calc(50% - 5px);
-}
-
-.form-group3 {
-  flex-basis: 100%;
-  text-align: center;
-  margin: 20px 15px;
-
-  color: var(--login-title-color);
-}
-
-.error-msg {
-  color: red;
-  font-size: 12px;
-  margin-top: 5px;
-}
-
-/*.btn-default {
-  flex-basis: 100%;
-  margin: 0 auto;
-}
-*/
-
-.form-control {
-  font-family: "Lastica";
+.form-control1,
+.form-control2 {
+  width: 100%;
+  height: 65px;
+  letter-spacing: 4px;
+  color: var(--placeholder-text);
+  font-size: 1.2rem;
+  font-family: "Aileron";
+  letter-spacing: 5px;
   background-image: url("/static/authentication/img/input.png");
   background-position: center;
   background-size: cover;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   border-radius: 0.7rem;
   padding: 10px 15px;
   border: hidden;
   background-color: transparent;
-  margin-bottom: 30px;
 }
 
-.form-control:focus {
+.form-control1::placeholder,
+.form-control2::placeholder {
+  color: var(--placeholder-text);
+}
+
+.form-control1:focus,
+.form-control2:focus {
   outline: none;
   box-shadow: none;
-  border: hidden !important;
+  border: hidden;
 }
 
 .custom-control {
-  margin-top: 10px;
+  margin-top: 2rem;
+}
+.mb-3 {
+  font-family: "Lastica-bold";
+  letter-spacing: 2px;
+}
+.custom-radio {
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  width: 100%;
+}
+.btn-default {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  font-weight: 900;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.417), 1px -1px 0 rgba(0, 0, 0, 0.426),
+    -1px 1px 0 rgba(0, 0, 0, 0.389), 1px 1px 0 rgba(0, 0, 0, 0.407);
+  letter-spacing: 9px;
+}
+.btn-nav {
+  font-size: 1rem !important;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow: scroll;
+  }
+  .title-form {
+    font-size: 1.5rem !important;
+    letter-spacing: 3px;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+  }
+
+  .form-control1,
+  .form-control2 {
+    width: 100%;
+  }
+
+  .form-group-container {
+    flex-direction: column;
+  }
+
+  .form-group1,
+  .form-group2,
+  .form-group3 {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 25px;
+  }
 }

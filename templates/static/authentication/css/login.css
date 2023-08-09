@@ -1,5 +1,10 @@
 body{
-  height: 100vh ;
+  overflow: hidden;
+}
+.form-group{
+  margin:1rem 0;
+  box-sizing: border-box;
+  color: var(--placeholder-text);
 }
 .title-form{
   margin-top: 100px;
@@ -11,7 +16,7 @@ body{
   text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black; 
   letter-spacing: 9px;
   
-  
+
 }
 .form-login{
   width: 100%;
@@ -22,21 +27,46 @@ body{
   margin: 0 auto;
 }
 
+.form-group{
+  color: var(--placeholder-text);
+  padding: 10px;
+  box-sizing: border-box;
+  
+}
+
 
 .form-control {
-  font-family: "Lastica";
+  height: 75%;
+  width: 28rem;
+  font-size: 1.2rem;
+  color: var(--placeholder-text);
+  font-family: "Aileron";
   background-image: url("/static/authentication/img/input.png");
   background-position: center;
   background-size: cover;
+  letter-spacing: 5px;
   margin-bottom: 10px;
   padding: 10px 15px;
   border: hidden;
-  width: 27rem;
+  border-radius: 0.7rem;
   background-color: transparent;
-}
-
-
-.title-form{
-  margin: 0 auto;
-}
+ 
   
+}
+
+.form-control::placeholder {
+  color: var(--placeholder-text);
+}
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border: hidden;
+}
+
+
+
+
+.btn-default {
+  font-size: 1rem;
+  width: 170px;
+}

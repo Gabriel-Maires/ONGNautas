@@ -14,16 +14,16 @@
 @font-face {
   font-family: "Lastica-bold";
   src: url("/static/fonts/lastica/lastica.ttf") format("truetype");
-  font-weight: 500;
+  font-weight: 900;
 }
 
 @font-face {
   font-family: "Aileron";
   src: url("/static/fonts/aileron/aileron.ttf") format("truetype");
-  /* propriedades da fonte */
+  font-weight: 900;
 }
 @font-face {
-  font-family: "Josefin sans";
+  font-family: "Josefin_sans";
   src: url("/static/fonts/Josefin_Sans/JosefinSans-SemiBoldItalic.ttf")
     format("truetype");
 }
@@ -39,7 +39,6 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  overflow: hidden;
 }
 
 .navbar {
@@ -60,7 +59,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra da navbar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand img {
@@ -80,18 +79,22 @@ body {
   text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black,
     2px 2px 0 black;
 }
+
 form {
   width: 100%;
-  margin-bottom: 150px;
 }
 
-.main-content-container-form {
+.container-form {
   margin: 0 auto;
-  height: 100%;
+  height: 100vh;
   width: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.main-content-container-form {
+  width: 85%;
+  margin: 0 auto;
   background-color: rgba(62, 51, 27, 0.343);
   backdrop-filter: blur(1px);
   border-left: 2.3rem solid black;
@@ -99,21 +102,38 @@ form {
 }
 
 .error-msg {
-  color: red !important;
-  font-size: 12px !important;
-  margin-top: 5px !important;
+  color: rgb(245, 243, 243);
+  font-family: "aileron";
+  font-weight: 500;
+  border: solid 1px rgba(128, 128, 128, 0.294);
+  padding: 5px;
+  background-color: rgb(243, 14, 14);
+  border-radius: 10px;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+.btn-nav {
+  font-size: 0.7rem;
+  width: 170px;
+}
+.btn-default {
+  font-size: 1rem;
+  width: 220px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  margin: 0 auto;
 }
 
+.btn-nav,
 .btn-default {
   font-family: "Lastica";
+  font-weight: 900;
   color: var(--login-title-color);
-  font-size: 0.8rem;
   margin: 0 auto;
-  width: 170px;
-  padding: 4px;
   height: 40px;
+
   border-radius: 1rem;
-  border: hidden;
+  border: groove #66a261;
   background-image: linear-gradient(
     to right,
     #00a651,
@@ -122,6 +142,22 @@ form {
     #83db30,
     #a8eb12
   );
+  text-shadow: -2px -2px 0 rgba(0, 0, 0, 0.12), 2px -2px 0 rgba(0, 0, 0, 0.154),
+    -2px 2px 0 rgba(0, 0, 0, 0.116), 2px 2px 0 rgba(0, 0, 0, 0.174);
+  letter-spacing: 4px;
+}
+
+.btn-default:hover,
+.btn-nav:hover {
+  background-image: linear-gradient(
+    to left bottom,
+    #8dc63f,
+    #74bf43,
+    #5ab748,
+    #3baf4c,
+    #00a651
+  );
+  color: #4b3d1c;
 }
 
 @media (max-width: 768px) {
