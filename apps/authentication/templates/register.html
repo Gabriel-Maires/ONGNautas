@@ -4,38 +4,39 @@
 {% endblock %} {% block 'title' %}Cadastro{% endblock %} {% block 'nav-h5' %} Já
 tem cadastro?
 <a href="{% url 'login' %}"
-  ><button type="submit" class="btn-default">Login</button></a
+  ><button type="submit" class="btn-nav">Login</button></a
 >
 {% endblock 'nav-h5' %} {% block 'body' %}
+<div class="container">
 <form class="row" method="POST" action="{% url 'register' %}">
   {% csrf_token %}
   <h2 class="title-form col-12 text-center">Cadastro</h2>
-  <div class="form-group col-mdl-6">
+  <div class="form-group1 col-mdl-6">
     {% if form.first_name.errors %}
     <p class="error-msg">{{ form.first_name.errors.0 }}</p>
     {% endif %} {% if form.first_name.value %}
     <input
       type="text"
-      class="form-control"
+      class="form-control1"
       id="inputname"
       name="first_name"
-      placeholder="Nome"
+      placeholder="Nome:"
       value="{{ form.first_name.value }}"
     />
     {% else %}
     <input
       type="text"
-      class="form-control"
+      class="form-control1"
       id="inputname"
       name="first_name"
-      placeholder="Nome"
+      placeholder="Nome:"
     />
     {% endif %} {% if form.cpf.errors %}
     <p class="error-msg">{{ form.cpf.errors.0 }}</p>
     {% endif %} {% if form.cpf.value %}
     <input
       type="text"
-      class="form-control"
+      class="form-control1"
       id="inputCity"
       name="cpf"
       placeholder="CPF"
@@ -44,7 +45,7 @@ tem cadastro?
     {% else %}
     <input
       type="text"
-      class="form-control"
+      class="form-control2"
       id="inputCity"
       name="cpf"
       placeholder="CPF"
@@ -54,178 +55,179 @@ tem cadastro?
     {% endif %} {% if form.email.value %}
     <input
       type="email"
-      class="form-control"
+      class="form-control1"
       id="inputEmail"
       name="email"
-      placeholder="Email"
+      placeholder="E-mail:"
       value="{{ form.email.value }}"
     />
     {% else %}
     <input
       type="email"
-      class="form-control"
+      class="form-control1"
       id="inputEmail"
       name="email"
-      placeholder="Email"
+      placeholder="E-mail:"
     />
     {% endif %} {% if form.password.errors %}
     <p class="error-msg">{{ form.password.errors.0 }}</p>
     {% endif %}
     <input
       type="password"
-      class="form-control"
+      class="form-control1"
       id="inputPassword"
       name="password"
-      placeholder="Senha"
+      placeholder="Senha:"
     />
 
     {% if form.birthdate.value %}
     <input
       type="date"
-      class="form-control"
+      class="form-control1"
       id="inputdate"
       name="birthdate"
-      placeholder="Data de Nascimento"
+      placeholder="Data de Nascimento:"
       value="{{ form.birthdate.value }}"
     />
     {% else %}
     <input
       type="date"
-      class="form-control"
+      class="form-control1"
       id="inputdate"
       name="birthdate"
-      placeholder="Data de Nascimento"
+      placeholder="Data de Nascimento:"
     />
     {% endif %}
   </div>
 
-  <div class="form-group col-md-6">
+  <div class="form-group2 col-md-6">
     {% if form.last_name.errors %}
     <p class="error-msg">{{ form.last_name.errors.0 }}</p>
     {% endif %} {% if form.last_name.value %}
     <input
       type="text"
-      class="form-control"
+      class="form-control2"
       id="inputlastname"
       name="last_name"
-      placeholder="Sobrenome"
+      placeholder="Sobrenome:"
       value="{{ form.last_name.value }}"
     />
     {% else %}
     <input
       type="text"
-      class="form-control"
+      class="form-control2"
       id="inputlastname"
       name="last_name"
-      placeholder="Sobrenome"
+      placeholder="Sobrenome:"
     />
     {% endif %} {% if form.cep.errors %}
     <p class="error-msg">{{ form.cep.errors.0 }}</p>
     {% endif %} {% if form.cep.value %}
     <input
       type="text"
-      class="form-control"
+      class="form-control2"
       id="inputZip"
       name="cep"
-      placeholder="CEP"
+      placeholder="CEP:"
       value="{{ form.cep.value }}"
     />
     {% else %}
     <input
       type="text"
-      class="form-control"
+      class="form-control2"
       id="inputZip"
       name="cep"
-      placeholder="CEP"
+      placeholder="CEP:"
     />
     {% endif %} {% if form.address.value %}
     <input
       type="text"
-      class="form-control"
+      class="form-control2"
       id="inputAddress"
       name="address"
-      placeholder="Endereço"
+      placeholder="Endereço:"
       value="{{ form.address.value }}"
     />
     {% else %}
     <input
       type="text"
-      class="form-control"
+      class="form-control2"
       id="inputAddress"
       name="address"
-      placeholder="Endereço"
+      placeholder="Endereço:"
     />
     {% endif %} {% if form.complement.value %}
     <input
       type="text"
-      class="form-control"
+      class="form-control2"
       id="inputComplement"
       name="complement"
-      placeholder="Complemento"
+      placeholder="Complemento:"
       value="{{ form.complement.value }}"
     />
     {% else %}
     <input
       type="text"
-      class="form-control"
+      class="form-control2"
       id="inputComplement"
       name="complement"
-      placeholder="Complemento"
+      placeholder="Complemento:"
     />
     {% endif %}
-    <div class="form-group3">
-      <h3 class="mb-3">Tipo de cadastro:</h3>
-      <div class="custom-control custom-radio custom-control-inline">
-        {% if form.is_voluntary.value %}
-        <input
-          type="radio"
-          name="is_voluntary"
-          checked="{{ form.is_voluntary.value }}"
-          id="customRadioInline1"
-          name="customRadioInline1"
-          class="custom-control-input"
-        />
-        {% else %}
-        <input
-          type="radio"
-          name="is_voluntary"
-          id="customRadioInline1"
-          name="customRadioInline1"
-          class="custom-control-input"
-        />
-        {% endif %}
-        <label class="custom-control-label" for="customRadioInline1"
-          >Quero ser Voluntário</label
-        >
-      </div>
-      <div class="custom-control custom-radio custom-control-inline">
-        {% if form.is_supporter.value %}
-        <input
-          type="radio"
-          name="is_supporter"
-          checked="{{ form.is_supporter.value }}"
-          id="customRadioInline2"
-          name="customRadioInline1"
-          class="custom-control-input"
-        />
-        {% else %}
-        <input
-          type="radio"
-          name="is_supporter"
-          id="customRadioInline2"
-          name="customRadioInline1"
-          class="custom-control-input"
-        />
-        {% endif %}
-        <label class="custom-control-label" for="customRadioInline2"
-          >Quero ser Apoiador</label
-        >
-      </div>
+   
+  </div>
+  <div class="form-group3">
+    <h3 class="mb-3">Tipo de cadastro:</h3>
+    <div class="custom-control custom-radio custom-control-inline">
+      {% if form.is_voluntary.value %}
+      <input
+        type="radio"
+        name="is_voluntary"
+        checked="{{ form.is_voluntary.value }}"
+        id="customRadioInline1"
+        name="customRadioInline1"
+        class="custom-control-input"
+      />
+      {% else %}
+      <input
+        type="radio"
+        name="is_voluntary"
+        id="customRadioInline1"
+        name="customRadioInline1"
+        class="custom-control-input"
+      />
+      {% endif %}
+      <label class="custom-control-label" for="customRadioInline1"
+        >Quero ser Voluntário</label
+      >
+    </div>
+    <div class="custom-control custom-radio custom-control-inline">
+      {% if form.is_supporter.value %}
+      <input
+        type="radio"
+        name="is_supporter"
+        checked="{{ form.is_supporter.value }}"
+        id="customRadioInline2"
+        name="customRadioInline1"
+        class="custom-control-input"
+      />
+      {% else %}
+      <input
+        type="radio"
+        name="is_supporter"
+        id="customRadioInline2"
+        name="customRadioInline1"
+        class="custom-control-input"
+      />
+      {% endif %}
+      <label class="custom-control-label" for="customRadioInline2"
+        >Quero ser Apoiador</label
+      >
     </div>
   </div>
-
   <button type="submit" class="btn-default col-md-6 offset-md-3">
     Cadastrar
   </button>
 </form>
+</div>
 {% endblock %}
