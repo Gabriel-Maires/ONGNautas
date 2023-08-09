@@ -8,19 +8,19 @@
 @font-face {
   font-family: "Lastica";
   src: url("/static/fonts/lastica/lastica.ttf") format("truetype");
-  /* Outras propriedades da fonte, se necessário (font-weight, font-style, etc.) */
+ 
 }
 
 @font-face {
   font-family: "Aileron";
   src: url("/static/fonts/aileron/aileron.ttf") format("truetype");
-  /* Outras propriedades da fonte, se necessário (font-weight, font-style, etc.) */
+  
 }
 @font-face {
   font-family: "Josefin sans";
   src: url("/static/fonts/Josefin_Sans/JosefinSans-SemiBoldItalic.ttf")
     format("truetype");
-  /* Outras propriedades da fonte, se necessário (font-weight, font-style, etc.) */
+  
 }
 body {
   background-image: radial-gradient(
@@ -46,6 +46,9 @@ body {
   width: 170px;
   padding: 2px;
   border-radius: 1rem;
+  font-family: "Lastica";
+  color: var(--login-title-color);
+  font-size: 0.8rem;
   transition: 0.4s;
   border: hidden;
   background-image: linear-gradient(
@@ -66,6 +69,7 @@ body {
     #3baf4c,
     #00a651
   );
+  color: var(--login-title-color);
 }
 
 body {
@@ -124,9 +128,9 @@ li {
   line-height: 30px;
   text-transform: capitalize;
 }
-
-p {
-  color: #cc6c6c !important;
+/* mudança de "p" para "paragrapher"*/
+.paragrapher {
+  color: #71c55d ;
   font-size: 14px;
   font-weight: 300;
   letter-spacing: 0.5px;
@@ -254,7 +258,7 @@ span {
   padding-top: 0;
 }
 
-.footer .footer-logo p {
+.footer .footer-logo .paragrapher {
   color: #fff;
   font-size: 12px;
   letter-spacing: 1px;
