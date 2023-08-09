@@ -8,6 +8,7 @@ python-decouple = "*"
 django = "==4.2.3"
 psycopg2-binary = "*"
 pillow = "*"
+django-role-permissions = "*"
 
 [dev-packages]
 
