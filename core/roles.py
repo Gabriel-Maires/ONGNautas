@@ -1,5 +1,6 @@
 from rolepermissions.roles import AbstractUserRole
 
+
 class Admin(AbstractUserRole):
     available_permissions = {
         'can_create_blog_posts':True,
