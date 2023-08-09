@@ -1,4 +1,4 @@
-{% load static %}
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -13,7 +13,7 @@
     {% include 'partials/header.html' %}
 
     <main class="main-content-container">
-      <!-- Front-Luciana: fazendo mudança de content para body -->
+      
       {% block 'body' %}{% endblock 'body' %}
     </main>
 
@@ -21,6 +21,7 @@
 
     {% include 'partials/footer.html' %} 
     <script>{% block 'scripts' %}{% endblock 'scripts' %}</script>
+
     <!-- Importe o jQuery e o Bootstrap JS via CDN -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

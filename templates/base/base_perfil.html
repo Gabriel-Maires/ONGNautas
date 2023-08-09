@@ -9,14 +9,14 @@
 
     <title>{% block 'title' %}{% endblock 'title' %} | ONGNautas</title>
 
-    <link rel="stylesheet" href="{% block 'css' %}{% endblock 'css' %}" />
+    <link rel="stylesheet" href="{% block 'css' %}{% static 'geral/css/base_perfil.css' %}{% endblock 'css' %}" />
   </head>
   <body>
     {% include 'partials/header-perfil.html' %} {% block content %}
     <div class="content"></div>
     {% endblock %}
 
-    <main class="main-content-container">
+    <main class="main-content-container-perfil">
       {% block 'body' %}{% endblock 'body' %}
     </main>
 

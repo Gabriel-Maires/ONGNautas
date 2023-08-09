@@ -6,7 +6,7 @@
 @font-face {
   font-family: "Lastica";
   src: url("/static/fonts/lastica/lastica.ttf") format("truetype");
-  /* Outras propriedades da fonte, se necessário (font-weight, font-style, etc.) */
+ 
 }
 
 @font-face {
@@ -41,7 +41,8 @@ body {
   background-position: center;
   background-size: cover;
   margin: 0 auto;
-  width: 65%;
+  height:500px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,8 +52,8 @@ body {
     255,
     255,
     0.3
-  ); /* Cor do efeito de vidro com transparência */
-  backdrop-filter: blur(10px); /* Efeito de desfoque para o efeito de vidro */
+  );
+  backdrop-filter: blur(10px); 
   border-left: 1rem solid black;
   border-right: 1rem solid black;
   position: relative;
@@ -75,4 +76,3 @@ body {
 .margin {
   margin-top: 10rem;
 }
-
