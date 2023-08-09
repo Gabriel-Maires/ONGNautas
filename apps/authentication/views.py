@@ -5,6 +5,8 @@ from django.contrib import auth
 from django.contrib import messages
 from django.contrib.messages import constants
 
+from rolepermissions.roles import assign_role
+
 from .forms import RegisterForm, LoginForm
 from .models import Voluntary
 
@@ -26,16 +28,24 @@ def register_view(request):
                     if user.is_voluntary:
                         Voluntary.objects.create(user=user)
 
-                        message: str
-                        if user.is_voluntary and user.is_supporter:
-                            message = 'Você se cadastrou como voluntário e apoiador!'
-                        elif user.is_voluntary:
-                            message = 'Você se cadastrou como voluntário!'
-                        elif user.is_supporter:
-                            message = 'Você se cadastrou como apoiador!'
-                        
-                        messages.add_message(request, constants.INFO, message)
+                    message: str
+                    if user.is_voluntary and user.is_supporter:
+                        message = 'Você se cadastrou como voluntário e apoiador!'
 
+                        assign_role(user, 'voluntary')
+                        assign_role(user, 'supporter')
+                        
+                    elif user.is_voluntary:
+                        message = 'Você se cadastrou como voluntário!'
+
+                        assign_role(user, 'voluntary')
+
+                    elif user.is_supporter:
+                        message = 'Você se cadastrou como apoiador!'
+
+                        assign_role(user, 'supporter')
+
+                    messages.add_message(request, constants.INFO, message)
                     messages.add_message(request, constants.SUCCESS, 'Usuário criado com sucesso!')
 
                     return redirect(reverse('login'))
