@@ -10,5 +10,6 @@ urlpatterns = [
     path('reports/', include('reports.urls')),
     path('', include('ong.urls')),
     path('perfil/', include('perfil.urls')),
+    path('ong_admin/', include('ong_admin.urls'))
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
