@@ -6,49 +6,52 @@
 
 {% block 'body' %}
     <section class="padd-section">
-        <div class="text-center margin">
+        <div class="container">
 
-            <h2>Bem vindo ao nosso Blog <div class="container"></h2>
-            <p class="separator">Fique por dentro das últimas notícias.</p>
-          </div>
-  
-          <div class="row">
-  
-            <div class="col-md-6 col-lg-4">
-                <div class="block-blog text-left">
-                    <a href="#"><img src="assets/img/blog/blog-image-3.jpg" class="img-responsive" alt="img"></a>
-                    <div class="content-blog">
-                        <h4><a href="#">whats isthe difference between good and bat typography</a></h4>
-                        <span>01, ago 2023</span>
-                        <a class="float-end readmore" href="#">Saiba Mais</a>
+            <div class="text-center margin">
+                <h2>Bem vindo ao nosso Blog </h2>
+                <p class="separator">Fique por dentro das últimas notícias.</p>
+            </div>
+            <div class="container">
+                <div class="row">
+    
+                    <div class="col-md-6 col-lg-4">
+                        <div class="block-blog text-left">
+                            <a href="#"><img src="{% static 'ong/img/blog/blog-1.jpg' %}" class="card-img-top" alt="img"></a>
+                            <div class="content-blog">
+                            
+                                <h4><a href="#">Junte-se a nós na missão verde! Acesse nosso Blog e inscrevas-se na nossa newsletter</a></h4>
+                                <span>01, ago 2023</span>
+                                <a class="float-end btn m-5" name="" id="" href="#" role="button">Saiba Mais</a>
+                            </div>
+                        </div>
                     </div>
+            
+                    <div class="col-md-6 col-lg-4">
+                        <div class="block-blog text-left">
+                            <a href="#"><img src="{% static 'ong/img/blog/blog-2.jpg' %}" class="img-responsive" alt="img"></a>
+                            <div class="content-blog">
+                                <h4><a href="#">Planeta Sustentável: Descubra como os ONGNautas estão fazendo a diferença</a></h4>
+                                <span>01, ago 2023</span>
+                                <a class="float-end btn m-5" name="" id="" href="#" role="button">Saiba Mais</a>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="col-md-6 col-lg-4">
+                        <div class="block-blog text-left">
+                            <a href="#"><img src="{% static 'ong/img/blog/blog-3.jpg' %}" class="img-responsive" alt="img"></a>
+                            <div class="content-blog">
+                                <h4><a href="#">Explorando a Natureza: As melhores trilhas ecológicas com os ONGNautas</a></h4>
+                                <span>01, ago 2023</span>
+                                <a class="float-end btn m-5" name="" id="" href="#" role="button">Saiba Mais</a>
+                            </div>
+                        </div>
+                    </div>
+    
                 </div>
             </div>
-  
-            <div class="col-md-6 col-lg-4">
-                <div class="block-blog text-left">
-                    <a href="#"><img src="assets/img/blog/blog-image-3.jpg" class="img-responsive" alt="img"></a>
-                    <div class="content-blog">
-                        <h4><a href="#">whats isthe difference between good and bat typography</a></h4>
-                        <span>01, ago 2023</span>
-                        <a class="float-end readmore" href="#">Saiba Mais</a>
-                    </div>
-                </div>
-            </div>
-  
-            <div class="col-md-6 col-lg-4">
-                <div class="block-blog text-left">
-                    <a href="#"><img src="assets/img/blog/blog-image-3.jpg" class="img-responsive" alt="img"></a>
-                    <div class="content-blog">
-                        <h4><a href="#">whats isthe difference between good and bat typography</a></h4>
-                        <span>01, ago 2023</span>
-                        <a class="float-end readmore" href="#">Saiba Mais</a>
-                    </div>
-                </div>
-            </div>
-          </div>
         </div>
-
     </section>
 
 {% endblock 'body' %}

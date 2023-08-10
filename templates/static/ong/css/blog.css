@@ -8,6 +8,7 @@
 
 .block-blog img {
   width: 100%;
+  height: 190px
 }
 
 .content-blog {
@@ -40,18 +41,4 @@
 .content-blog span {
   float: left;
   font-size: 12px;
-}
-
-.content-blog a.readmore {
-  color: #505050;
-  font-size: 12px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
-  letter-spacing: 0;
-  text-transform: capitalize;
-}
-
-.content-blog a.readmore:hover {
-  color: #71c55d;
 }
