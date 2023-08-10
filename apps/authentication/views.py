@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib import auth
 
+from django.http import HttpRequest
+
 from django.contrib import messages
 from django.contrib.messages import constants
 
@@ -11,7 +13,7 @@ from .forms import RegisterForm, LoginForm
 from .models import Voluntary
 
 
-def register_view(request):
+def register_view(request: HttpRequest):
 
     match request.method:
         case 'GET':
@@ -64,7 +66,7 @@ def register_view(request):
             return render(request, 'register.html', {'form': register_form},)
 
 
-def login_view(request):
+def login_view(request: HttpRequest):
     
     match request.method:
         case 'GET':
@@ -103,4 +105,10 @@ def login_view(request):
 
             messages.add_message(request, constants.WARNING, 'Preencha os campos corretamente!')
             
-            return render(request, 'login.html', {'form': login_form})         
+            return render(request, 'login.html', {'form': login_form})
+
+
+def logout_view(request: HttpRequest):
+
+    auth.logout(request)
+    return redirect(reverse('home'))
