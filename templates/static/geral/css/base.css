@@ -17,10 +17,17 @@
   
 }
 @font-face {
-  font-family: "Josefin sans";
+  font-family: "Josefin-sans";
   src: url("/static/fonts/Josefin_Sans/JosefinSans-SemiBoldItalic.ttf")
     format("truetype");
   
+}
+
+:root{
+  --home-titles:#00A651;
+  --home-subtitles:#A8CF45;
+  --home-description-title: #A28E61;
+  --home-discription-subtitle: #928c86f2;
 }
 body {
   background-image: radial-gradient(
@@ -45,12 +52,13 @@ body {
   margin: 10px auto;
   width: 170px;
   padding: 2px;
-  border-radius: 1rem;
-  font-family: "Lastica";
-  color: var(--login-title-color);
-  font-size: 0.8rem;
+  letter-spacing: 3px;
+  border-radius: 1.5rem;
+  font-family: "Aileron";
+  color: var(--login-title-color)!important;
+  font-size: 1.8rem;
   transition: 0.4s;
-  border: hidden;
+  border: groove #66a261;
   background-image: linear-gradient(
     to left bottom,
     #00a651,
@@ -87,8 +95,9 @@ h6 {
 }
 
 h2 {
-  color: #000;
-  font-weight: 600;
+font-family: "Aileron, Lastica, sans";
+letter-spacing: 2px;
+color: var(--home-titles);
 }
 
 h4 {
@@ -130,13 +139,15 @@ li {
 }
 /* mudança de "p" para "paragrapher"*/
 .paragrapher {
-  color: #71c55d ;
-  font-size: 14px;
-  font-weight: 300;
-  letter-spacing: 0.5px;
+  color:var(--home-discription-subtitle);
+  font-family: "josefin-sans";
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.7px;
   line-height: 2;
   margin-bottom: 20px;
 }
+
 
 span {
   letter-spacing: 1px;
