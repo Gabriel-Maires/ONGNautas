@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from datetime import datetime
 
 
 class Project(models.Model):
@@ -14,3 +15,15 @@ class Project(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+
+class Category(models.Model):
+    category = models.CharField(_('category'), max_length=20, blank=False)
+
+class Post(models.Model):
+    title = models.CharField(_('title'), max_length=24, blank=False)
+    text = models.CharField(_('text'), blank=False)
+    category = models.Choices() #TODO:ORGANIZAR ESSE CHOICES
+    image = models.ImageField(_('image'), upload_to='blog_posts')
+    date = models.DateField(_('date'), default=datetime.now())
+
