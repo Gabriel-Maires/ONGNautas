@@ -36,12 +36,12 @@ body {
 }
 
 .background {
-  background-image: url("/static/ong/img/background/cover.png");
+  background-image: url("/static/ong/img/background/cover.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   margin: 0 auto;
-  height:500px;
+  
   width: 100%;
   display: flex;
   align-items: center;
@@ -75,4 +75,23 @@ body {
 
 .margin {
   margin-top: 10rem;
+}
+.section-description{
+  color:var(--home-subtitles);
+  font-size:1.8rem;
+ 
+}
+
+.photos-container{
+width:100%;
+
+}
+
+img{
+  width:350px;
+  margin:10px;
+  box-sizing: border-box;
+}
+.card-title{
+  color:var(--home-description-title);
 }
