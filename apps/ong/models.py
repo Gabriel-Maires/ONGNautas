@@ -17,13 +17,12 @@ class Project(models.Model):
         return self.title
 
 
-class Category(models.Model):
-    category = models.CharField(_('category'), max_length=20, blank=False)
-
 class Post(models.Model):
+    CATEGORY_CHOICES = [('Forest', 'Floresta'), ('Water', 'Água'), ('Air', 'Ar')]
+
     title = models.CharField(_('title'), max_length=24, blank=False)
     text = models.CharField(_('text'), blank=False)
-    category = models.Choices() #TODO:ORGANIZAR ESSE CHOICES
+    category = models.CharField(_('category'), max_length=20, choices=CATEGORY_CHOICES, blank=False)
     image = models.ImageField(_('image'), upload_to='blog_posts')
     date = models.DateField(_('date'), default=datetime.now())
 
