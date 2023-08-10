@@ -5,106 +5,184 @@
 {% block 'css' %}{% static 'reports/css/denouncement.css' %}{% endblock 'css' %}
 
 {% block 'body' %}
-    <section class="padd-section">
-        <div class="container mt-5">
-            <h2 class="margin section-title ">Denúncia Ambiental</h2>
-            <p>A ONGNautas é uma organização empenhada na conservação e proteção do meio ambiente, especialmente em praias e cidades. Movidos pela conexão profunda entre a humanidade e esses ambientes, eles se dedicam a garantir um futuro sustentável para essas áreas. Através de ações de conscientização, educação e denúncia, a ONGNautas trabalha incansavelmente para enfrentar problemas como a poluição, a degradação e outras ameaças aos ecossistemas.</p>
-        </div>
-        
-        <!-- Seção: Importância da Denúncia -->
-        <div class="container mt-5">
-            <h3>Importância da Denúncia</h3>
-            <p>A denúncia é uma ferramenta crucial na proteção do meio ambiente. Ao denunciar atividades ilegais ou prejudiciais ao ecossistema, você está contribuindo diretamente para a preservação do nosso planeta.</p>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="feature-item">
-                        <i class="bi bi-shield"></i>
-                        <h4>Proteja a Natureza</h4>
-                        <p>Ao denunciar, você ajuda a evitar danos irreparáveis a habitats naturais e espécies.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="feature-item">
-                        <i class="bi bi-binoculars"></i>
-                        <h4>Promova a Fiscalização</h4>
-                        <p>Suas denúncias auxiliam as autoridades a monitorar e controlar atividades ambientais ilegais.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-md-6">
-                    <img  class="img-fluid"src="{% static 'reports/img/denouncement-1.jpg' %}" alt="Coletando Lixo">
-                </div>
-                <div class="col-md-6">
-                    <img class="img-fluid"src="{% static 'reports/img/denouncement-2.jpg' %}" alt="voluntários">
-                </div>
-            </div>
-        </div>
+		<section class="padd-section">
+				<div class="container mt-5">
+						<h2 class="margin section-title ">Denúncia Ambiental</h2>
+						<p>A ONGNautas é uma organização empenhada na conservação e proteção do meio ambiente, especialmente em praias e cidades. Movidos pela conexão profunda entre a humanidade e esses ambientes, eles se dedicam a garantir um futuro sustentável para essas áreas. Através de ações de conscientização, educação e denúncia, a ONGNautas trabalha incansavelmente para enfrentar problemas como a poluição, a degradação e outras ameaças aos ecossistemas.</p>
+				</div>
+				
+				<!-- Seção: Importância da Denúncia -->
+				<div class="container mt-5">
+						<h3>Importância da Denúncia</h3>
+						<p>A denúncia é uma ferramenta crucial na proteção do meio ambiente. Ao denunciar atividades ilegais ou prejudiciais ao ecossistema, você está contribuindo diretamente para a preservação do nosso planeta.</p>
+						<div class="row">
+								<div class="col-md-6">
+										<div class="feature-item">
+												<i class="bi bi-shield"></i>
+												<h4>Proteja a Natureza</h4>
+												<p>Ao denunciar, você ajuda a evitar danos irreparáveis a habitats naturais e espécies.</p>
+										</div>
+								</div>
+								<div class="col-md-6">
+										<div class="feature-item">
+												<i class="bi bi-binoculars"></i>
+												<h4>Promova a Fiscalização</h4>
+												<p>Suas denúncias auxiliam as autoridades a monitorar e controlar atividades ambientais ilegais.</p>
+										</div>
+								</div>
+						</div>
+						<div class="row mt-5">
+								<div class="col-md-6">
+										<img  class="img-fluid"src="{% static 'reports/img/denouncement-1.jpg' %}" alt="Coletando Lixo">
+								</div>
+								<div class="col-md-6">
+										<img class="img-fluid"src="{% static 'reports/img/denouncement-2.jpg' %}" alt="voluntários">
+								</div>
+						</div>
+				</div>
 
-        <!-- Seção: Como Denunciar -->
-        <div class="container mt-5">
-            <h3>Como Fazer uma Denúncia</h3>
-            <p>Denunciar é simples e pode ser feito seguindo estes passos:</p>
-            <ol>
-                <li> Clique no botão a baixo e preencha o formulário, fornecendo uma descrição detalhada da situação.</li>
-                <li>Anexe fotos relevantes para fortalecer sua denúncia.</li>
-                <li>Clique em "Enviar Denúncia".</li>
-            </ol>
-            <p>Sua identidade será mantida confidencial.</p>
-        </div>
-        <div class="text-center">
-            <button class="btn" data-toggle="modal" data-target="#denunciaModal">Fazer Denúncia</button>
-        </div>
+				<!-- Seção: Como Denunciar -->
+				<div class="container mt-5">
+						<h3>Como Fazer uma Denúncia</h3>
+						<p>Denunciar é simples e pode ser feito seguindo estes passos:</p>
+						<ol>
+								<li> Clique no botão a baixo e preencha o formulário, fornecendo uma descrição detalhada da situação.</li>
+								<li>Anexe fotos relevantes para fortalecer sua denúncia.</li>
+								<li>Clique em "Enviar Denúncia".</li>
+						</ol>
+						<p>Sua identidade será mantida confidencial.</p>
+				</div>
+				<div class="text-center">
+						<button class="btn" id="denouncementModalTrigger" data-toggle="modal" data-target="#denunciaModal">Fazer Denúncia</button>
+				</div>
 
-        <!-- Modal para fazer a denúncia -->
-        <div class="modal fade" id="denunciaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Fazer Denúncia</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="title-reports">
-                                <h2>DENUNCIE</h2>
-                            </div>
-                            <div class="form-group">
-                                <label for="descricao">Descrição da Denúncia:</label>
-                                <textarea class="form-control" id="descricao" rows="3" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="endereco">CEP:</label>
-                                <input type="text" class="form-control" id="CEP" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="endereco">Endereço da Denúncia:</label>
-                                <input type="text" class="form-control" id="endereco" required>
-                            </div>
-                           
-                            <div class="form-group">
-                                <label for="endereco">complemento:</label>
-                                <input type="text" class="form-control" id="endereco" required>
-                            </div>
-                           
-                            <div class="form-group">
-                                <label for="foto">Foto da Denúncia:</label>
-                                <input type="file" class="form-control-file" id="foto">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-primary">Enviar Denúncia</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+				<!-- Modal para fazer a denúncia -->
+				<div class="modal fade" id="denunciaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+								<div class="modal-content">
+										<div class="modal-header">
+												<h5 class="modal-title" id="exampleModalLabel">Fazer Denúncia</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+												</button>
+										</div>
+										<div class="modal-body">
+												<form method="POST" action="{% url 'denouncement' %}" enctype="multipart/form-data">{% csrf_token %}
+														<div class="title-reports">
+																<h2>DENUNCIE</h2>
+														</div>
 
-    </section>
-    {% endblock 'body' %}
+														{% if messages %}
+															{% for message in messages %}
+																<div class="alert {{ message.tags }}" role="alert">
+																	{{ message }}
+																</div>															
+															{% endfor %}
+														{% endif %}
+														
+														{% if form.title.errors %}
+																{{ form.title.errors.0 }}
+														{% endif %}
+														{% if form.title.value %}
+															<div class="form-group">
+																<label for="descricao">Título:</label>
+																<input class="form-control" name="title" id="titulo" value="{{ form.title.value }}" required>
+															</div>
+														{% else %}
+															<div class="form-group">
+																<label for="descricao">Título:</label>
+																<input class="form-control" name="title" id="titulo" required>
+															</div>
+														{% endif %}
+
+														{% if form.description.errors %}
+															{{ form.description.errors.0 }}
+														{% endif %}
+														{% if form.description.value %}
+															<div class="form-group">
+																<label for="descricao">Descrição da Denúncia:</label>
+																<textarea class="form-control" name="description" id="descricao" rows="3" required>{{ form.description.value }}</textarea>
+															</div>
+														{% else %}
+															<div class="form-group">
+																<label for="descricao">Descrição da Denúncia:</label>
+																<textarea class="form-control" name="description" id="descricao" rows="3" required></textarea>
+															</div>
+														{% endif %}
+
+														{% if form.cep.errors %}
+															{{ form.cep.errors.0 }}
+														{% endif %}
+														{% if form.cep.value %}
+														<div class="form-group">
+															<label for="endereco">CEP:</label>
+															<input type="text" class="form-control" value="{{ form.cep.value }}" name="cep" id="CEP" required>
+														</div>
+														{% else %}
+														<div class="form-group">
+															<label for="endereco">CEP:</label>
+															<input type="text" class="form-control" name="cep" id="CEP" required>
+														</div>
+														{% endif %}
+
+														{% if form.address.errors %}
+															{{ form.address.errors.0 }}
+														{% endif %}
+														{% if form.address.value %}
+														<div class="form-group">
+															<label for="endereco">Endereço da Denúncia:</label>
+															<input type="text" class="form-control" value="{{ form.address.value }}" name="address" id="endereco" required>
+														</div>
+														{% else %}
+														<div class="form-group">
+															<label for="endereco">Endereço da Denúncia:</label>
+															<input type="text" class="form-control" name="address" id="endereco" required>
+														</div>
+														{% endif %}
+
+														{% if form.complement.errors %}
+																{{ form.complement.errors.0 }}
+														{% endif %}
+														{% if form.complement.value %}
+														<div class="form-group">
+															<label for="endereco">complemento:</label>
+															<input type="text" class="form-control" value="{{ form.complement.value }}" name="complement" id="endereco" required>
+														</div>
+														{% else %}
+														<div class="form-group">
+															<label for="endereco">complemento:</label>
+															<input type="text" class="form-control" name="complement" id="endereco" required>
+														</div>
+														{% endif %}
+														
+														{% if form.evidence_image.errors %}
+																{{ form.evidence_image.errors.0 }}
+														{% endif %}
+														<div class="form-group">
+																<label for="foto">Foto da Denúncia:</label>
+																<input type="file" class="form-control-file" name="evidence_image" id="foto">
+														</div>
+
+														<div class="modal-footer">
+																<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+																<button type="submit" class="btn btn-primary">Enviar Denúncia</button>
+														</div>
+												</form>
+										</div>
+								</div>
+						</div>
+				</div>
+		</section>
+
+		{% if open_denouncement_modal %}
+			<script>
+				window.addEventListener('DOMContentLoaded', () => {
+					const denouncementModal = new bootstrap.Modal(document.getElementById('denunciaModal'));
+					denouncementModal.show();
+				})
+			</script>
+		{% endif %}
+		{% endblock 'body' %}
 
 </body>
 </html>
