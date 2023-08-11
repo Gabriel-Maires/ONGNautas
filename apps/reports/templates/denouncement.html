@@ -1,5 +1,6 @@
 {% extends "base/base.html" %}
 {% load static %}
+{% load permission_tags %}
 {% block 'title' %}Denuncie{% endblock 'title' %}
 <!-- CSS -->
 {% block 'css' %}{% static 'reports/css/denouncement.css' %}{% endblock 'css' %}
@@ -182,6 +183,7 @@
 				})
 			</script>
 		{% endif %}
+		{% include 'partials/table_denouncement.html' %}
 		{% endblock 'body' %}
 
 </body>

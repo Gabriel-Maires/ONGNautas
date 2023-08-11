@@ -19,3 +19,5 @@ class Report(models.Model):
     class Meta:
         verbose_name = 'Denúncia'
         verbose_name_plural = 'Denúncias'
+
+
