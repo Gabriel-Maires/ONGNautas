@@ -28,7 +28,7 @@ def create_posts(request):
             post_form = PostForm(request.POST)
             if post_form.is_valid():
                 post_form.save()
-                messages.add_message(request, constants.INFO, message)
+                
                 messages.add_message(request, constants.SUCCESS, 'Post criado com sucesso!')
 
 
