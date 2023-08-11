@@ -45,3 +45,8 @@ def denouncement_view(request: HttpRequest):
             messages.add_message(request, constants.WARNING, 'Preencha os campos corretamente!')    
 
             return render(request, 'denouncement.html', context)
+
+
+def transparency_view(request):
+    return render(request, 'transparency.html')
+
