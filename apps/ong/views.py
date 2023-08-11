@@ -33,8 +33,10 @@ def create_posts(request):
 
 
 def show_all_posts(request):
-    return Post.objects.all()
+    posts = Post.objects.all()
+    return render(request, 'blog.html', {'posts':posts})
 
 
 def show_posts_per_category(request):
-    return Post.objects.filter(category = request.POST.get('category'))
+    sel_posts = Post.objects.filter(category = request.POST.get('category'))
+    return render(request, 'blog.html', {'sel_posts':sel_posts})
