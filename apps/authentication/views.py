@@ -24,6 +24,7 @@ def register_view(request: HttpRequest):
         
         case 'POST':
             register_form = RegisterForm(request.POST)
+
             if register_form.is_valid():
                 try:
                     user = register_form.save()
