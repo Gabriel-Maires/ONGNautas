@@ -52,9 +52,15 @@
           </li>
 
           <li class="nav-item px-4">
-            <a href="{% url 'login' %}">
-              <button class="nav-link btn">Login</button>
-            </a>
+            {% if user.is_authenticated %}
+              <a href="{% url 'logout' %}">
+                <button class="nav-link btn btn-danger">Logout</button>
+              </a>
+            {% else %}
+              <a href="{% url 'login' %}">
+                <button class="nav-link btn">Login</button>
+              </a>
+            {% endif %}
           </li>
         </ul>
       </div>
