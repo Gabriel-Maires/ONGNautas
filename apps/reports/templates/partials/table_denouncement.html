@@ -1,0 +1,99 @@
+{% load permission_tags %}
+   
+<!-- Registered Denouncements -->
+<section>
+    <h1>Denúncias</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Fotos</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for denouncement in page_obj %}
+            {# Each "contact" is a Contact model object. #}
+            {{ contact.full_name|upper }}<br>
+            <tr>
+                <td><a href="#" data-toggle="modal" data-target="#detailsModal{{ denouncement.id }}">{{ denouncement.title }}</a></td>
+                <td><a href="#" data-toggle="modal" data-target="#photosModal{{ denouncement.id }}">Fotos</a></td>
+                {% if user|has_role:'admin' %}
+                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ denouncement.id }}"></button></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Modal Details -->
+    </table>
+    <div class="modal fade" id="detailsModal{{ denouncement.id }}" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel{{ denouncement.id }}" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detailsModalLabel{{ denouncement.id }}">{{ denouncement.title }} - Detalhes</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Descrição: {{ denouncement.description }}</p>
+                    <p>Endereço: {{ denouncement.address }}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Photos-->
+
+    <div class="modal fade" id="photosModal{{ denouncement.id }}" tabindex="-1" role="dialog" aria-labelledby="photosModalLabel{{ denouncement.id }}" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="photosModalLabel{{ denouncement.id }}">{{ denouncement.title }} - Fotos</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        {% for photo in denouncement.photos.all %}
+                        <div class="col-md-4 mb-3">
+                            <img src="{{ photo.image.url }}" class="img-fluid" alt="Denouncement Photo">
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Delete-->
+    <div class="modal fade" id="deleteModal{{ denouncement.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{ denouncement.id }}" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel{{ denouncement.id }}">Excluir</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Tem certeza que deseja excluir a denuncia "{{ denouncement.title }}"?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <a href="#" class="btn">Excluir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
