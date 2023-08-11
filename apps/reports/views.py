@@ -58,3 +58,6 @@ def show_reports(request):
     page = reports_paginator.get_page(page_num)
 
     return render(request, 'denouncement.html', {'page':page})
+
+def transparency_view(request):
+    return render(request, 'transparency.html')
