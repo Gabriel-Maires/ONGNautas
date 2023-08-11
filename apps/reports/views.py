@@ -8,6 +8,9 @@ from django.contrib.messages import constants
 
 from .forms import ReportsForm
 
+from django.core.paginator import Paginator
+from .models import Report
+
 
 def denouncement_view(request: HttpRequest):
 
@@ -47,6 +50,11 @@ def denouncement_view(request: HttpRequest):
             return render(request, 'denouncement.html', context)
 
 
-def transparency_view(request):
-    return render(request, 'transparency.html')
+def show_reports(request):
+    reports = Report.objects.all()
 
+    reports_paginator = Paginator(reports, 10)
+    page_num = request.GET.get('page')
+    page = reports_paginator.get_page(page_num)
+
+    return render(request, 'denouncement.html', {'page':page})
