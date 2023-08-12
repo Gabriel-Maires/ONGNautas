@@ -15,6 +15,14 @@ class RegisterForm(forms.ModelForm):
             'address', 'complement', 'password'
         ]
 
+    CHOICES = (
+        ('V', 'Voluntary'),
+        ('S', 'Supporter'),
+        ('VS', 'Voluntary and Supporter')
+    )
+
+    check = forms.ChoiceField(choices=CHOICES)
+
     password = forms.CharField(
         validators=[special_characters, uppercase_letters, lowercase_letters, number_validator]
     )
@@ -41,13 +49,24 @@ class RegisterForm(forms.ModelForm):
     
     def save(self, commit=True):
 
-        instance = super().save(commit=False)
+        instance: User = super().save(commit=False)
         instance.cpf = self.cleaned_data.get('cpf')
         instance.cep = self.cleaned_data.get('cep')
 
         password = self.cleaned_data['password']
         if password:
             instance.set_password(password)
+
+        match self.cleaned_data.get('check'):
+            case 'V':
+                instance.is_voluntary = True
+
+            case 'S':
+                instance.is_supporter = True
+
+            case 'VS':
+                instance.is_voluntary = True 
+                instance.is_supporter = True
 
         if commit:
             instance.save()
