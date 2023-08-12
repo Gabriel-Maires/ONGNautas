@@ -24,7 +24,13 @@ class RegisterForm(forms.ModelForm):
     check = forms.ChoiceField(choices=CHOICES)
 
     password = forms.CharField(
-        validators=[special_characters, uppercase_letters, lowercase_letters, number_validator]
+        validators=[
+            special_characters, 
+            uppercase_letters, 
+            lowercase_letters, 
+            number_validator, 
+            no_whitespaces
+        ]
     )
 
     cpf = forms.CharField(max_length=14)
