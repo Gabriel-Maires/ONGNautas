@@ -196,3 +196,54 @@ class RegisterFormTests(TestCase):
         register_form: RegisterForm = RegisterForm(_data)
         if not register_form.is_valid():
             self.assertIn(message, register_form.errors.get('cep'))
+
+    def test_if_created_user_is_only_voluntary(self):
+        """
+        Tests if created user is only voluntary
+        """
+
+        _data = self.data.copy()
+        _data['check'] = 'V'
+
+        register_form: RegisterForm = RegisterForm(_data)
+        if register_form.is_valid():
+            register_form.save()
+
+        user: User = User.objects.get(email=_data.get('email'))
+
+        self.assertTrue(user.is_voluntary)
+        self.assertFalse(user.is_supporter)
+
+    def test_if_created_user_is_only_supporter(self):
+        """
+        Tests if created user is only supporter
+        """
+
+        _data = self.data.copy()
+        _data['check'] = 'S'
+
+        register_form: RegisterForm = RegisterForm(_data)
+        if register_form.is_valid():
+            register_form.save()
+
+        user: User = User.objects.get(email=_data.get('email'))
+
+        self.assertFalse(user.is_voluntary)
+        self.assertTrue(user.is_supporter)
+
+    def test_if_created_user_is_both_voluntary_and_supporter(self):
+        """
+        Tests if created user is both voluntary and supporter
+        """
+
+        _data = self.data.copy()
+        _data['check'] = 'VS'
+
+        register_form: RegisterForm = RegisterForm(_data)
+        if register_form.is_valid():
+            register_form.save()
+
+        user: User = User.objects.get(email=_data.get('email'))
+
+        self.assertTrue(user.is_voluntary)
+        self.assertTrue(user.is_supporter)
