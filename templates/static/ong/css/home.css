@@ -6,7 +6,6 @@
 @font-face {
   font-family: "Lastica";
   src: url("/static/fonts/lastica/lastica.ttf") format("truetype");
- 
 }
 
 @font-face {
@@ -15,7 +14,7 @@
   /* Outras propriedades da fonte, (font-weight, font-style, etc.) */
 }
 @font-face {
-  font-family: "Josefin sans";
+  font-family: "Josefin-sans";
   src: url("/static/fonts/Josefin_Sans/JosefinSans-SemiBoldItalic.ttf")
     format("truetype");
   /* Outras propriedades da fonte, (font-weight, font-style, etc.) */
@@ -24,7 +23,8 @@
 :root {
   --login-title-color: #f3ece8; /* Cor dos Titulos: Login e Cadastro */
   --input-login-bg: #a28e61; /* background color dos inputs dos forms: Login e Cadastro */
-  --placeholder-text: #f1ebeb; /* Cor do texto nome, data, email e etc */
+  --placeholder-text: #f1ebeb;
+  /* Cor do texto nome, data, email e etc */
 }
 /* para usar as variaveis root use o var(aqui dentro a variavel com a propriedade desejada) */
 
@@ -33,65 +33,211 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  margin-bottom: 1rem;
 }
-
 .background {
   background-image: url("/static/ong/img/background/cover.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   margin: 0 auto;
-  
-  width: 100%;
+  padding: 0;
+  width: 80%;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30vh;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.3
-  );
-  backdrop-filter: blur(10px); 
-  border-left: 1rem solid black;
-  border-right: 1rem solid black;
   position: relative;
 }
-.overlay{
-  text-align: center;
+
+.overlay {
   position: absolute;
-  left: 60%;
-  width: 40%;
-  background-color: rgba(0, 0, 0 ,0.5);
-  padding: 10px;
-}
-
-.overlay p {
+  top: 0;
+  right: 0;
+  width: 43%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
   color: white;
-  font-size: 18px;
-  text-align: center;
-}
-
-.margin {
-  margin-top: 10rem;
-}
-.section-description{
-  color:var(--home-subtitles);
-  font-size:1.8rem;
- 
-}
-
-.photos-container{
-width:100%;
-
-}
-
-img{
-  width:350px;
-  margin:10px;
+  padding: 20px;
   box-sizing: border-box;
 }
-.card-title{
-  color:var(--home-description-title);
+.overlay h2 {
+  display: none;
+}
+.overlay p {
+  padding: 50px -30px;
+  width: 100%;
+  font-size: 1rem;
+  text-align: center;
+  font-family: "Aileron";
+}
+.padd-section {
+  padding-top: -80px;
+  padding-bottom: -80px;
+}
+.section-title {
+  font-size: 4rem;
+  font-family: "Aileron, Lastica, sans";
+  letter-spacing: 2px;
+  color: var(--home-titles);
+}
+.section-description {
+  margin-bottom: 50px;
+  font-family: "Aileron, Lastica, sans";
+  letter-spacing: 2px;
+  color: var(--home-subtitles);
+  font-size: 1.5rem;
+}
+
+img {
+  margin: 10px;
+  border-radius: 5px;
+}
+.photos-container,
+img {
+  width: 18rem;
+  text-align: left;
+  box-sizing: border-box;
+}
+.photos-container {
+  width: 100%;
+}
+
+.card-title {
+  color: var(--input-login-bg);
+  text-align: center;
+  font-family: "Lastica";
+}
+
+.btn-actions {
+  padding: 10px;
+  letter-spacing: 1.5px;
+  font-family: "Aileron";
+  font-weight: 600;
+  width: 150px;
+  border-radius: 2.5rem;
+}
+.btn-main {
+  font-size: 1rem;
+  padding: 0.8rem;
+  font-weight: 700;
+  font-family: "Lastica-bold", "Aileron";
+  margin: 20px auto;
+  width: 240px;
+
+  border-radius: 2.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: 0.4s;
+  color: var(--login-title-color) !important;
+  border: groove #66a26141;
+}
+.btn-more {
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  font-weight: 400;
+  font-family: "Lastica-bold", "Aileron";
+  margin: 8px;
+  text-transform: none;
+  width: 40px;
+  border: groove #66a26141;
+  border-radius: 1.5rem;
+  background-image: linear-gradient(
+    to left bottom,
+    #8dc63f,
+    #74bf43,
+    #5ab748,
+    #3baf4c,
+    #00a651
+  );
+  color: var(--login-title-color) !important;
+}
+.btn-newsletter {
+  width: 150px;
+  text-align: center;
+  margin: 0 10px;
+}
+.btn-newsletter:hover,
+.btn-more:hover,
+.btn-main:hover,
+.btn-actions:hover {
+  background-image: linear-gradient(
+    to right bottom,
+    #8dc63f,
+    #74bf43,
+    #5ab748,
+    #3baf4c,
+    #00a651
+  );
+  color: var(--login-title-color);
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  .background {
+    width: 100%;
+  }
+  .overlay {
+    width: 45%;
+  }
+  .overlay h2 {
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin: 0 auto;
+    font-weight: 700;
+    padding-bottom: 40px;
+  }
+  .overlay p {
+    display: none;
+  }
+  .section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center !important;
+  }
+  .section-description {
+    font-size: 1.5rem;
+    width: 80%;
+    text-align: center;
+  }
+
+  .paragrapher {
+    line-height: 1;
+    width: 290px;
+    margin-top: 20px;
+    font-size: 1.3rem;
+  }
+
+  .py-md-5 {
+    display: block;
+    flex-direction: column;
+  }
+  .btn-actions {
+    width: 5.5rem;
+    font-size: 0.8rem;
+  }
+  .section-title,
+  .section-description {
+    text-align: center;
+  }
+
+  .btn-main,
+  .btn-more,
+  .btn-newsletter {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .date-more,
+  .date-more2 {
+    margin: 40px;
+  }
+  .form-control {
+   margin:0 5px;
+  }
 }
