@@ -11,4 +11,4 @@ class PostForm(forms.ModelForm):
 class RegisterNewsletterForm(forms.ModelForm):
     class Meta:
         model = NewsletterUser
-        fields = 'email'
+        fields = ['email']
