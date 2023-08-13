@@ -28,6 +28,7 @@
 
     <!-- Modal Details -->
     </table>
+    {% for report in page %}
     <div class="modal fade" id="detailsModal{{ report.id }}" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel{{ report.id }}" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -60,11 +61,9 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        {% for photo in report.photos.all %}
-                        <div class="col-md-4 mb-3">
-                            <img src="{{ photo.image.url }}" class="img-fluid" alt="report Photo">
+                        <div class="col-md-12 mb-3">
+                            <img src="{{ report.evidence_image.url }}" class="img-fluid" alt="Denúncia Photo">
                         </div>
-                        {% endfor %}
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -73,6 +72,7 @@
             </div>
         </div>
     </div>
+    
 
     <!-- Modal Delete-->
     <div class="modal fade" id="deleteModal{{ report.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{ report.id }}" aria-hidden="true">
@@ -94,6 +94,7 @@
             </div>
         </div>
     </div>
+    {% endfor %}
 </section>
 
 
