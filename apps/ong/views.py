@@ -40,3 +40,8 @@ def show_all_posts(request):
 def show_posts_per_category(request):
     sel_posts = Post.objects.filter(category = request.POST.get('category'))
     return render(request, 'blog.html', {'sel_posts':sel_posts})
+
+
+@has_role_decorator('Admin', 'Voluntary', 'Supporter')
+def make_comment(request):
+    pass
