@@ -21,7 +21,7 @@ class Post(models.Model):
     CATEGORY_CHOICES = [('F', 'Forest'), ('W', 'Water'), ('A', 'Air')]
 
     title = models.CharField(_('title'), max_length=24, blank=False)
-    text = models.CharField(_('text'), blank=False)
+    text = models.TextField(_('text'), blank=False)
     category = models.CharField(_('category'), max_length=1, choices=CATEGORY_CHOICES, blank=False)
     image = models.ImageField(_('image'), upload_to='blog_posts')
     date = models.DateField(_('date'), default=datetime.now())

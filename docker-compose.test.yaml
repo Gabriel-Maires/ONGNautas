@@ -11,7 +11,7 @@ services:
       - ./:/app
     command: >
       sh -c "python3.11 manage.py migrate &&
-             python3.11 manage.py test"
+             python3.11 manage.py test apps"
     networks:
       - django-network
 

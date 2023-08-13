@@ -12,8 +12,9 @@
             <div class="margin">
                 <div class="background">
                     <div class="overlay">
+                        <h2 class="title-banner">Conheça um pouco mais do que fazemos pelo meio-ambiente:</h2>
                         <p class="paragrapher">A ONGNautas é uma organização empenhada na conservação e proteção do meio ambiente, especialmente em praias e cidades. Movidos pela conexão profunda entre a humanidade e esses ambientes, eles se dedicam a garantir um futuro sustentável para essas áreas. Através de ações de conscientização, educação e denúncia, a ONGNautas trabalha incansavelmente para enfrentar problemas como a poluição, a degradação e outras ameaças aos ecossistemas.</p>
-                        <button class="btn">AÇÔES</button>
+                        <button name="btn-actions" class="btn-actions">AÇÔES</button>
                     </div>
                     
                 </div>
@@ -24,29 +25,34 @@
         <section></section>
         
     </section>
-
-<!-- Quem somos -->
+    
     <section class="py-5" id="about-us">
-        <div class="container ">
-            <h2 class="section-title text-center">Quem Somos?</h2>
+        <div class="container">
+            <h3 class="section-title text-center">Quem Somos?</h3>
             <p class="section-description text-center">Entenda um pouco mais sobre a ong.</p>
 
             <div class="row">
-                <div class="col-lg-6  mx-3">
-                    <h1 class="card-title text-center">ONG.Nautas</h1>
+                <div class="col-lg-6 my-5 mx-0 ">
+                    <h5 class="card-title text-center mb-4">ONG.Nautas</h5>
                     <div class="d-flex flex-column align-items-center">
-                    <p class="paragrapher">Estamos comprometidos em combater a poluição, promover práticas sustentáveis e engajar a comunidade local em ações de preservação.</p>
-                    <p class="paragrapher">Com uma equipe apaixonada por natureza e especialistas em conservação, trabalhamos para um futuro mais saudável para nossas praias e cidades.</p>
-                    <button class="btn text-center">Conheça nosso blog</button>
+                    <p class="paragrapher">Estamos comprometidos em combater a poluição, promover práticas sustentáveis e engajar a comunidade local em ações de preservação.
+
+                        Com uma equipe apaixonada por natureza e especialistas em conservação, trabalhamos para um futuro mais saudável para nossas praias e cidades.
+                        </p>
+                    <p class="paragrapher">Estamos comprometidos em combater a poluição, promover práticas sustentáveis e engajar a comunidade local em ações de preservação.
+
+                        Com uma equipe apaixonada por natureza e especialistas em conservação, trabalhamos para um futuro mais saudável para nossas praias e cidades.
+                        </p>
+                    <button name="btn-blog mb-4" class="btn-main ">Conheça o Blog</button>
                 </div>
-            </div>
+            </div> 
                 <!-- Linha vertical -->
                 <div class="d-flex" style="height: 200px;">
                     <div class="vr bg-primary"></div>
                 </div>
 
-                <div class="col-lg-3 d-flex align-items-center justify-content-center photos-container mx-3">
-                    <div class="photos-ong-01">
+                <div class="col-lg-3 d-flex align-items-center justify-content-center  ">
+                    <div>
                         <div class="photo">
                             <img src="{% static 'ong/img/about-ong-img/ongft1.svg' %}" alt="Foto 1">
                         </div>
@@ -54,7 +60,7 @@
                             <img src="{% static 'ong/img/about-ong-img/ongft2.svg' %}" alt="Foto 2">
                         </div>
                     </div>
-                    <div class="photos-ong-02">
+                    <div>
                         <div class="photo">
                             <img src="{% static 'ong/img/about-ong-img/ongft3.svg' %}" alt="Foto 3">
                         </div>
@@ -66,20 +72,19 @@
             </div>
         </div>
     </section>
-
     <!-- Voluntary-->
     <section class="py-5" id="volunteers">
-        <div class="container">
-            <h2 class="section-title text-center">Seja Voluntário</h2>
+        <div class="container ">
+            <h3 class="section-title text-center">Seja Voluntário</h3>
             <p class="section-description text-center">Com você somos mais forte.</p>
 
-            <div class="row">
-                <div class="col-lg-6 d-flex align-items-center justify-content-center photos-container my-4 ">
+            <div class="row ml-4 ">
+                <div class="col-lg-6 d-flex align-items-center justify-content-center photos-container my-8">
                     <div>
-                        <div class="photo">
+                        <div class="photo ">
                             <img src="{% static 'ong/img/about-voluntarys/voluntaryft1.svg' %}" alt="Foto 1">
                         </div>
-                        <div class="photo">
+                        <div class="photo mx-1">
                             <img src="{% static 'ong/img/about-voluntarys/voluntaryft2.svg' %}" alt="Foto 2">
                         </div>
                     </div>
@@ -87,7 +92,7 @@
                         <div class="photo">
                             <img src="{% static 'ong/img/about-voluntarys/voluntaryft3.svg' %}" alt="Foto 3">
                         </div>
-                        <div class="photo">
+                        <div class="photo mx-1">
                             <img src="{% static 'ong/img/about-voluntarys/voluntaryft4.svg' %}" alt="Foto 4">
                         </div>
                     </div>
@@ -96,12 +101,12 @@
                     <div class="vr bg-primary"></div>
               
                     
-                        <div class="col-lg-9 ">
-                            <h1 class="card-title text-center">Voluntário</h1>
+                        <div class="col-lg-12 mx-5 ">
+                            <h5 class="card-title">Voluntario</h5>
                             <div class="d-flex flex-column align-items-center">
-                                <p class="paragrapher">Você, sim, você mesmo! Se tem um coração verde, vontade de fazer a diferença e um espírito aventureiro, essa é a sua chance de fazer parte de uma equipe dedicada a proteger o meio ambiente e preservar as belezas naturais do nosso querido lar terrestre.</p>
-                                <p class="paragrapher">Impacto positivo: Cada ação que você realizar terá um efeito cascata em nosso ecossistema, contribuindo para um mundo mais verde e sustentável. Plante árvores, participe de limpezas ambientais, e deixe sua marca brilhando no firmamento!</p>
-                                <button class="btn">Cadastrar</button>
+                                <p class="paragrapher">Você, sim, você mesmo! Se tem um coração verde, vontade de fazer a diferença e um espírito aventureiro, essa é a sua chance de fazer parte de uma equipe dedicada a proteger o meio ambiente e preservar as belezas naturais do nosso querido Impacto positivo: Cada ação que você realizar terá um efeito cascata em nosso ecossistema, contribuindo para um mundo mais verde e sustentável. Plante árvores, participe de limpezas ambientais, e deixe sua marca brilhando no firmamento!lar terrestre.</p>
+                                <p class="paragrapher">Você, sim, você mesmo!.</p>
+                                <button name="register" class="btn-main">Cadastrar</button>
                             </div>
                     </div>
                 </div>
@@ -112,16 +117,16 @@
     <!-- support -->
     <section class="py-5" id="supporters">
         <div class="container">
-            <h2 class="section-title text-center">Fortaleça nossas ações</h2>
+            <h3 class="section-title text-center">Fortaleça nossas ações</h3>
             <p class="section-description text-center">Fortaleça nossas ações</p>
 
-            <div class="row">
-                <div class="col-lg-6 mx-3">
-                    <h1 class="card-title text-center">Apoiador</h1>
+            <div class="row ml-8">
+                <div class="col-lg-6 mx-1 ">
+                    <h3 class="card-title text-center mb-4 ">Apoiador</h3>
                     <div class="d-flex flex-column align-items-center">
-                    <p class="paragrapher">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p class="paragrapher">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <button class="btn">Apoiar</button>
+                    <p class="paragrapher">Lorem ipsum dolor sit amet, consectetur adipiscing elit, onsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, deserunt mollit anim id est laborum.</p>
+                    <p class="paragrapher">Lorem ipsum dokkkkkklor sit   mmmmmmmmmmm amet, consectetur adipiscing elit, sed onsectetur adipiscing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. </p>
+                    <button name="register" class="btn-main mt-4">Apoiar</button>
                 </div>
             </div> 
                 <!-- Linha vertical -->
@@ -129,7 +134,7 @@
                     <div class="vr bg-primary"></div>
                 </div>
 
-                <div class="col-lg-3 d-flex align-items-center justify-content-center mx-3 ">
+                <div class="col-lg-3 d-flex align-items-center justify-content-center  ">
                     <div>
                         <div class="photo">
                             <img src="{% static 'ong/img/about-supporter/apoieft1.svg' %}" alt="Foto 1">
@@ -151,46 +156,47 @@
         </div>
     </section>
           <!-- ======= Newsletter ======= -->
-    <section class="padd-section">
+    <section class="padd-section mb-5 mt-5">
 
         <div class="container">
             <div class="">
     
-            <h2 class="text-center">Ultimas Notícias</h2>
-            <p class="text-center">Fique por dentro das últimas notícias .</p>
+            <h3 class="section-title text-center">Ultimas Notícias</h3>
+            <p class="section-description text-center">Fique por dentro das últimas notícias .</p>
             </div>
 
-            <div class="row">
+            <div class="row bi-bi-train-freight-front-fill d-flex justify-content-around ">
     
-            <div class="col-md-6 col-lg-4">
-                <div class="">
-                <a href="#"><img src="{% static 'ong/img/lastnews/lastnewsft1.svg' %}" alt="img-1"></a>
-                <div class="content-blog">
-                    <h4><a href="#">Junte-se a nós na missão verde! Acesse nosso Blog e inscrevas-se na nossa newsletter</a></h4>
-                    <span>01, ago 2023</span>
-                    <a class="btn" href="#">saiba mais</a>
+            <div class="col-md-8 col-lg-4">
+                <div class="text-justify d-flex flex-column justify-content-center align-content-center">
+                <a name="btn" href="#"><img src="{% static 'ong/img/lastnews/lastnewsft2.svg' %}" alt="img-1"></a>
+                <h4><a name="btn" href="#">Junte-se a nós na missão verde! Inscreva-se a baixo na nossa newsletter</a></h4>
+                <div class="date-more mt-4"> 
+                    <span >01, ago 2023</span>
+                    <a class="btn-more " name="btn" href="#">saiba mais</a>
                 </div>
                 </div>
             </div>
     
             <div class="col-md-6 col-lg-4">
-                <div class="text-left">
-                <a href="#"><img src="{% static 'ong/img/lastnews/lastnewsft2.svg' %}" class="" alt="img-2"></a>
-                <div class="">
-                    <h4><a href="#">Planeta Sustentável: Descubra como os ONGNautas estão fazendo a diferença</a></h4>
+                <div class="text-justify d-flex flex-column justify-content-center align-content-center">
+                <a name="btn" href="#"><img src="{% static 'ong/img/lastnews/lastnewsft2.svg' %}"  alt="img-2"></a>
+                <h4><a name="btn" href="#">Planeta Sustentável:
+                    Descubra como os ONGNautas estão fazendo a diferença</a></h4>
+                <div class="date-more"> 
                     <span>01, ago 2023</span>
-                    <a class="btn" href="#">saiba mais</a>
+                    <a class="btn-more" name="btn" href="#">saiba mais</a>
                 </div>
                 </div>
             </div>
     
             <div class="col-md-6 col-lg-4">
-                <div class="text-left">
-                <a href="#"><img src="{% static 'ong/img/lastnews/lastnewsft3.svg' %}" class="" alt="img-3"></a>
-                <div class="">
-                    <h4><a href="#">Explorando a Natureza: As melhores trilhas ecológicas com os ONGNautas</a></h4>
+                <div class="text-justify d-flex flex-column justify-content-center align-content-center">
+                <a name='btn' href="#"><img src="{% static 'ong/img/lastnews/lastnewsft3.svg' %}" class="" alt="img-3"></a>
+                <h4><a name='btn' href="#">Explorando a Natureza: As melhores trilhas ecológicas com os ONGNautas</a></h4>
+                <div class="date-more mt-1">  
                     <span>01, ago 2023</span>
-                    <a class="btn" href="#">saiba mais</a>
+                    <a class="btn-more" name="btn" href="#">saiba mais</a>
                 </div>
                 </div>
             </div>
@@ -199,14 +205,14 @@
     </section>
       
 
-          <section  class="text-center">
+          <section  class="text-center mt-5 mb-5">
             <div class="">
               <div class="container" >
                 <div class="row justify-content-center">
                   <div class="col-md-9 col-lg-6">
-                    <form class="d-flex" method="POST" action="#">
-                      <input type="email" class="form-control " placeholder="Email Adress" name="email">
-                      <button type="submit" class="btn "><i></i>Inscreva-se</button>
+                    <form class="d-flex mt-5 mb-5" method="POST" action="#">{% csrf_token %}
+                      <input type="email" class="form-control" placeholder="Email Adress" name="email">
+                      <button type="submit" name="btn_newsletter" class="btn-newsletter"><i></i>Inscreva-se</button>
                     </form>
                   </div>
                 </div>

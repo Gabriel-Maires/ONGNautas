@@ -4,15 +4,15 @@
 <html lang="pt-BR">
   <head>
     {% include 'partials/head.html' %}
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block 'title' %}{% endblock 'title' %} | ONGNautas</title>
 
     <link rel="stylesheet" href="{% block 'css' %}{% endblock 'css' %}" />
   </head>
-  <body>
+  <body Style=" background-color: black">
     {% include 'partials/header.html' %}
 
-    <main class="main-content-container">
+    <main class="main-content-container ">
       
       {% block 'body' %}{% endblock 'body' %}
     </main>
