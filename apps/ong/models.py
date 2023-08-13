@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from datetime import datetime
+from authentication.validators import validators
 
 
 class Project(models.Model):
@@ -26,3 +27,10 @@ class Post(models.Model):
     image = models.ImageField(_('image'), upload_to='blog_posts')
     date = models.DateField(_('date'), default=datetime.now())
 
+
+class NewsletterUser(models.Model):
+    email = models.EmailField(
+            _('email address'),
+            unique=True, 
+            blank=False, 
+            validators=[no_whitespaces])
