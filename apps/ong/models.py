@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from datetime import datetime
+from authentication.validators import no_whitespaces
 
 
 class Project(models.Model):
@@ -18,7 +19,7 @@ class Project(models.Model):
 
 
 class Post(models.Model):
-    CATEGORY_CHOICES = [('F', 'Forest'), ('W', 'Water'), ('A', 'Air')]
+    CATEGORY_CHOICES = [('F', 'Forest'), ('W', 'Water'), ('A', 'Air'), ('L', 'Animals')]
 
     title = models.CharField(_('title'), max_length=24, blank=False)
     text = models.TextField(_('text'), blank=False)
@@ -26,3 +27,10 @@ class Post(models.Model):
     image = models.ImageField(_('image'), upload_to='blog_posts')
     date = models.DateField(_('date'), default=datetime.now())
 
+
+class NewsletterUser(models.Model):
+    email = models.EmailField(
+            _('email address'),
+            unique=True, 
+            blank=False, 
+            validators=[no_whitespaces])
