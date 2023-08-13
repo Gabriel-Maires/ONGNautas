@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from datetime import datetime
-from authentication.validators import validators
+from authentication.validators import no_whitespaces
 
 
 class Project(models.Model):
