@@ -18,7 +18,7 @@ class Project(models.Model):
 
 
 class Post(models.Model):
-    CATEGORY_CHOICES = [('F', 'Forest'), ('W', 'Water'), ('A', 'Air')]
+    CATEGORY_CHOICES = [('F', 'Forest'), ('W', 'Water'), ('A', 'Air'), ('L', 'Animals')]
 
     title = models.CharField(_('title'), max_length=24, blank=False)
     text = models.TextField(_('text'), blank=False)
