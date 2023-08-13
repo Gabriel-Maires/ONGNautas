@@ -6,6 +6,7 @@ from rolepermissions.decorators import has_role_decorator
 
 from django.contrib import messages
 from django.contrib.messages import constants
+from .forms import RegisterNewsletterForm
 
 
 def blog_view(request):
@@ -45,3 +46,18 @@ def show_posts_per_category(request):
 @has_role_decorator('Admin', 'Voluntary', 'Supporter')
 def make_comment(request):
     pass
+
+
+def newsletter_register(request):
+    register_news_user = RegisterNewsletterForm()
+
+    if register_news_user.is_valid():
+        try:
+            register_news_user.save()
+
+        except:
+            messages.add_message(
+                        request, 
+                        constants.ERROR, 
+                        'Erro interno do sistema. Tente novamente mais tarde.'
+                    )
