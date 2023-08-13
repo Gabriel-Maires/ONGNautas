@@ -55,9 +55,16 @@ def newsletter_register(request):
         try:
             register_news_user.save()
 
+            messages.add_message(request, constants.INFO, message)
+            messages.add_message(request, constants.SUCCESS, 'Usuário criado com sucesso!')
+
+            return render(request, 'home.html')
+
         except:
             messages.add_message(
                         request, 
                         constants.ERROR, 
                         'Erro interno do sistema. Tente novamente mais tarde.'
                     )
+
+    return render(request, 'home.html')
