@@ -16,7 +16,14 @@ def denouncement_view(request: HttpRequest):
 
     match request.method:
         case 'GET':
+            all_reports = Report.objects.all()
+            paginator = Paginator(all_reports, 10)
+
+            page_number = request.GET.get('page')
+            page = paginator.get_page(page_number)
             context = {
+                'reports': Report.objects.all(),
+                'page': page,
                 'form': ReportsForm(),
                 'open_denouncement_modal': False
             }
