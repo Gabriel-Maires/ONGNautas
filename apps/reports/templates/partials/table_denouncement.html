@@ -12,14 +12,14 @@
             </tr>
         </thead>
         <tbody>
-            {% for denouncement in page_obj %}
+            {% for report in page %}
             {# Each "contact" is a Contact model object. #}
             {{ contact.full_name|upper }}<br>
             <tr>
-                <td><a href="#" data-toggle="modal" data-target="#detailsModal{{ denouncement.id }}">{{ denouncement.title }}</a></td>
-                <td><a href="#" data-toggle="modal" data-target="#photosModal{{ denouncement.id }}">Fotos</a></td>
+                <td><a href="#" data-toggle="modal" data-target="#detailsModal{{ report.id }}">{{ report.title }}</a></td>
+                <td><a href="#" data-toggle="modal" data-target="#photosModal{{ report.id }}">Fotos</a></td>
                 {% if user|has_role:'admin' %}
-                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ denouncement.id }}"></button></td>
+                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ report.id }}">Excluir</button></td>
                 {% endif %}
             </tr>
             {% endfor %}
@@ -28,18 +28,19 @@
 
     <!-- Modal Details -->
     </table>
-    <div class="modal fade" id="detailsModal{{ denouncement.id }}" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel{{ denouncement.id }}" aria-hidden="true">
+    {% for report in page %}
+    <div class="modal fade" id="detailsModal{{ report.id }}" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel{{ report.id }}" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="detailsModalLabel{{ denouncement.id }}">{{ denouncement.title }} - Detalhes</h5>
+                    <h5 class="modal-title" id="detailsModalLabel{{ report.id }}">{{ report.title }} - Detalhes</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Descrição: {{ denouncement.description }}</p>
-                    <p>Endereço: {{ denouncement.address }}</p>
+                    <p>Descrição: {{ report.description }}</p>
+                    <p>Endereço: {{ report.address }}</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
@@ -49,22 +50,20 @@
     </div>
     <!-- Modal Photos-->
 
-    <div class="modal fade" id="photosModal{{ denouncement.id }}" tabindex="-1" role="dialog" aria-labelledby="photosModalLabel{{ denouncement.id }}" aria-hidden="true">
+    <div class="modal fade" id="photosModal{{ report.id }}" tabindex="-1" role="dialog" aria-labelledby="photosModalLabel{{ report.id }}" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="photosModalLabel{{ denouncement.id }}">{{ denouncement.title }} - Fotos</h5>
+                    <h5 class="modal-title" id="photosModalLabel{{ report.id }}">{{ report.title }} - Fotos</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        {% for photo in denouncement.photos.all %}
-                        <div class="col-md-4 mb-3">
-                            <img src="{{ photo.image.url }}" class="img-fluid" alt="Denouncement Photo">
+                        <div class="col-md-12 mb-3">
+                            <img src="{{ report.evidence_image.url }}" class="img-fluid" alt="Denúncia Photo">
                         </div>
-                        {% endfor %}
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -73,26 +72,45 @@
             </div>
         </div>
     </div>
+    
 
     <!-- Modal Delete-->
-    <div class="modal fade" id="deleteModal{{ denouncement.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{ denouncement.id }}" aria-hidden="true">
+    <div class="modal fade" id="deleteModal{{ report.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{ report.id }}" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel{{ denouncement.id }}">Excluir</h5>
+                    <h5 class="modal-title" id="deleteModalLabel{{ report.id }}">Excluir</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Tem certeza que deseja excluir a denuncia "{{ denouncement.title }}"?</p>
+                    <p>Tem certeza que deseja excluir a denuncia "{{ report.title }}"?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <a href="#" class="btn">Excluir</a>
+                    <button type="submit" class="btn btn-primary">Excluir</button>
                 </div>
             </div>
         </div>
+    </div>
+    {% endfor %}
+    <div class="pagination">
+        <span class="step-links">
+            {% if page.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Pagina {{ page.number }} de {{ page.paginator.num_pages }}.
+            </span>
+
+            {% if page.has_next %}
+                <a href="?page={{ page.next_page_number }}">next</a>
+                <a href="?page={{ page.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
     </div>
 </section>
 

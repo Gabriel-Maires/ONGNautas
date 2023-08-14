@@ -16,7 +16,13 @@ def denouncement_view(request: HttpRequest):
 
     match request.method:
         case 'GET':
+            all_reports = Report.objects.all()
+            paginator = Paginator(all_reports, 10)
+
+            page_number = request.GET.get('page')
+            page = paginator.get_page(page_number)
             context = {
+                'page': page,
                 'form': ReportsForm(),
                 'open_denouncement_modal': False
             }
@@ -24,7 +30,6 @@ def denouncement_view(request: HttpRequest):
             return render(request, 'denouncement.html', context)
         
         case 'POST':
-
             reports_form = ReportsForm(request.POST, request.FILES)
             context = {
                 'form': reports_form,
@@ -36,7 +41,20 @@ def denouncement_view(request: HttpRequest):
                     reports_form.save()
                     messages.add_message(request, constants.SUCCESS, 'Denúncia enviada com sucesso!')
 
-                    return redirect(reverse('denouncement'))
+                    all_reports = Report.objects.all()
+                    paginator = Paginator(all_reports, 10)
+
+                    page_number = request.GET.get('page')
+                    page = paginator.get_page(page_number)
+
+                    reports_form = ReportsForm(request.POST, request.FILES)
+                    context = {
+                        'page': page,
+                        'form': reports_form,
+                        'open_denouncement_modal': True
+                    }
+
+                    return render(request, 'denouncement.html', context)
                 
                 except:
                     messages.add_message(request, constants.ERROR, 'Erro interno do sistema.')
@@ -48,16 +66,6 @@ def denouncement_view(request: HttpRequest):
             messages.add_message(request, constants.WARNING, 'Preencha os campos corretamente!')    
 
             return render(request, 'denouncement.html', context)
-
-
-def show_reports(request):
-    reports = Report.objects.all()
-
-    reports_paginator = Paginator(reports, 10)
-    page_num = request.GET.get('page')
-    page = reports_paginator.get_page(page_num)
-
-    return render(request, 'denouncement.html', {'page':page})
 
 def transparency_view(request):
     return render(request, 'transparency.html')
