@@ -3,6 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from datetime import datetime
 from authentication.validators import no_whitespaces
 from authentication.models import User
+from django.utils import timezone 
 
 
 class Project(models.Model):
@@ -30,9 +31,9 @@ class Post(models.Model):
 
 
 class Comments(models.Model):
-    post = models.ForeignKey(Post, on_delete=CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
     comment = models.CharField(max_length=150, blank=False)
-    user = models.ForeignKey(User, on_delete=DO_NOTHING)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     date = datetime.now()
     
 

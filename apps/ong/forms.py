@@ -17,4 +17,4 @@ class RegisterNewsletterForm(forms.ModelForm):
 class CommentsForm(forms.ModelForm):
     class Meta:
         model = Comments
-        fields = ('post', 'user', 'comment', 'date')
+        fields = ('post', 'user', 'comment')

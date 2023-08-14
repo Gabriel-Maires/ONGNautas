@@ -1,0 +1,20 @@
+.card {
+    background-color: #009933;
+    color: #fff;
+  }
+
+.rounded-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #00571E;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.card-content {
+    text-align: center;
+    padding: 1rem;
+  }
