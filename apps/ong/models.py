@@ -14,6 +14,7 @@ class Project(models.Model):
     image = models.ImageField(_('image'), upload_to='projects')
     is_active = models.BooleanField(_('is active'), default=True)
     amount_spent = models.DecimalField(_('amount spent'), max_digits=6, decimal_places=2, default=0.0)
+    amount_expected = models.DecimalField(_('amount spent'), max_digits=6, decimal_places=2, default=0.0)
 
     def __str__(self) -> str:
         return self.title
@@ -27,6 +28,7 @@ class Post(models.Model):
     category = models.CharField(_('category'), max_length=1, choices=CATEGORY_CHOICES, blank=False)
     image = models.ImageField(_('image'), upload_to='blog_posts')
     date = models.DateField(_('date'), default=datetime.now())
+    autor = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
 
 class Comments(models.Model):
