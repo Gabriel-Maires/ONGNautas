@@ -17,10 +17,10 @@ class RegisterNewsletterForm(forms.ModelForm):
 class CommentsForm(forms.ModelForm):
     class Meta:
         model = Comments
-        fields = ('post', 'user', 'comment', 'date')
+        fields = ('post', 'comment', 'user', 'date')
 
 
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
-        fields = ('title', 'text', 'category', 'image', 'date')
+        fields = ('title', 'short_description', 'description', 'address', 'image', 'is_active', 'amount_spent')
