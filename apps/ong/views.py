@@ -1,12 +1,11 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from .models import Post
-from .forms import PostForm
+from .forms import PostForm, RegisterNewsletterForm, CommentsForm
 from rolepermissions.decorators import has_role_decorator
 
 from django.contrib import messages
 from django.contrib.messages import constants
-from .forms import RegisterNewsletterForm
 
 
 def blog_view(request):
@@ -45,7 +44,20 @@ def show_posts_per_category(request):
 
 @has_role_decorator('Admin', 'Voluntary', 'Supporter')
 def make_comment(request):
-    pass
+    if request.method == 'POST':
+        comment_form = CommentsForm()
+        if comment_form.is_valid():
+            try:
+                comment_form.save()
+                #nao sei oque retornar aqui
+                return render(request, '.html')
+            except:
+                messages.add_message(
+                        request, 
+                        constants.ERROR, 
+                        'Houve algum erro. Tente novamente mais tarde.'
+                    )
+        
 
 
 def newsletter_register(request):
