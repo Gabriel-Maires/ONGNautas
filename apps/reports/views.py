@@ -1,7 +1,7 @@
 from django.http import HttpRequest
 
 from django.urls import reverse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from django.contrib import messages
 from django.contrib.messages import constants
@@ -66,6 +66,14 @@ def denouncement_view(request: HttpRequest):
             messages.add_message(request, constants.WARNING, 'Preencha os campos corretamente!')    
 
             return render(request, 'denouncement.html', context)
+
+
+def delete_report(request, report_id):
+    report = get_object_or_404(Report, id=report_id)
+    report.delete()
+    messages.success(request, 'Denúncia excluída com sucesso!')
+    return redirect('denouncement')
+
 
 def transparency_view(request):
     return render(request, 'transparency.html')

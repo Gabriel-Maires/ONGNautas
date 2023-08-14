@@ -87,9 +87,9 @@
                 <div class="modal-body">
                     <p>Tem certeza que deseja excluir a denuncia "{{ report.title }}"?</p>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer btn-group">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary">Excluir</button>
+                    <a href="{% url 'delete_report' report.id %}" class="btn btn-primary">Excluir</a>
                 </div>
             </div>
         </div>
