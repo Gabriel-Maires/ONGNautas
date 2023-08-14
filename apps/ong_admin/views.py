@@ -10,7 +10,7 @@ def ong_admin_view(request):
 
 
 @has_role_decorator('admin')
-def create_projects(request):
+def register_projects(request):
     if request.method == 'POST':
         project_form = ProjectForm(request.POST)
         if project_form.is_valid():
@@ -42,5 +42,9 @@ def register_admin(request):
                     )
 
 
-def allow_project_register(request):
+def confirm_voluntary_participation(request):
+    pass
+
+
+def register_expenses(request):
     pass
