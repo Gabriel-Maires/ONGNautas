@@ -45,7 +45,7 @@ def show_posts_per_category(request):
 @has_role_decorator('Admin', 'Voluntary', 'Supporter')
 def make_comment(request):
     if request.method == 'POST':
-        comment_form = CommentsForm()
+        comment_form = CommentsForm(request.POST)
         if comment_form.is_valid():
             try:
                 comment_form.save()
