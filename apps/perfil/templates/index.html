@@ -1,190 +1,102 @@
 {% extends "base/base_perfil.html" %}
 
-{% load static %} 
+{% load static %}
 
 {% block 'title'%}Perfil{% endblock 'title' %}
 
-{% block 'css' %}{% static 'perfil/css/index.css'%}{% endblock 'css' %}
+{% block 'css' %} 
+{% static 'perfil/css/index.css'%}
+{% endblock 'css' %}
 
 {% block 'scripts' %}
-
 <script src="{% static 'perfil/js/scripts.js' %}"></script>
-{% endblock %} {% block 'body' %}
+{% endblock %}
 
-<section style="background-color: #eee">
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="card mb-4">
-          <div class="card-body text-center">
-            <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-              alt="avatar"
-              class="rounded-circle img-fluid"
-              style="width: 150px"
-            />
-            <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">Voluntario</a></li>
-              <li class="breadcrumb-item"><a href="#">Apoiador</a></li>
-            </ol>
-          </div>
-        </div>
-      </div>
-      <!-- Parte de dados do usuario -->
-      <div class="col-lg-8">
-        <div class="card mb-4">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Nome do Usuario:</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">Johnatan Smith</p>
-              </div>
-            </div>
-            <hr />
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">E-mail</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">example@example.com</p>
-              </div>
-            </div>
-            <hr />
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Numero de Contato:</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">ex: (097) 234-5678</p>
-              </div>
-            </div>
-            <hr />
+{% block 'body' %}
 
-            <hr />
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Endereço:</p>
+<section class="vh-100" style="background-color: black">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <!-- coluna do perfil de usuario com as opções que ao clicadas, serão renderiazadas ao meio do indexhtml -->
+      <div class="col col-lg-6 mb-4 mb-lg-0">
+        <div class="card mb-3" style="border-radius: 0.5rem">
+          <div class="row g-0">
+            <div
+              class="aside-user col-md-4 gradient-custom text-center"
+              style="
+                border-top-left-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+              "
+            >
+              <img
+                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                alt="Avatar"
+                class="img-fluid my-5"
+                style="width: 80px"
+              />
+              <h5>Nome de Usuário:</h5>
+
+              <!--
+                Aqui será feita uma lógica para quando o usuario for, ex apenas voluntário esse link terá a cor branca e aparecerá o conteudo apenas de voluntário enquanto o link de apoiador estará em cinza e vice e versa.
+
+                Ao clicar em "apoiador" vai aparecer um modal perguntando se ele quer ser ambos (voluntário e apoiador), ao clicar em aceitar, automaticamente o modal fecha e o link de voluntario e apoiador passa a ser um link em branco que ao clicar em voluntário aparecera as funcoes de voluntario e e vice e versa
+                 -->
+              <a href="#" name="is_voluntary">
+                <p>Voluntário</p>
+              </a>
+              <a href="#" name=" is_supporter">
+                <p>Apoiador</p>
+              </a>
+
+              <i class="far fa-edit mb-5"></i>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body p-4">
+                <h6>Informações de <span>Usuário</span></h6>
+                <hr class="mt-0 mb-4" />
+                <div class="row pt-1">
+                  <div class="col-6 mb-3">
+                    <h6>Email de Contato:</h6>
+                    <p class="text-muted">info@example.com</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>Celular:</h6>
+                    <p class="text-muted">(21) 171171-171</p>
+                  </div>
+                </div>
+
+                <!--Essa parte ficará assim:
+                  Quando for Voluntário:
+                   de Projetos de voluntário e abaixo o registro de voluntariado e as horas -->
+              <div class="container-perfil-actions">
+                <div class="">
+                  <h6>Ações</h6>
+                  <hr class="mt-0 mb-4" />
+                  <div class="row pt-1">
+                   <!-- Seção de card aparecendo apenas no max 3 ações, depois disso aparecera um botão de próximo-->
+                  </div>
+                </div>
+                <div>
+                  <h6>Meus voluntariados</h6>
+                  <button>Registrar ação</button>
+                  <hr class="mt-0 mb-4" />
+                  <div class="row pt-1">
+                    <div class="">
+                      <p class="text-muted">
+                        Voce ainda não participou de nenhuma ação
+                        <!-- Ao participar de alguma ação e o admin aceitar, irá aparecer um card com a foto escolhida, horas trabalhadas no projeto e o nome do projeto. eele será feitodda mesma forma que ações, no max 3 cardas e depois disso vem o btão previous e next-->
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">
-                  ex: Rua manoel bastos de oliveira,55
-                </p>
+                <div class="d-flex justify-content-start">
+                  <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                  <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                  <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- aqui teremos as seções de cada usuario -->
-<section class="container py-5 h-100">
-  <div class="row d-flex justify-content-center align-items-center h-100">
-    <div class="col col-xl-10">
-      <div class="card mb-5" style="border-radius: 15px">
-        <div class="card-body p-4">
-          <h3 class="mb-3">açoes</h3>
-          <p class="small mb-0">
-            <i class="far fa-star fa-lg"></i>
-            <span class="mx-2">|</span> Created by <strong>lorem</strong> on 11
-            April , 2021
-          </p>
-          <hr class="my-4" />
-          <div class="d-flex justify-content-start align-items-center">
-            <p class="mb-0 text-uppercase">
-              <i class="fas fa-cog me-2"></i>
-              <span class="text-muted small">lorem</span>
-            </p>
-            <p class="mb-0 text-uppercase">
-              <i class="fas fa-link ms-4 me-2"></i>
-              <span class="text-muted small">lorem</span>
-            </p>
-            <p class="mb-0 text-uppercase">
-              <i class="fas fa-ellipsis-h ms-4 me-2"></i>
-              <span class="text-muted small">lorem</span>
-              <span class="ms-3 me-4">|</span>
-            </p>
-            <a href="#!">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-2.webp"
-                alt="avatar"
-                class="img-fluid rounded-circle me-3"
-                width="35"
-              />
-            </a>
-            <button
-              type="button"
-              class="btn btn-outline-dark btn-sm btn-floating"
-            >
-              <i class="fas fa-plus"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-radius: 15px">
-        <div class="card-body p-4">
-          <h3 class="mb-3">voluntariados</h3>
-          <p class="small mb-0">
-            <i class="fas fa-star fa-lg text-warning"></i>
-            <span class="mx-2">|</span> Public <span class="mx-2">|</span> lorem
-            <strong>lorem</strong> on 11 April , 2021
-          </p>
-          <hr class="my-4" />
-          <div class="d-flex justify-content-start align-items-center">
-            <p class="mb-0 text-uppercase">
-              <i class="fas fa-cog me-2"></i>
-              <span class="text-muted small">lorem</span>
-            </p>
-            <p class="mb-0 text-uppercase">
-              <i class="fas fa-link ms-4 me-2"></i>
-              <span class="text-muted small">loremk</span>
-            </p>
-            <p class="mb-0 text-uppercase">
-              <i class="fas fa-ellipsis-h ms-4 me-2"></i>
-              <span class="text-muted small">lorem</span>
-              <span class="ms-3 me-4">|</span>
-            </p>
-            <a href="#!">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-2.webp"
-                alt="avatar"
-                class="img-fluid rounded-circle me-1"
-                width="35"
-              />
-            </a>
-            <a href="#!">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-3.webp"
-                alt="avatar"
-                class="img-fluid rounded-circle me-1"
-                width="35"
-              />
-            </a>
-            <a href="#!">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-4.webp"
-                alt="avatar"
-                class="img-fluid rounded-circle me-1"
-                width="35"
-              />
-            </a>
-            <a href="#!">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp"
-                alt="avatar"
-                class="img-fluid rounded-circle me-3"
-                width="35"
-              />
-            </a>
-            <button
-              type="button"
-              class="btn btn-outline-dark btn-sm btn-floating"
-            >
-              <i class="fas fa-plus"></i>
-            </button>
           </div>
         </div>
       </div>

@@ -23,6 +23,18 @@
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+          {% if user.is_admin %}
+          <!-- adm -->
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="#">Permissões</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="#">Registros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="#">Blog</a>
+          </li>
+          {% else %}
           {% if user.is_volunteer and user.is_supporter %}
           <!--  voluntários e apoiadores -->
           <li class="nav-item">
@@ -60,6 +72,7 @@
             <a class="nav-link scrollto" href="#">Doar</a>
           </li>
           {% endif %} {% endif %}
+          {% endif %}
 
           <!--logout sempre será exibido em todas as opçoes! -->
           <li class="nav-item">
