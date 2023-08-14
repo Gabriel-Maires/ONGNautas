@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from datetime import datetime
 from authentication.validators import no_whitespaces
+from authentication.models import User
 
 
 class Project(models.Model):
@@ -26,6 +27,14 @@ class Post(models.Model):
     category = models.CharField(_('category'), max_length=1, choices=CATEGORY_CHOICES, blank=False)
     image = models.ImageField(_('image'), upload_to='blog_posts')
     date = models.DateField(_('date'), default=datetime.now())
+
+
+class Comments(models.Model):
+    post = models.ForeignKey(Post, on_delete=CASCADE)
+    comment = models.CharField(max_length=150, blank=False)
+    user = models.ForeignKey(User, on_delete=DO_NOTHING)
+    date = datetime.now()
+    
 
 
 class NewsletterUser(models.Model):
