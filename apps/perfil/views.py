@@ -9,13 +9,13 @@ def index_view(request):
 def voluntary_view(request):
     user = request.user
 
-    return render(request, '.html', {'is_voluntary': user.is_voluntary})
+    return render(request, 'voluntary.html', {'is_voluntary': user.is_voluntary})
 
 
 def supporter_view(request):
     user = request.user
 
-    return render(request, '.html', {'is_supporter': user.is_supporter})
+    return render(request, 'supporter.html', {'is_supporter': user.is_supporter})
 
 
 def project_registration(request):
