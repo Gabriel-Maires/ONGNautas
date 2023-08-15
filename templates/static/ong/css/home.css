@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: "Aileron";
-  src: url("/static/fonts/aileron/aileron.otf") format("truetype");
+  src: url("/static/fonts/aileron/aileron.ttf") format("truetype");
   /* Outras propriedades da fonte, (font-weight, font-style, etc.) */
 }
 @font-face {
@@ -112,7 +112,6 @@ img {
   color: var(--input-login-bg);
   text-align: center;
   font-family: "Lastica";
-  text-transform: uppercase;
 }
 
 .btn-actions {
@@ -123,7 +122,21 @@ img {
   width: 150px;
   border-radius: 2.5rem;
 }
+.btn-main {
+  font-size: 1rem;
+  padding: 0.8rem;
+  font-weight: 700;
+  font-family: "Lastica-bold", "Aileron";
+  margin: 20px auto;
+  width: 240px;
 
+  border-radius: 2.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: 0.4s;
+  color: var(--login-title-color) !important;
+  border: groove #66a26141;
+}
 .btn-more {
   font-size: 1.3rem;
   padding: 0.5rem;
