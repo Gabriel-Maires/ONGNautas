@@ -5,20 +5,18 @@
 {% block 'title'%}Perfil{% endblock 'title' %}
 
 {% block 'css' %} 
-{% static 'perfil/css/index.css'%}
+{% static 'perfil/css/index.css'%} 
 {% endblock 'css' %}
 
 {% block 'scripts' %}
 <script src="{% static 'perfil/js/scripts.js' %}"></script>
-{% endblock %}
+{% endblock %} {% block 'body' %}
 
-{% block 'body' %}
-
-<section class="vh-100" style="background-color: black">
-  <div class="container py-5 h-100">
+<section class="vh-100" style="">
+  <div class="container-xl py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <!-- coluna do perfil de usuario com as opções que ao clicadas, serão renderiazadas ao meio do indexhtml -->
-      <div class="col col-lg-6 mb-4 mb-lg-0">
+      <div class="col-md-12 mx-6">
         <div class="card mb-3" style="border-radius: 0.5rem">
           <div class="row g-0">
             <div
@@ -28,73 +26,57 @@
                 border-bottom-left-radius: 0.5rem;
               "
             >
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
-                alt="Avatar"
-                class="img-fluid my-5"
-                style="width: 80px"
-              />
-              <h5>Nome de Usuário:</h5>
-
-              <!--
-                Aqui será feita uma lógica para quando o usuario for, ex apenas voluntário esse link terá a cor branca e aparecerá o conteudo apenas de voluntário enquanto o link de apoiador estará em cinza e vice e versa.
-
-                Ao clicar em "apoiador" vai aparecer um modal perguntando se ele quer ser ambos (voluntário e apoiador), ao clicar em aceitar, automaticamente o modal fecha e o link de voluntario e apoiador passa a ser um link em branco que ao clicar em voluntário aparecera as funcoes de voluntario e e vice e versa
-                 -->
-              <a href="#" name="is_voluntary">
-                <p>Voluntário</p>
-              </a>
-              <a href="#" name=" is_supporter">
-                <p>Apoiador</p>
-              </a>
-
+            <button id="btn-voluntary" type="button" name="is_voluntary" class="aside-btn aside-link">Voluntário</button>
+            <button id="btn-supporter" type="button" name="is_supporter" class="aside-btn aside-link">Apoiador</button>            
+            
               <i class="far fa-edit mb-5"></i>
             </div>
+            <!-- Informações do Usuario -->
             <div class="col-md-8">
-              <div class="card-body p-4">
+              <div class="card-body p-8">
                 <h6>Informações de <span>Usuário</span></h6>
-                <hr class="mt-0 mb-4" />
-                <div class="row pt-1">
-                  <div class="col-6 mb-3">
-                    <h6>Email de Contato:</h6>
-                    <p class="text-muted">info@example.com</p>
-                  </div>
-                  <div class="col-6 mb-3">
-                    <h6>Celular:</h6>
-                    <p class="text-muted">(21) 171171-171</p>
-                  </div>
-                </div>
 
-                <!--Essa parte ficará assim:
-                  Quando for Voluntário:
-                   de Projetos de voluntário e abaixo o registro de voluntariado e as horas -->
-              <div class="container-perfil-actions">
-                <div class="">
-                  <h6>Ações</h6>
-                  <hr class="mt-0 mb-4" />
-                  <div class="row pt-1">
-                   <!-- Seção de card aparecendo apenas no max 3 ações, depois disso aparecera um botão de próximo-->
-                  </div>
-                </div>
-                <div>
-                  <h6>Meus voluntariados</h6>
-                  <button>Registrar ação</button>
-                  <hr class="mt-0 mb-4" />
-                  <div class="row pt-1">
-                    <div class="">
-                      <p class="text-muted">
-                        Voce ainda não participou de nenhuma ação
-                        <!-- Ao participar de alguma ação e o admin aceitar, irá aparecer um card com a foto escolhida, horas trabalhadas no projeto e o nome do projeto. eele será feitodda mesma forma que ações, no max 3 cardas e depois disso vem o btão previous e next-->
-                      </p>
+                <hr class="mt-0 mb-4" />
+
+                <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                        <h6>Email de Contato:</h6>
+                        <p class="text-muted">info@example.com</p>
+                      </div>
+                      <div class="col-6 mb-3">
+                        <h6>Celular:</h6>
+                        <p class="text-muted">(21) 171171-171</p>
+                      </div>
                     </div>
+                  
+                </div>
+                <!-- Incluindo o partial de acordo com a opção do usuário -->
+                {% if is_voluntary and not is_supporter %}
+                  <div class="container-perfil-actions">
+                    <div id="actions-voluntary" class="actions">
+                        <h6 class="category-title">Ações</h6>
+                        {% include 'partials/voluntary.html' %}
+                    </div>      
+
+                {% elif is_supporter and not is_voluntary %}
+                <div class="container-perfil-actions">
+                  <div id="actions-supporter" class="actions">
+                      <h6 class="category-title">Ações</h6>
+                      {% include 'partials/supporter.html' %}
                   </div>
-                </div>
               </div>
-                <div class="d-flex justify-content-start">
-                  <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
-                  <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
-                  <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
-                </div>
+
+                {% elif is_voluntary and is_supporter %}                
+                <div class="container-perfil-actions">
+                  <div class="actions">
+                      <h6 class="category-title">Ações</h6>
+                      {% include 'partials/voluntary.html' %}
+                  </div> 
+                  <div class="actions">
+                    <h6 class="category-title">Ações</h6>
+                  {% include 'partials/supporter.html' %}  
+                {% endif %}
+               
               </div>
             </div>
           </div>
