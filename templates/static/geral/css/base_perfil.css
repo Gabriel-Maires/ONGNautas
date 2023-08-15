@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --card-bg: gray;
+    --link-btn: green;
+    --user-category-title: green;
+    --perfil-discription: white;
+}
+
+.nav-item{
+    color: aliceblue;
+}
+

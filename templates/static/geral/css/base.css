@@ -8,33 +8,25 @@
 @font-face {
   font-family: "Lastica";
   src: url("/static/fonts/lastica/lastica.ttf") format("truetype");
- 
 }
 
 @font-face {
   font-family: "Aileron";
   src: url("/static/fonts/aileron/aileron.ttf") format("truetype");
-  
 }
 @font-face {
   font-family: "Josefin-sans";
-  src: url("/static/fonts/Josefin_Sans/JosefinSans.ttf")
-    format("truetype");
-  
+  src: url("/static/fonts/Josefin_Sans/JosefinSans.ttf") format("truetype");
 }
 
-:root{
-  --home-titles:#00A651;
-  --home-subtitles:#A8CF45;
-  --home-nav:#a28e61cb;
+:root {
+  --home-titles: #00a651;
+  --home-subtitles: #a8cf45;
+  --home-nav: #a28e61cb;
   --home-nav-decoration: #a28e6168;
   --home-description-title: #a28e6130;
   --home-discription-subtitle: #65584a;
 }
-
-
-
-
 
 h1,
 h2,
@@ -46,16 +38,17 @@ h6 {
 }
 
 h2 {
-font-family: "Aileron, Lastica, sans";
-letter-spacing: 2px;
-color: var(--home-titles);
+  font-family: "Aileron, Lastica, sans";
+  letter-spacing: 2px;
+  color: var(--home-titles);
 }
 
-h4, a {
+h4,
+a {
   font-family: "Aileron, Lastica, sans";
-  color:var(--login-title-color)!important;
-  width:82%;
-  margin:0 auto;
+  color: var(--login-title-color) !important;
+  width: 82%;
+  margin: 0 auto;
   text-align: left;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -63,7 +56,6 @@ h4, a {
   text-transform: uppercase;
   line-height: 1;
 }
-
 
 h5 {
   color: #626262;
@@ -96,15 +88,15 @@ li {
 }
 /* mudança de "p" para "paragrapher"*/
 .paragrapher {
-  color:var(--placeholder-text);
+  color: var(--placeholder-text);
   font-family: "josefin-sans";
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 0.7px;
   line-height: 2;
   margin-bottom: 20px;
 }
-
 
 span {
   color: var(--home-subtitles);
@@ -112,10 +104,10 @@ span {
   font-size: 14px;
   letter-spacing: 1px;
   font-weight: 900;
-  text-decoration-line:underline;
+  text-decoration-line: underline;
 }
 
-button{
+button {
   border: groove #66a26141;
   background-image: linear-gradient(
     to left bottom,
@@ -125,19 +117,17 @@ button{
     #74bf43,
     #8dc63f
   );
-  
+
   color: var(--placeholder-text);
- 
 }
 /*-- Header --*/
 
 #header {
-  background:#000;
+  background: #000;
   z-index: 997;
   transition: all 0.5s ease;
   padding: 10px 0;
   margin-bottom: 1rem;
-  
 }
 .logo h1 {
   color: #505050;
@@ -162,7 +152,6 @@ button{
 
 .logo h1 a span {
   color: #71c55d;
-  
 }
 
 .logo img {
@@ -225,36 +214,62 @@ button{
 .navbar-nav > li {
   margin-right: 15px;
 }
-.btn{
-    border: groove #66a26141;
-    background-image: linear-gradient(
-      to left bottom,
-      #00a651,
-      #3baf4c,
-      #5ab748,
-      #74bf43,
-      #8dc63f
-    );
-    
-    color: var(--placeholder-text);
+.btn {
+  border: groove #66a26141;
+  background-image: linear-gradient(
+    to left bottom,
+    #00a651,
+    #3baf4c,
+    #5ab748,
+    #74bf43,
+    #8dc63f
+  );
+
+  color: var(--placeholder-text);
 }
 
-
 .btn-login {
-  
-  
   text-align: center;
   width: 95px;
   letter-spacing: 3px;
   border-radius: 2.5rem;
   font-size: 0.8rem;
-  font-family: 'Lastica';
+  font-family: "Lastica";
   font-weight: 800;
-  color:var(--login-title-color)!important;
-  transition: 0.4s;  color: var(--login-title-color)!important;
+  color: var(--login-title-color) !important;
+  transition: 0.4s;
+  color: var(--login-title-color) !important;
+}
+
+/* main css*/
+.padd-section{
+  
+  margin-bottom:90px;
+}
+.midle-title{
+  font-family: 'Josefin-sans';
+  font-weight: 900;
+  color: var(--home-subtitles);
+  text-align: center;
+  letter-spacing: 5px;
   
 }
-.btn-login:hover {
+.btn-main {
+  font-size: 1rem;
+  padding: 0.8rem;
+  font-weight: 700;
+  font-family: "Lastica-bold", "Aileron";
+  margin: 0 auto;
+  width: 240px;
+  border-radius: 2.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: 0.4s;
+  color: var(--login-title-color) !important;
+  border: groove #66a26141;
+}
+.btn-login:hover,
+.btn-main:hover {
   background-image: linear-gradient(
     to right bottom,
     #8dc63f,
@@ -302,4 +317,3 @@ button{
   text-decoration: none;
   letter-spacing: 0;
 }
-

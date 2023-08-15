@@ -1,190 +1,87 @@
 {% extends "base/base_perfil.html" %}
 
-{% load static %} 
+{% load static %}
 
 {% block 'title'%}Perfil{% endblock 'title' %}
 
-{% block 'css' %}{% static 'perfil/css/index.css'%}{% endblock 'css' %}
+{% block 'css' %} 
+{% static 'perfil/css/index.css'%} 
+{% endblock 'css' %}
 
 {% block 'scripts' %}
-
 <script src="{% static 'perfil/js/scripts.js' %}"></script>
 {% endblock %} {% block 'body' %}
 
-<section style="background-color: #eee">
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="card mb-4">
-          <div class="card-body text-center">
-            <img
-              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-              alt="avatar"
-              class="rounded-circle img-fluid"
-              style="width: 150px"
-            />
-            <ol class="breadcrumb mb-0">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">Voluntario</a></li>
-              <li class="breadcrumb-item"><a href="#">Apoiador</a></li>
-            </ol>
-          </div>
-        </div>
-      </div>
-      <!-- Parte de dados do usuario -->
-      <div class="col-lg-8">
-        <div class="card mb-4">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Nome do Usuario:</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">Johnatan Smith</p>
-              </div>
+<section class="vh-100">
+  <div class="container-xl py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100 ">
+      <!-- coluna do perfil de usuario com as opções que ao clicadas, serão renderiazadas ao meio do indexhtml -->
+      <div class="col-md-12 mx-6">
+        <div class="card mb-3 bg-transparent" style="border-radius: 0.5rem">
+          <div class="row g-0">
+            <div
+              class="aside-user col-md-4 gradient-custom text-center "
+              style="
+                border-top-left-radius: 0.5rem;
+                border-bottom-left-radius: 0.5rem;
+              "
+            >
+            <button id="btn-voluntary" type="button" name="is_voluntary" class="aside-btn aside-link">Voluntário</button>
+            <button id="btn-supporter" type="button" name="is_supporter" class="aside-btn aside-link">Apoiador</button>
+            
+            
+              <i class="far fa-edit mb-5"></i>
             </div>
-            <hr />
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">E-mail</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">example@example.com</p>
-              </div>
-            </div>
-            <hr />
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Numero de Contato:</p>
-              </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">ex: (097) 234-5678</p>
-              </div>
-            </div>
-            <hr />
+            <!-- Informações do Usuario -->
+            <div class="col-md-8">
+              <div class="card-body p-8">
+                <h2>Informações de <span>User</span></h2>
 
-            <hr />
-            <div class="row">
-              <div class="col-sm-3">
-                <p class="mb-0">Endereço:</p>
+                <hr class="mt-0 mb-4" />
+
+                <div class="row pt-1">
+                    <div class="col-6 mb-3">
+                        <h6 class="midle-title">Email de Contato:</h6>
+                        <p class="midle-title">info@example.com</p>
+                      </div>
+                      <div class="col-6 mb-3">
+                        <h6 class="midle-title">Celular:</h6>
+                        <p class="midle-title">(21) 171171-171</p>
+                      </div>
+                    </div>
+                  
+                </div>
+                <h6 class="category-title">Ações</h6>
+                <!-- Incluindo o partial de acordo com a opção do usuário -->
+                {% if is_voluntary and not is_supporter %}
+                  <div class="container-perfil-actions">
+                    <div id="actions-voluntary" class="actions">
+                        {% include 'partials/voluntary.html' %}
+                    </div>      
+
+                    
+                    <h6 class="category-title">Minhas ações</h6>
+                {% elif is_supporter and not is_voluntary %}
+                <div class="container-perfil-actions">
+                  <div id="actions-supporter" class="actions">
+                      
+                      {% include 'partials/supporter.html' %}
+                  </div>
               </div>
-              <div class="col-sm-9">
-                <p class="text-muted mb-0">
-                  ex: Rua manoel bastos de oliveira,55
-                </p>
+
+                {% elif is_voluntary and is_supporter %}                
+                <div class="container-perfil-actions">
+                  <div class="actions">
+                      <h6 class="category-title">Ações</h6>
+                      {% include 'partials/voluntary.html' %}
+                  </div> 
+                  <div class="actions">
+                    <h6 class="category-title">Ações</h6>
+                  {% include 'partials/supporter.html' %}  
+                {% endif %}
+               
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- aqui teremos as seções de cada usuario -->
-<section class="container py-5 h-100">
-  <div class="row d-flex justify-content-center align-items-center h-100">
-    <div class="col col-xl-10">
-      <div class="card mb-5" style="border-radius: 15px">
-        <div class="card-body p-4">
-          <h3 class="mb-3">açoes</h3>
-          <p class="small mb-0">
-            <i class="far fa-star fa-lg"></i>
-            <span class="mx-2">|</span> Created by <strong>lorem</strong> on 11
-            April , 2021
-          </p>
-          <hr class="my-4" />
-          <div class="d-flex justify-content-start align-items-center">
-            <p class="mb-0 text-uppercase">
-              <i class="fas fa-cog me-2"></i>
-              <span class="text-muted small">lorem</span>
-            </p>
-            <p class="mb-0 text-uppercase">
-              <i class="fas fa-link ms-4 me-2"></i>
-              <span class="text-muted small">lorem</span>
-            </p>
-            <p class="mb-0 text-uppercase">
-              <i class="fas fa-ellipsis-h ms-4 me-2"></i>
-              <span class="text-muted small">lorem</span>
-              <span class="ms-3 me-4">|</span>
-            </p>
-            <a href="#!">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-2.webp"
-                alt="avatar"
-                class="img-fluid rounded-circle me-3"
-                width="35"
-              />
-            </a>
-            <button
-              type="button"
-              class="btn btn-outline-dark btn-sm btn-floating"
-            >
-              <i class="fas fa-plus"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="card" style="border-radius: 15px">
-        <div class="card-body p-4">
-          <h3 class="mb-3">voluntariados</h3>
-          <p class="small mb-0">
-            <i class="fas fa-star fa-lg text-warning"></i>
-            <span class="mx-2">|</span> Public <span class="mx-2">|</span> lorem
-            <strong>lorem</strong> on 11 April , 2021
-          </p>
-          <hr class="my-4" />
-          <div class="d-flex justify-content-start align-items-center">
-            <p class="mb-0 text-uppercase">
-              <i class="fas fa-cog me-2"></i>
-              <span class="text-muted small">lorem</span>
-            </p>
-            <p class="mb-0 text-uppercase">
-              <i class="fas fa-link ms-4 me-2"></i>
-              <span class="text-muted small">loremk</span>
-            </p>
-            <p class="mb-0 text-uppercase">
-              <i class="fas fa-ellipsis-h ms-4 me-2"></i>
-              <span class="text-muted small">lorem</span>
-              <span class="ms-3 me-4">|</span>
-            </p>
-            <a href="#!">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-2.webp"
-                alt="avatar"
-                class="img-fluid rounded-circle me-1"
-                width="35"
-              />
-            </a>
-            <a href="#!">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-3.webp"
-                alt="avatar"
-                class="img-fluid rounded-circle me-1"
-                width="35"
-              />
-            </a>
-            <a href="#!">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-4.webp"
-                alt="avatar"
-                class="img-fluid rounded-circle me-1"
-                width="35"
-              />
-            </a>
-            <a href="#!">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-5.webp"
-                alt="avatar"
-                class="img-fluid rounded-circle me-3"
-                width="35"
-              />
-            </a>
-            <button
-              type="button"
-              class="btn btn-outline-dark btn-sm btn-floating"
-            >
-              <i class="fas fa-plus"></i>
-            </button>
           </div>
         </div>
       </div>
