@@ -122,21 +122,7 @@ img {
   width: 150px;
   border-radius: 2.5rem;
 }
-.btn-main {
-  font-size: 1rem;
-  padding: 0.8rem;
-  font-weight: 700;
-  font-family: "Lastica-bold", "Aileron";
-  margin: 20px auto;
-  width: 240px;
 
-  border-radius: 2.5rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  transition: 0.4s;
-  color: var(--login-title-color) !important;
-  border: groove #66a26141;
-}
 .btn-more {
   font-size: 1.3rem;
   padding: 0.5rem;

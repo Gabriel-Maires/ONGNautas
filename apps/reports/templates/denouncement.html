@@ -8,27 +8,27 @@
 {% block 'body' %}
 		<section class="padd-section">
 				<div class="container mt-5">
-						<h2 class="margin section-title ">Denúncia Ambiental</h2>
-						<p>A ONGNautas é uma organização empenhada na conservação e proteção do meio ambiente, especialmente em praias e cidades. Movidos pela conexão profunda entre a humanidade e esses ambientes, eles se dedicam a garantir um futuro sustentável para essas áreas. Através de ações de conscientização, educação e denúncia, a ONGNautas trabalha incansavelmente para enfrentar problemas como a poluição, a degradação e outras ameaças aos ecossistemas.</p>
+						<h2 class="margin section-title">Denúncia Ambiental</h2>
+						<p class="paragrapher">A ONGNautas é uma organização empenhada na conservação e proteção do meio ambiente, especialmente em praias e cidades. Movidos pela conexão profunda entre a humanidade e esses ambientes, eles se dedicam a garantir um futuro sustentável para essas áreas. Através de ações de conscientização, educação e denúncia, a ONGNautas trabalha incansavelmente para enfrentar problemas como a poluição, a degradação e outras ameaças aos ecossistemas.</p>
 				</div>
 				
 				<!-- Seção: Importância da Denúncia -->
 				<div class="container mt-5">
-						<h3>Importância da Denúncia</h3>
-						<p>A denúncia é uma ferramenta crucial na proteção do meio ambiente. Ao denunciar atividades ilegais ou prejudiciais ao ecossistema, você está contribuindo diretamente para a preservação do nosso planeta.</p>
+						<h2 class="card-title">Importância da Denúncia</h2>
+						<p class="paragrapher">A denúncia é uma ferramenta crucial na proteção do meio ambiente. Ao denunciar atividades ilegais ou prejudiciais ao ecossistema, você está contribuindo diretamente para a preservação do nosso planeta.</p>
 						<div class="row">
 								<div class="col-md-6">
 										<div class="feature-item">
 												<i class="bi bi-shield"></i>
-												<h4>Proteja a Natureza</h4>
-												<p>Ao denunciar, você ajuda a evitar danos irreparáveis a habitats naturais e espécies.</p>
+												<h2>Proteja a Natureza</h2>
+												<p class="paragrapher">Ao denunciar, você ajuda a evitar danos irreparáveis a habitats naturais e espécies.</p>
 										</div>
 								</div>
 								<div class="col-md-6">
 										<div class="feature-item">
 												<i class="bi bi-binoculars"></i>
-												<h4>Promova a Fiscalização</h4>
-												<p>Suas denúncias auxiliam as autoridades a monitorar e controlar atividades ambientais ilegais.</p>
+												<h2>Promova a Fiscalização</h2>
+												<p class="paragrapher">Suas denúncias auxiliam as autoridades a monitorar e controlar atividades ambientais ilegais.</p>
 										</div>
 								</div>
 						</div>
@@ -44,17 +44,17 @@
 
 				<!-- Seção: Como Denunciar -->
 				<div class="container mt-5">
-						<h3>Como Fazer uma Denúncia</h3>
-						<p>Denunciar é simples e pode ser feito seguindo estes passos:</p>
+						<h2>Como Fazer uma Denúncia</h2>
+						<p class="paragrapher">Denunciar é simples e pode ser feito seguindo estes passos:</p>
 						<ol>
 								<li> Clique no botão a baixo e preencha o formulário, fornecendo uma descrição detalhada da situação.</li>
 								<li>Anexe fotos relevantes para fortalecer sua denúncia.</li>
 								<li>Clique em "Enviar Denúncia".</li>
 						</ol>
-						<p>Sua identidade será mantida confidencial.</p>
+						<p class="paragrapher">Sua identidade será mantida confidencial.</p>
 				</div>
 				<div class="text-center">
-						<button class="btn" id="denouncementModalTrigger" data-toggle="modal" data-target="#denunciaModal">Fazer Denúncia</button>
+						<button class="btn-main" id="denouncementModalTrigger" data-toggle="modal" data-target="#denunciaModal">Fazer Denúncia</button>
 				</div>
 
 				<!-- Modal para fazer a denúncia -->
@@ -86,12 +86,12 @@
 														{% endif %}
 														{% if form.title.value %}
 															<div class="form-group">
-																<label for="descricao">Título:</label>
+																<label for="card-title">Título:</label>
 																<input class="form-control" name="title" id="titulo" value="{{ form.title.value }}" required>
 															</div>
 														{% else %}
 															<div class="form-group">
-																<label for="descricao">Título:</label>
+																<label for="section-title">Título:</label>
 																<input class="form-control" name="title" id="titulo" required>
 															</div>
 														{% endif %}

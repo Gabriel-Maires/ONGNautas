@@ -33,9 +33,6 @@
 }
 
 
-
-
-
 h1,
 h2,
 h3,
@@ -98,7 +95,8 @@ li {
 .paragrapher {
   color:var(--placeholder-text);
   font-family: "josefin-sans";
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: 0.7px;
   line-height: 2;
@@ -242,7 +240,26 @@ button{
   transition: 0.4s;  color: var(--login-title-color)!important;
   
 }
-.btn-login:hover {
+
+
+/* main css*/
+.btn-main {
+  font-size: 1rem;
+  padding: 0.8rem;
+  font-weight: 700;
+  font-family: "Lastica-bold", "Aileron";
+  margin: 20px auto;
+  width: 240px;
+
+  border-radius: 2.5rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: 0.4s;
+  color: var(--login-title-color) !important;
+  border: groove #66a26141;
+}
+.btn-login:hover,
+.btn-main:hover {
   background-image: linear-gradient(
     to right bottom,
     #8dc63f,
