@@ -12,7 +12,7 @@
 <script src="{% static 'perfil/js/scripts.js' %}"></script>
 {% endblock %} {% block 'body' %}
 
-<section class="vh-100" style="">
+<section class="vh-100">
   <div class="container-xl py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <!-- coluna do perfil de usuario com as opções que ao clicadas, serão renderiazadas ao meio do indexhtml -->
@@ -20,48 +20,51 @@
         <div class="card mb-3" style="border-radius: 0.5rem">
           <div class="row g-0">
             <div
-              class="aside-user col-md-4 gradient-custom text-center"
+              class="aside-user col-md-4 gradient-custom text-center "
               style="
                 border-top-left-radius: 0.5rem;
                 border-bottom-left-radius: 0.5rem;
               "
             >
             <button id="btn-voluntary" type="button" name="is_voluntary" class="aside-btn aside-link">Voluntário</button>
-            <button id="btn-supporter" type="button" name="is_supporter" class="aside-btn aside-link">Apoiador</button>            
+            <button id="btn-supporter" type="button" name="is_supporter" class="aside-btn aside-link">Apoiador</button>
+            
             
               <i class="far fa-edit mb-5"></i>
             </div>
             <!-- Informações do Usuario -->
             <div class="col-md-8">
               <div class="card-body p-8">
-                <h6>Informações de <span>Usuário</span></h6>
+                <h2>Informações de <span>User</span></h2>
 
                 <hr class="mt-0 mb-4" />
 
                 <div class="row pt-1">
                     <div class="col-6 mb-3">
-                        <h6>Email de Contato:</h6>
-                        <p class="text-muted">info@example.com</p>
+                        <h6 class="midle-title">Email de Contato:</h6>
+                        <p class="midle-title">info@example.com</p>
                       </div>
                       <div class="col-6 mb-3">
-                        <h6>Celular:</h6>
-                        <p class="text-muted">(21) 171171-171</p>
+                        <h6 class="midle-title">Celular:</h6>
+                        <p class="midle-title">(21) 171171-171</p>
                       </div>
                     </div>
                   
                 </div>
+                <h6 class="category-title">Ações</h6>
                 <!-- Incluindo o partial de acordo com a opção do usuário -->
                 {% if is_voluntary and not is_supporter %}
                   <div class="container-perfil-actions">
                     <div id="actions-voluntary" class="actions">
-                        <h6 class="category-title">Ações</h6>
                         {% include 'partials/voluntary.html' %}
                     </div>      
 
+                    
+                    <h6 class="category-title">Minhas ações</h6>
                 {% elif is_supporter and not is_voluntary %}
                 <div class="container-perfil-actions">
                   <div id="actions-supporter" class="actions">
-                      <h6 class="category-title">Ações</h6>
+                      
                       {% include 'partials/supporter.html' %}
                   </div>
               </div>

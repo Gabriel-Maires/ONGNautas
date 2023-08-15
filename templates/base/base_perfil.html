@@ -11,12 +11,12 @@
 
     <link rel="stylesheet" href="{% block 'css' %}{% static 'geral/css/base_perfil.css' %}{% endblock 'css' %}" />
   </head>
-  <body>
+  <body style=" background-color: black;">
     {% include 'partials/header-perfil.html' %} {% block content %}
     <div class="content"></div>
     {% endblock %}
 
-    <main class="main-content-container-perfil"style="margin-top: 100px; background-color: black">
+    <main class="main-content-container-perfil"style="margin-top: 100px;">
       {% block 'body' %}{% endblock 'body' %}
     </main>
 

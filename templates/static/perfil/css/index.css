@@ -1,8 +1,9 @@
 .container-xl{
    max-width: 1200px;
+   background-color: #bfd4b83d !important;
 }
 .aside-user{
-  background-image: url("/static/perfil/img/aside-perfil.svg");
+  background-image: url("/static/perfil/img/perfil-aside.svg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -22,6 +23,9 @@
   width:9rem;
   margin: 0 auto;
   color:azure ;
+}
+.col-md-12{
+background-color: #c0d3b7;  
 }
 .card-img-top{
   width:90%
