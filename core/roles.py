@@ -9,6 +9,7 @@ class Admin(AbstractUserRole):
         'can_register_admin':True,
         'can_confirm_voluntary_participation':True,
         'can_register_expenses':True,
+        'can_delete_reports':True,
     }
 
 

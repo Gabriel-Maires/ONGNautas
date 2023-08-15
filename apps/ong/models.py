@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from datetime import datetime
 from authentication.validators import no_whitespaces
+from authentication.models import User
 
 
 class Project(models.Model):
@@ -13,6 +14,7 @@ class Project(models.Model):
     image = models.ImageField(_('image'), upload_to='projects')
     is_active = models.BooleanField(_('is active'), default=True)
     amount_spent = models.DecimalField(_('amount spent'), max_digits=6, decimal_places=2, default=0.0)
+    amount_expected = models.DecimalField(_('amount spent'), max_digits=6, decimal_places=2, default=0.0)
 
     def __str__(self) -> str:
         return self.title
@@ -26,6 +28,20 @@ class Post(models.Model):
     category = models.CharField(_('category'), max_length=1, choices=CATEGORY_CHOICES, blank=False)
     image = models.ImageField(_('image'), upload_to='blog_posts')
     date = models.DateField(_('date'), default=datetime.now())
+    autor = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+
+    def __str__(self) -> str:
+        return self.autor + ' | ' + self.date  + ' | ' +  self.title
+
+
+class Comments(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    comment = models.CharField(max_length=150, blank=False)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    date = models.DateField(default=datetime.now())
+    
+    def __str__(self) -> str:
+        return self.autor + ' | ' + self.comment + ' | ' +  self.date
 
 
 class NewsletterUser(models.Model):
@@ -34,3 +50,8 @@ class NewsletterUser(models.Model):
             unique=True, 
             blank=False, 
             validators=[no_whitespaces])
+    
+    date = models.DateField(_('date'), default=datetime.now())
+
+    def __str__(self):
+        return self.email + '  |  ' + str(self.date)

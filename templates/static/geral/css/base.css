@@ -223,7 +223,19 @@ button{
 .navbar-nav > li {
   margin-right: 15px;
 }
-
+.btn{
+    border: groove #66a26141;
+    background-image: linear-gradient(
+      to left bottom,
+      #00a651,
+      #3baf4c,
+      #5ab748,
+      #74bf43,
+      #8dc63f
+    );
+    
+    color: var(--placeholder-text);
+}
 
 
 .btn-login {

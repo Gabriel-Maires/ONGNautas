@@ -1,11 +1,13 @@
 {% load permission_tags %}
    
 <!-- Registered Denouncements -->
-<section>
-    <h1>Denúncias Cadastradas</h1>
-    <table class="table">
+<section class="padd-section">
+    <div class="container">
+        <h2 class="margin section-title">Denúncias Cadastradas</h2>
+    </div>
+    <table class="table container">
         <thead>
-            <tr>
+            <tr class="card-title text-center mb-4">
                 <th>Título</th>
                 <th>Fotos</th>
                 <th></th>
@@ -87,9 +89,9 @@
                 <div class="modal-body">
                     <p>Tem certeza que deseja excluir a denuncia "{{ report.title }}"?</p>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer btn-group">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary">Excluir</button>
+                    <a href="{% url 'delete_report' report.id %}" class="btn btn-primary">Excluir</a>
                 </div>
             </div>
         </div>
@@ -103,7 +105,7 @@
             {% endif %}
 
             <span class="current">
-                Pagina {{ page.number }} de {{ page.paginator.num_pages }}.
+                Página {{ page.number }} de {{ page.paginator.num_pages }}.
             </span>
 
             {% if page.has_next %}
