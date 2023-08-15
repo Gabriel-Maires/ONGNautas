@@ -1,7 +1,7 @@
 <!-- partials/header-perfil.html -->
 
-<header id="header" class="header fixed-top">
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
+<header id="header" class="header fixed-top" Style="background-color:#a28e6168;">
+  <nav class="navbar navbar-expand-md">
     <div class="container logo">
       <h1>
         <a class="navbar-brand" href="{% url 'home' %}"
@@ -23,6 +23,18 @@
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+          {% if user.is_admin %}
+          <!-- adm -->
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="#">Permissões</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="#">Registros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="#">Blog</a>
+          </li>
+          {% else %}
           {% if user.is_volunteer and user.is_supporter %}
           <!--  voluntários e apoiadores -->
           <li class="nav-item">
@@ -60,10 +72,11 @@
             <a class="nav-link scrollto" href="#">Doar</a>
           </li>
           {% endif %} {% endif %}
+          {% endif %}
 
           <!--logout sempre será exibido em todas as opçoes! -->
           <li class="nav-item">
-            <a class="nav-link scrollto" href="#">Logout</a>
+            <a class="nav-link scrollto" href="#" >Logout</a>
           </li>
         </ul>
       </div>

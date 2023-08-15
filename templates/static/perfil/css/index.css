@@ -1,0 +1,68 @@
+.container-xl{
+   max-width: 1200px;
+   
+}
+.aside-user{
+  background-image: url("/static/perfil/img/perfil_aside.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+   
+}
+.button-vol-sup-group{
+  display: flex;
+  flex-direction: column;
+  margin-top:22rem;
+  gap: 40px;
+  font-size: 1.5rem;
+  
+}
+
+.aside-btn{
+  border-radius: 1rem;
+  width:9rem;
+  margin: 0 auto;
+  color:azure ;
+}
+.col-md-12{
+  background-color: #bfd4b825 ;  
+  border-radius: 1rem;
+}
+.card-img-top{
+  width:90%
+}
+.card-body{
+  text-align: justify;
+  
+}
+.container-perfil-actions{
+  margin:0 auto;
+
+}
+.card-group{
+    display:-webkit-inline-box;
+    
+    
+}
+.card-actions{
+    width:210px;
+}
+
+.category-vol-line{
+  background-image: linear-gradient(to right top, #f6f4ef, #ecebdf, #e0e2cf, #d1dac2, #c0d3b6, #c0d3b7, #bfd4b7, #bfd4b8, #d0dcc4, #cfdbad, #eeeecf, #f9f8f2);
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.category-title{
+  background-image: linear-gradient(to right top, #f6f4ef, #ecebdf, #e0e2cf, #d1dac2, #c0d3b6, #c0d3b7, #bfd4b7, #bfd4b8, #d0dcc4, #cfdbad, #eeeecf, #f9f8f2);
+  width:100%;
+  text-align: center;
+  padding:0.4rem 0;
+  margin: 1rem 0;
+  border-radius: 5px;
+  font-size: 2rem;
+  font-family: "Aileron, Lastica, sans";
+  letter-spacing: 2px;
+  color: var(--home-titles);
+}

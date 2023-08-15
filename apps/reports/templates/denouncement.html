@@ -9,13 +9,13 @@
 {% block 'body' %}
 		<section class="padd-section">
 				<div class="container mt-5">
-						<h2 class="margin section-title ">Denúncia Ambiental</h2>
+						<h2 class="margin section-title">Denúncia Ambiental</h2>
 						<p class="paragrapher">A ONGNautas é uma organização empenhada na conservação e proteção do meio ambiente, especialmente em praias e cidades. Movidos pela conexão profunda entre a humanidade e esses ambientes, eles se dedicam a garantir um futuro sustentável para essas áreas. Através de ações de conscientização, educação e denúncia, a ONGNautas trabalha incansavelmente para enfrentar problemas como a poluição, a degradação e outras ameaças aos ecossistemas.</p>
 				</div>
 				
 				<!-- Seção: Importância da Denúncia -->
 				<div class="container mt-5">
-						<h3 class="section-description">Importância da Denúncia</h3>
+						<h2 class="midle-title">Importância da Denúncia</h2>
 						<p class="paragrapher">A denúncia é uma ferramenta crucial na proteção do meio ambiente. Ao denunciar atividades ilegais ou prejudiciais ao ecossistema, você está contribuindo diretamente para a preservação do nosso planeta.</p>
 						<div class="row">
 								<div class="col-md-6">
@@ -55,7 +55,7 @@
 						<p class="paragrapher">Sua identidade será mantida confidencial.</p>
 				</div>
 				<div class="text-center">
-						<button class="btn" id="denouncementModalTrigger" data-toggle="modal" data-target="#denunciaModal">Fazer Denúncia</button>
+						<button class="btn-main" id="denouncementModalTrigger" data-toggle="modal" data-target="#denunciaModal">Fazer Denúncia</button>
 				</div>
 
 				<!-- Modal para fazer a denúncia -->
@@ -87,12 +87,12 @@
 														{% endif %}
 														{% if form.title.value %}
 															<div class="form-group">
-																<label for="descricao">Título:</label>
+																<label for="card-title">Título:</label>
 																<input class="form-control" name="title" id="titulo" value="{{ form.title.value }}" required>
 															</div>
 														{% else %}
 															<div class="form-group">
-																<label for="descricao">Título:</label>
+																<label for="section-title">Título:</label>
 																<input class="form-control" name="title" id="titulo" required>
 															</div>
 														{% endif %}
