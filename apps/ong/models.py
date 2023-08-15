@@ -50,3 +50,8 @@ class NewsletterUser(models.Model):
             unique=True, 
             blank=False, 
             validators=[no_whitespaces])
+    
+    date = models.DateField(_('date'), default=datetime.now())
+
+    def __str__(self):
+        return self.email + '  |  ' + str(self.date)
