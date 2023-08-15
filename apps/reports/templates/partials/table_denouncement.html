@@ -5,7 +5,7 @@
     <div class="container">
         <h2 class="margin section-title">Denúncias Cadastradas</h2>
     </div>
-    <table class="table container">
+    <table class="table table container">
         <thead>
             <tr class="card-title text-center mb-4">
                 <th>Título</th>
@@ -13,7 +13,7 @@
                 <th></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="text-center">
             {% for report in page %}
             {# Each "contact" is a Contact model object. #}
             {{ contact.full_name|upper }}<br>
@@ -21,7 +21,7 @@
                 <td><a href="#" data-toggle="modal" data-target="#detailsModal{{ report.id }}">{{ report.title }}</a></td>
                 <td><a href="#" data-toggle="modal" data-target="#photosModal{{ report.id }}">Fotos</a></td>
                 {% if user|has_role:'admin' %}
-                <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ report.id }}">Excluir</button></td>
+                <td><button type="button" class="btn" data-toggle="modal" data-target="#deleteModal{{ report.id }}">Excluir</button></td>
                 {% endif %}
             </tr>
             {% endfor %}
@@ -105,7 +105,7 @@
             {% endif %}
 
             <span class="current">
-                Página {{ page.number }} de {{ page.paginator.num_pages }}.
+                Pagina {{ page.number }} de {{ page.paginator.num_pages }}.
             </span>
 
             {% if page.has_next %}

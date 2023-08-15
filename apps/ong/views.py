@@ -9,7 +9,9 @@ from django.contrib.messages import constants
 
 
 def blog_view(request):
-    return render(request, 'blog.html')
+    if request.method == 'GET':
+        posts = Post.objects.all()
+        return render(request, 'blog.html', {'posts': posts})
 
 
 def home_view(request):
@@ -31,10 +33,6 @@ def create_posts(request):
                 
                 messages.add_message(request, constants.SUCCESS, 'Post criado com sucesso!')
 
-
-def show_all_posts(request):
-    posts = Post.objects.all()
-    return render(request, 'blog.html', {'posts':posts})
 
 
 def show_posts_per_category(request):
