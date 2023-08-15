@@ -30,6 +30,9 @@ class Post(models.Model):
     date = models.DateField(_('date'), default=datetime.now())
     autor = models.ForeignKey(User, on_delete=models.DO_NOTHING)
 
+    def __str__(self) -> str:
+        return self.autor + ' | ' + self.date  + ' | ' +  self.title
+
 
 class Comments(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
@@ -37,6 +40,8 @@ class Comments(models.Model):
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     date = models.DateField(default=datetime.now())
     
+    def __str__(self) -> str:
+        return self.autor + ' | ' + self.comment + ' | ' +  self.date
 
 
 class NewsletterUser(models.Model):
