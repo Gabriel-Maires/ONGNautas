@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 python-decouple = "*"
-django = "==4.2.3"
+django = "==4.2.16"
 psycopg2-binary = "*"
 pillow = "*"
 django-role-permissions = "*"
